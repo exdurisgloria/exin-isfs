@@ -2074,7 +2074,1475 @@ const extraQuestions = [
             "Escalamento refere-se ao fluxo de atendimento de incidentes.",
             "Tailgating e Mantrap pertencem ao domínio de segurança física perimetral."
         ]
+    },
+    // ==========================================
+// LOTE 3: +75 QUESTÕES FOUNDATION (TOTAL: 200 QUESTÕES)
+// Cole este bloco no final do seu arquivo questoes.js
+// ==========================================
+extraQuestions.push(
+    {
+        domain: "DOM1",
+        q: "Um sensor meteorológico registra a sequência numérica '38, 42, 45' a cada hora em um arquivo de texto bruto, sem indicar unidade de medida, local ou data. Para um analista que abre esse arquivo isolado sem contexto, o que esses números representam?",
+        options: [
+            "Informação estruturada de negócio.",
+            "Apenas dados.",
+            "Conhecimento tácito.",
+            "Um plano de continuidade."
+        ],
+        answer: 1,
+        explanations: [
+            "Sem significado atribuído ou contexto, números isolados ainda não constituem informação.",
+            "Números ou fatos brutos sem contexto ou significado para o receptor são classificados estritamente como dados.",
+            "Conhecimento exige interpretação humana sobre informações já contextualizadas.",
+            "Planos de continuidade são documentos formais de gestão de crises."
+        ]
+    },
+    {
+        domain: "DOM1",
+        q: "Dois departamentos da mesma empresa analisam um relatório de vendas regionais. Para a equipe de Marketing, o relatório é vital para planejar campanhas; para a equipe de Manutenção Predial, o documento é irrelevante. O que esse cenário comprova sobre a natureza da informação?",
+        options: [
+            "Que dados não estruturados não exigem controles de segurança.",
+            "Que o valor e o significado da informação são determinados pelo destinatário dentro do seu contexto.",
+            "Que relatórios impressos possuem apenas integridade, mas não confidencialidade.",
+            "Que a informação deixa de existir quando é enviada por rede."
+        ],
+        answer: 1,
+        explanations: [
+            "Qualquer dado ou informação corporativa exige segurança adequada à sua classificação.",
+            "Na literatura oficial, o valor da informação depende diretamente de quem a recebe e da utilidade que tem para aquele destinatário.",
+            "Documentos impressos possuem todos os atributos da tríade CIA.",
+            "O meio de transmissão não anula a existência da informação."
+        ]
+    },
+    {
+        domain: "DOM1",
+        q: "Uma organização decide mapear detalhadamente por quais departamentos um pedido de compra passa, desde o preenchimento pelo cliente até o arquivamento fiscal, desenhando o caminho percorrido pelos documentos. Qual atividade está sendo executada?",
+        options: [
+            "Gerenciamento de Continuidade de Negócios (BCM).",
+            "Análise da Informação.",
+            "Controle de Acesso Mandatório (MAC).",
+            "Criptografia Assimétrica."
+        ],
+        answer: 1,
+        explanations: [
+            "O BCM foca em manter processos críticos operando durante e após desastres.",
+            "A Análise da Informação tem como foco fornecer uma visão clara de como a informação flui através de uma organização.",
+            "MAC é um modelo técnico de restrição de acesso por rótulos de sigilo.",
+            "Criptografia é um controle técnico de proteção de sigilo e autenticidade."
+        ]
+    },
+    {
+        domain: "DOM1",
+        q: "Durante uma transferência bancária via aplicativo, um erro de programação faz com que o último dígito do valor transferido seja cortado, registrando R$ 150 em vez de R$ 1.500. Qual subaspecto específico da Integridade foi violado?",
+        options: [
+            "Disponibilidade.",
+            "Completude e Exatidão.",
+            "Confidencialidade.",
+            "Posse física."
+        ],
+        answer: 1,
+        explanations: [
+            "O sistema estava online e realizou a transação, portanto a disponibilidade não foi afetada.",
+            "A Integridade garante que os dados estejam inteiros (Completude) e corretos sem adulteração ou truncamento (Exatidão).",
+            "A transação não foi revelada a terceiros não autorizados.",
+            "Posse refere-se à detenção do suporte físico onde os dados residem."
+        ]
+    },
+    {
+        domain: "DOM1",
+        q: "Um hospital sofre um corte nos dois cabos de fibra óptica que ligam a recepção ao servidor central de prontuários. Os dados dos pacientes continuam gravados sem erros e protegidos por senha no servidor, mas os médicos não conseguem consultá-los durante 6 horas. Qual pilar da confiabilidade foi afetado?",
+        options: [
+            "Integridade.",
+            "Confidencialidade.",
+            "Disponibilidade.",
+            "Não-repúdio."
+        ],
+        answer: 2,
+        explanations: [
+            "Os prontuários não foram alterados nem corrompidos no servidor.",
+            "Nenhuma pessoa não autorizada teve acesso aos prontuários.",
+            "A incapacidade de usuários autorizados (médicos) acessarem a informação no momento necessário caracteriza perda de Disponibilidade.",
+            "Não-repúdio trata da impossibilidade de negar a autoria de uma ação."
+        ]
+    },
+    {
+        domain: "DOM1",
+        q: "Um gerente de compras aprova um pedido fraudulento no sistema e, dias depois, alega que nunca clicou no botão de aprovação e que o sistema deve ter criado o registro sozinho. Qual mecanismo de segurança impede que esse gerente negue a autoria da sua ação?",
+        options: [
+            "Balanceamento de carga.",
+            "Não-repúdio (Irretratabilidade) suportado por assinatura digital e logs íntegros.",
+            "Ar-condicionado na sala de servidores.",
+            "Backup diferencial."
+        ],
+        answer: 1,
+        explanations: [
+            "Balanceamento de carga serve apenas para distribuir tráfego de rede e manter a disponibilidade.",
+            "O Não-repúdio garante provas criptográficas e de auditoria indiscutíveis de quem realizou determinada ação ou envio.",
+            "Climatização é um controle físico ambiental.",
+            "Backups recuperam dados perdidos, mas não atestam autoria criptográfica de transações."
+        ]
+    },
+    {
+        domain: "DOM1",
+        q: "Um analista criptografa o único banco de dados de clientes com uma chave de 256 bits gerada aleatoriamente e, por acidente, apaga a chave sem ter feito cópia. O arquivo criptografado continua intacto no servidor e acessível na rede. Segundo o Hexagrama Parkeriano, o que foi perdido?",
+        options: [
+            "Confidencialidade.",
+            "Utilidade.",
+            "Posse.",
+            "Exatidão."
+        ],
+        answer: 1,
+        explanations: [
+            "A confidencialidade permanece máxima, já que ninguém consegue ler os dados.",
+            "Sem a chave para decifrar, os dados tornam-se indecifráveis e inúteis para qualquer finalidade prática, perdendo a Utilidade.",
+            "A empresa ainda detém o arquivo físico no seu servidor (mantém a posse).",
+            "A estrutura matemática do arquivo criptografado não sofreu alteração indevida."
+        ]
+    },
+    {
+        domain: "DOM1",
+        q: "Para validar se a pessoa que está ligando para a central de atendimento bancário é realmente o titular da conta, o sistema solicita uma senha e um código temporário enviado ao aplicativo do cliente. Qual atributo de segurança está sendo verificado nesse instante?",
+        options: [
+            "Autenticidade.",
+            "Completude.",
+            "Redundância.",
+            "Continuidade."
+        ],
+        answer: 0,
+        explanations: [
+            "A Autenticidade verifica e confirma se a identidade declarada por um usuário ou sistema é genuína.",
+            "Completude refere-se à totalidade de um conjunto de dados.",
+            "Redundância é a duplicação de componentes para garantir disponibilidade.",
+            "Continuidade refere-se à manutenção dos processos críticos após desastres."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Em uma reunião de diretoria, o presidente exige que todos os departamentos mantenham trilhas de auditoria, atas de aprovação e registros de mudanças organizados, de modo que um auditor externo possa inspecionar a empresa a qualquer momento sem obstáculos. Qual conceito está sendo exigido?",
+        options: [
+            "Auditabilidade.",
+            "Esteganografia.",
+            "Fator de Exposição.",
+            "Engenharia Social."
+        ],
+        answer: 0,
+        explanations: [
+            "Auditabilidade é a prontidão e capacidade de uma organização para ser submetida a uma avaliação independente.",
+            "Esteganografia é a ocultação de mensagens dentro de arquivos de mídia.",
+            "Fator de Exposição é a porcentagem de perda de um ativo em análise quantitativa.",
+            "Engenharia social é a manipulação psicológica de usuários."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Quando a diretoria define que cada gerente de departamento responderá formalmente pelos resultados das metas de segurança da sua respectiva área, prestando contas sobre sucessos ou falhas, qual princípio de governança está sendo aplicado?",
+        options: [
+            "Responsabilização (Accountability).",
+            "Preenchimento de Tráfego.",
+            "Análise Qualitativa.",
+            "Falso Positivo."
+        ],
+        answer: 0,
+        explanations: [
+            "Responsabilização significa ser formalmente responsável pelos resultados das atividades de uma organização ou setor.",
+            "Preenchimento de tráfego é uma técnica de rede para mascarar volume de dados.",
+            "Análise qualitativa é o método de avaliação de riscos por escalas subjetivas.",
+            "Falso positivo é um alerta disparado por engano em tráfego legítimo."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "A diretoria executiva aprovou a Política de Segurança da Informação de uma empresa financeira. Agora, a equipe precisa elaborar o documento que concretiza essa política, especificando exatamente quais controles serão implantados, os prazos, recursos e responsáveis. Que documento é esse?",
+        options: [
+            "Plano de Segurança da Informação.",
+            "Certificado de Boa Índole.",
+            "Lista de Revogação de Certificados (CRL).",
+            "Termo de Abertura de Chamado."
+        ],
+        answer: 0,
+        explanations: [
+            "Na hierarquia documental da EXIN, o Plano de Segurança concretiza a política ao fornecer os detalhes práticos para sua execução.",
+            "Certificado de boa índole é o atestado de antecedentes criminais de um indivíduo.",
+            "CRL é a lista técnica de certificados digitais cancelados por uma CA.",
+            "Chamados são registros operacionais do Help Desk."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Qual profissional dentro da estrutura organizacional atua no nível específico de uma unidade de negócios (departamento/divisão), desenvolvendo a política de segurança daquela unidade com base na política corporativa e fiscalizando seu cumprimento?",
+        options: [
+            "Information Security Officer (ISO).",
+            "Atendente de Help Desk Nível 1.",
+            "Auditor Externo Independente.",
+            "Desenvolvedor Júnior."
+        ],
+        answer: 0,
+        explanations: [
+            "Enquanto o CISO atua no nível estratégico corporativo global, o ISO atua na unidade de negócios traduzindo e supervisionando a política corporativa na sua área.",
+            "O Help Desk realiza suporte e triagem inicial de incidentes.",
+            "O auditor externo avalia a conformidade de forma independente, sem criar políticas internas.",
+            "Desenvolvedores programam sistemas e não detêm a governança da unidade de negócios."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Em uma corporação, quem é o profissional especificamente encarregado de redigir, revisar periodicamente e manter atualizado o texto da Política de Segurança da Informação que deriva da estratégia definida pelo CISO?",
+        options: [
+            "Information Security Policy Officer.",
+            "Custodiante de Fitas de Backup.",
+            "Vigilante Patrimonial.",
+            "Operador de Telemarketing."
+        ],
+        answer: 0,
+        explanations: [
+            "Na literatura da EXIN, o Information Security Policy Officer tem a atribuição específica de manter a documentação da política derivada da estratégia.",
+            "O custodiante executa tarefas técnicas de manutenção e cópias de segurança.",
+            "O vigilante atua no controle de acesso físico perimetral.",
+            "Operadores de atendimento são usuários finais do sistema."
+        ]
+    },
+    {
+        domain: "DOM1",
+        q: "O Diretor de Recursos Humanos é o Proprietário (Asset Owner) da base de dados salarial da empresa. Ele solicita à equipe de Administração de Banco de Dados (TI) que configure backups diários e aplique criptografia no disco onde a base reside. Nesse cenário, qual é o papel da equipe de TI?",
+        options: [
+            "Custodiante do ativo (Custodian).",
+            "Proprietário legal primário dos salários.",
+            "Autoridade Certificadora Nacional.",
+            "Auditor de Certificação ISO."
+        ],
+        answer: 0,
+        explanations: [
+            "O Custodiante (geralmente a TI) é responsável pela guarda técnica, manutenção, backups e aplicação prática dos controles definidos pelo Proprietário do Ativo.",
+            "A propriedade do ativo permanece com o Diretor de RH (área de negócios).",
+            "Autoridade Certificadora emite certificados digitais públicos.",
+            "Auditores de certificação são entidades externas independentes."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Um novo analista de governança está lendo uma norma da família ISO que não possui requisitos de certificação nem lista de controles, mas traz todas as definições oficiais dos termos 'Ativo', 'Risco', 'Vulnerabilidade' e 'SGSI'. Qual norma ele está lendo?",
+        options: [
+            "ISO/IEC 27000.",
+            "ISO/IEC 27001.",
+            "ISO/IEC 27002.",
+            "ISO/IEC 27005."
+        ],
+        answer: 0,
+        explanations: [
+            "A ISO/IEC 27000 fornece a visão geral e o vocabulário (glossário de termos e definições) de toda a série 27000.",
+            "A ISO/IEC 27001 contém os requisitos obrigatórios para certificar um SGSI.",
+            "A ISO/IEC 27002 fornece diretrizes para a implementação de controles.",
+            "A ISO/IEC 27005 trata especificamente da gestão de riscos."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "A equipe de segurança de uma indústria precisa escolher uma metodologia estruturada para identificar contextos, analisar probabilidades, estimar impactos e tratar os riscos de informação. Qual norma da família ISO/IEC 27000 foi criada especificamente como guia para essa atividade?",
+        options: [
+            "ISO/IEC 27000.",
+            "ISO/IEC 27001.",
+            "ISO/IEC 27002.",
+            "ISO/IEC 27005."
+        ],
+        answer: 3,
+        explanations: [
+            "A 27000 é a norma de vocabulário e introdução geral.",
+            "A 27001 define os requisitos gerais do SGSI, mas não detalha o passo a passo metodológico de cálculo de risco.",
+            "A 27002 foca nas diretrizes de implementação dos controles do Anexo A.",
+            "A ISO/IEC 27005 é a norma dedicada exclusivamente às diretrizes de Gestão de Riscos de Segurança da Informação."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Uma consultoria afirma a um cliente que sua empresa acabou de receber o 'Certificado Oficial ISO/IEC 27002' emitido por um órgão internacional. Por que essa afirmação da consultoria é tecnicamente incorreta?",
+        options: [
+            "Porque a ISO/IEC 27002 é apenas um guia de boas práticas para implementação de controles e não uma norma de requisitos certificável (a certificação ocorre apenas na ISO/IEC 27001).",
+            "Porque apenas hospitais públicos podem ser certificados na ISO 27002.",
+            "Porque a ISO 27002 foi cancelada em 1995.",
+            "Porque certificações só existem para a norma ISO 27000."
+        ],
+        answer: 0,
+        explanations: [
+            "Apenas normas que contêm requisitos mandatórios ('deve'), como a ISO/IEC 27001, permitem auditoria de certificação; a 27002 contém recomendações ('convém').",
+            "Qualquer organização pode usar a 27002 como guia, mas nenhuma pode ser certificada nela.",
+            "A ISO 27002 continua ativa e atualizada (edição 2022).",
+            "A ISO 27000 é um glossário e também não é certificável."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Na versão atualizada da ISO/IEC 27001:2022 (e ISO/IEC 27002:2022), os 93 controles de segurança do Anexo A foram reorganizados e consolidados em quatro grandes categorias (temas). Quais são essas quatro categorias?",
+        options: [
+            "Organizacionais, Pessoas, Físicos e Tecnológicos.",
+            "Financeiros, Comerciais, Logísticos e Tributários.",
+            "Preventivos, Repressivos, Financeiros e Judiciais.",
+            "Públicos, Internos, Confidenciais e Secretos."
+        ],
+        answer: 0,
+        explanations: [
+            "A revisão de 2022 agrupou os controles do Anexo A em 4 temas claros: Controles Organizacionais (Cláusula 5), de Pessoas (Cláusula 6), Físicos (Cláusula 7) e Tecnológicos (Cláusula 8).",
+            "Estes são departamentos empresariais, não temas do Anexo A.",
+            "Esta lista mistura funcionalidade no tempo com áreas jurídicas.",
+            "Estes são níveis de classificação de sigilo da informação."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Uma empresa de contabilidade que não desenvolve nenhum tipo de software próprio está elaborando sua Declaração de Aplicabilidade (SoA) para a certificação ISO/IEC 27001. Como ela deve tratar os controles do Anexo A referentes a 'Desenvolvimento Seguro de Software'?",
+        options: [
+            "É obrigada a criar uma equipe de programação apenas para cumprir o controle.",
+            "Pode declarar esses controles como excluídos (não aplicáveis) na SoA, registrando a justificativa formal de que não realiza desenvolvimento de software.",
+            "Deve desistir da certificação ISO 27001, pois é proibido excluir controles do Anexo A.",
+            "Deve apagar a Cláusula 6 do seu manual do SGSI."
+        ],
+        answer: 1,
+        explanations: [
+            "A norma não obriga a empresa a criar processos de negócio inexistentes.",
+            "A SoA permite excluir controles do Anexo A que não se aplicam à realidade ou aos riscos da organização, desde que a exclusão seja devidamente justificada.",
+            "A proibição de exclusão aplica-se apenas às cláusulas 4 a 10 do corpo da norma, não ao Anexo A.",
+            "As cláusulas de 4 a 10 são obrigatórias e jamais podem ser excluídas."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Classifique corretamente os três eventos a seguir quanto à origem da ameaça: (1) Um raio atinge a subestação elétrica; (2) Um estagiário apaga uma pasta compartilhada sem querer; (3) Um concorrente invade o servidor web.",
+        options: [
+            "1: Humana Intencional; 2: Não Humana; 3: Humana Acidental.",
+            "1: Não Humana (Ambiental/Natural); 2: Humana Não Intencional (Acidental); 3: Humana Intencional (Deliberada).",
+            "Todas as três são ameaças Não Humanas.",
+            "1: Vulnerabilidade; 2: Impacto; 3: Controle."
+        ],
+        answer: 1,
+        explanations: [
+            "As categorias foram completamente trocadas.",
+            "Raios são fenômenos naturais (Não Humanos); erros operacionais são ameaças humanas acidentais; ataques e invasões são ameaças humanas intencionais.",
+            "Os eventos 2 e 3 decorrem diretamente de ações humanas.",
+            "Todos os três eventos descritos são Ameaças (causas potenciais de incidentes)."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Um ataque de negação de serviço (DDoS) derruba a loja virtual de uma varejista por 12 horas. O cancelamento imediato das vendas naquelas 12 horas custou R$ 80.000; porém, nos meses seguintes, a empresa perdeu contratos importantes porque o mercado deixou de confiar na marca. Como são classificados o prejuízo das 12 horas e a perda de reputação posterior?",
+        options: [
+            "Ambos são controles repressivos.",
+            "Dano Direto (vendas perdidas durante a parada) e Dano Indireto (perda de reputação e imagem a longo prazo).",
+            "Dano Indireto (vendas perdidas na hora) e Dano Direto (perda de imagem futura).",
+            "Vulnerabilidade física e Ameaça ambiental."
+        ],
+        answer: 1,
+        explanations: [
+            "Prejuízos sofridos não são controles de segurança.",
+            "O dano imediato provocado pela interrupção é Direto; efeitos colaterais secundários como perda de imagem, multas futuras e fuga de clientes são Danos Indiretos.",
+            "A classificação entre direto e indireto foi invertida.",
+            "O enunciado descreve consequências (impactos/danos), não vulnerabilidades ou ameaças naturais."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Em uma fábrica, um cano de água estoura no andar superior e alaga o rack de telecomunicações no andar de baixo, queimando dois switches. Nessa cadeia de eventos, o que representa a 'Ameaça' e o que representa a 'Vulnerabilidade'?",
+        options: [
+            "Ameaça: Inundação/vazamento de água; Vulnerabilidade: O rack estar posicionado diretamente sob tubulações hidráulicas sem proteção impermeável.",
+            "Ameaça: O switch queimado; Vulnerabilidade: A água.",
+            "Ameaça: O fabricante do switch; Vulnerabilidade: O bombeiro.",
+            "Não existe vulnerabilidade quando a ameaça é não humana."
+        ],
+        answer: 0,
+        explanations: [
+            "A água vazando é o agente causador externo (Ameaça não humana), enquanto a localização inadequada e desprotegida do rack é a fraqueza explorada (Vulnerabilidade).",
+            "O switch queimado é o impacto/dano resultante, não a ameaça.",
+            "Nem o fabricante nem o bombeiro causaram o evento.",
+            "Ameaças naturais/ambientais só causam dano quando encontram uma vulnerabilidade física ou estrutural."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Por que muitas organizações optam por iniciar seu processo de gestão de riscos utilizando uma 'Análise Qualitativa' em vez de partir diretamente para uma 'Análise Quantitativa'?",
+        options: [
+            "Porque a análise qualitativa é mais rápida, simples e não exige dados históricos estatísticos precisos sobre a frequência financeira de cada ameaça.",
+            "Porque a análise qualitativa calcula o valor exato em centavos de cada incidente.",
+            "Porque a norma ISO 27001 proíbe o uso de números em relatórios de segurança.",
+            "Porque a análise qualitativa instala firewalls automaticamente."
+        ],
+        answer: 0,
+        explanations: [
+            "Nem sempre há estatísticas financeiras exatas (ARO/EF); a análise qualitativa permite priorizar riscos rapidamente usando escalas (Alto/Médio/Baixo).",
+            "O cálculo monetário exato é característica da análise quantitativa.",
+            "A ISO 27001 aceita abordagens qualitativas, quantitativas ou híbridas.",
+            "Nenhuma análise instala controles sozinha."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Na análise quantitativa de riscos, um servidor avaliado em R$ 100.000 (Asset Value) está sujeito a uma ameaça que, se ocorrer, destruirá metade da sua capacidade e valor (Fator de Exposição de 50%). Qual conceito representa o valor de R$ 50.000 resultante dessa única ocorrência?",
+        options: [
+            "Expectativa Única de Perda (SLE - Single Loss Expectancy).",
+            "Taxa Anual de Ocorrência (ARO).",
+            "Objetivo de Ponto de Recuperação (RPO).",
+            "Tempo Médio Entre Falhas (MTBF)."
+        ],
+        answer: 0,
+        explanations: [
+            "A SLE (Single Loss Expectancy) mede o custo financeiro esperado de um único incidente caso ele aconteça (AV × EF).",
+            "A ARO mede apenas quantas vezes por ano o evento ocorre.",
+            "RPO mede perda de dados em tempo para backup.",
+            "MTBF mede a confiabilidade técnica de hardware em horas."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Após analisar o risco de furto de mouses e teclados básicos nas salas de treinamento (cujo prejuízo anual estimado é de R$ 300), a diretoria verifica que instalar câmeras e travas físicas custaria R$ 15.000 por ano. A direção decide formalmente não aplicar nenhum controle novo e assumir a perda caso ocorra. Qual estratégia foi adotada?",
+        options: [
+            "Aceitar / Suportar o risco.",
+            "Evitar o risco.",
+            "Transferir o risco.",
+            "Reduzir o risco."
+        ],
+        answer: 0,
+        explanations: [
+            "Quando o custo do controle supera o possível dano, a decisão racional é aceitar (suportar) o risco.",
+            "Evitar exigiria fechar a sala de treinamento ou parar de usar computadores.",
+            "Transferir exigiria contratar seguro ou repassar o custo a terceiros.",
+            "Reduzir exigiria implantar salvaguardas para diminuir a probabilidade ou impacto."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Uma transportadora contrata uma apólice de seguro contra roubo de cargas e sinistros cibernéticos. Ao tomar essa medida, o que acontece com o risco da operação?",
+        options: [
+            "A probabilidade de um roubo ou ataque acontecer cai para zero.",
+            "As consequências financeiras do risco são transferidas (compartilhadas) com a seguradora, mas a ameaça continua existindo.",
+            "O risco foi evitado por completo.",
+            "O controle atua como preventivo antes da ameaça surgir."
+        ],
+        answer: 1,
+        explanations: [
+            "O seguro não impede que ladrões ou hackers ataquem a empresa.",
+            "O seguro é a forma clássica de Transferência/Compartilhamento de risco: ele cobre o impacto financeiro pós-sinistro, sem eliminar a probabilidade do evento.",
+            "Evitar o risco significaria parar de transportar cargas.",
+            "Seguro não é um controle preventivo técnico; é uma estratégia financeira de transferência."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Classifique os quatro controles de proteção contra incêndio a seguir na ordem exata: (1) Proibição de fumar e uso de materiais antichamas; (2) Detector óptico de fumaça no teto; (3) Acionamento de gás inerte para apagar as chamas; (4) Restauração dos servidores afetados a partir do backup.",
+        options: [
+            "1: Preventivo; 2: Detectivo; 3: Repressivo; 4: Corretivo.",
+            "1: Repressivo; 2: Corretivo; 3: Preventivo; 4: Detectivo.",
+            "1: Detectivo; 2: Preventivo; 3: Corretivo; 4: Repressivo.",
+            "Todos os quatro são controles exclusivamente Preventivos."
+        ],
+        answer: 0,
+        explanations: [
+            "Materiais antichamas previnem o início (Preventivo); o sensor identifica a fumaça (Detectivo); o gás apaga o fogo limitando o dano (Repressivo); a restauração recupera o ambiente pós-dano (Corretivo).",
+            "A ordem temporal do ciclo de vida do incidente foi misturada.",
+            "Prevenção e detecção foram invertidas, assim como correção e repressão.",
+            "Apenas o primeiro item ocorre antes do incidente existir."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "No ciclo de vida de um incidente (Ameaça ➔ Incidente ➔ Dano ➔ Recuperação), em que momento exato atua um 'Controle Preventivo'?",
+        options: [
+            "Antes do incidente, atuando entre a Ameaça e o Incidente para impedir que o evento se concretize.",
+            "Entre o Incidente e o Dano, para apagar o fogo.",
+            "Entre o Dano e a Recuperação, para reconstruir o prédio.",
+            "Apenas cinco anos após a Recuperação."
+        ],
+        answer: 0,
+        explanations: [
+            "O controle preventivo bloqueia a ameaça antes que ela consiga explorar a vulnerabilidade e gerar um incidente.",
+            "Entre o Incidente e o Dano atuam os controles Repressivos.",
+            "Entre o Dano e a Recuperação atuam os controles Corretivos.",
+            "Controles preventivos são aplicados previamente à ocorrência."
+        ]
+    },
+    {
+        domain: "DOM1",
+        q: "Após o Proprietário do Ativo definir que um novo projeto industrial pertence à categoria 'Confidencial', um analista insere a marca d'água 'CONFIDENCIAL' no cabeçalho de todas as páginas do PDF e grava essa mesma tag nos metadados do arquivo. Qual procedimento específico esse analista acabou de executar?",
+        options: [
+            "Designação (Rotulagem / Labeling) da informação.",
+            "Análise Quantitativa de Risco.",
+            "Descarte seguro de mídia.",
+            "Escalamento Hierárquico."
+        ],
+        answer: 0,
+        explanations: [
+            "Na literatura da EXIN, rotular a informação para facilitar seu reconhecimento visual ou eletrônico de acordo com sua classificação chama-se Designação.",
+            "Análise quantitativa envolve cálculos financeiros de risco.",
+            "Descarte refere-se à destruição ou sanitização ao fim do ciclo de vida.",
+            "Escalamento é o repasse de chamados no gerenciamento de incidentes."
+        ]
+    },
+    {
+        domain: "DOM1",
+        q: "O que acontece em uma organização se o esquema de Classificação da Informação for complexo demais (por exemplo, criando 15 níveis diferentes de sigilo) ou se todos os documentos forem rotulados indiscriminadamente como 'Ultrassecreto'?",
+        options: [
+            "A segurança fica perfeita e sem custos.",
+            "O sistema perde eficácia: se tudo é classificado no nível máximo, o controle encarece a operação sem necessidade e os funcionários passam a ignorar os rótulos no dia a dia.",
+            "Os servidores ficam 50% mais rápidos.",
+            "A empresa fica dispensada de usar antivírus."
+        ],
+        answer: 1,
+        explanations: [
+            "Excesso de níveis ou sobreclassificação gera altos custos e confusão operacional.",
+            "A classificação deve ser simples (geralmente 3 a 4 níveis) e proporcional; classificar tudo como secreto banaliza o rótulo e inviabiliza o trabalho.",
+            "Classificação organizacional não aumenta a velocidade de processamento de hardware.",
+            "A classificação complementa, mas nunca substitui controles técnicos contra malware."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Em um sistema corporativo, quatro eventos ocorrem em sequência quando Ana entra para trabalhar: (1) Ana digita seu login 'ana.silva'; (2) Ana posiciona o dedo no leitor biométrico; (3) O sistema libera o botão 'Emitir Nota Fiscal', mas bloqueia o botão 'Cancelar Nota'; (4) O sistema grava no log que 'ana.silva' emitiu a nota nº 502 às 09h15. Quais são essas 4 fases?",
+        options: [
+            "1: Identificação; 2: Autenticação; 3: Autorização; 4: Auditoria / Accounting.",
+            "1: Autenticação; 2: Identificação; 3: Criptografia; 4: Formatação.",
+            "1: Autorização; 2: Auditoria; 3: Identificação; 4: Autenticação.",
+            "Todas as 4 etapas chamam-se apenas Identificação."
+        ],
+        answer: 0,
+        explanations: [
+            "Declarar o login é Identificação; provar com biometria é Autenticação; checar o que pode fazer é Autorização; registrar a ação no log é Auditoria (Accounting).",
+            "Digitar apenas o nome de usuário não autentica ninguém; é apenas identificação.",
+            "A ordem cronológica está invertida.",
+            "Cada etapa tem uma função técnica distinta no controle de acesso."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Por que o compartilhamento de uma mesma conta de usuário e senha genérica (como 'admin_ti' ou 'recepcao01') entre vários funcionários é estritamente proibido pelas boas práticas da ISO/IEC 27002?",
+        options: [
+            "Porque o teclado desgasta mais rápido.",
+            "Porque destrói a Responsabilização individual (Accountability) e o Não-repúdio: se ocorrer uma fraude ou erro usando aquela conta, será impossível provar qual pessoa física estava no teclado.",
+            "Porque contas compartilhadas consomem o dobro de energia elétrica no servidor.",
+            "Porque o monitor não exibe cores em contas compartilhadas."
+        ],
+        answer: 1,
+        explanations: [
+            "O uso de contas lógicas não afeta o desgaste físico de periféricos.",
+            "Sem identificadores únicos por pessoa, a trilha de auditoria perde a capacidade de vincular uma ação a um indivíduo específico.",
+            "Contas de usuário não alteram o consumo elétrico do data center.",
+            "Configurações de vídeo independem da exclusividade da conta."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Além do 'Princípio do Menor Privilégio', as organizações aplicam o princípio da 'Necessidade de Saber' (Need-to-Know). O que determina especificamente o conceito de Need-to-Know?",
+        options: [
+            "Qualquer funcionário com cargo de diretor pode ler todos os processos judiciais e prontuários médicos da empresa por curiosidade.",
+            "Mesmo que um usuário possua alto nível hierárquico ou credencial de segurança, ele só deve ter acesso às informações específicas necessárias para executar sua tarefa atual.",
+            "Todos os estagiários devem saber a senha do CISO.",
+            "As senhas devem ser trocadas a cada 10 minutos."
+        ],
+        answer: 1,
+        explanations: [
+            "O acesso por mera curiosidade, mesmo por diretores, é bloqueado pelo Need-to-Know.",
+            "Ter um cargo alto não dá direito automático a ver tudo: o acesso é restrito apenas aos projetos e dados vinculados à atribuição daquele profissional.",
+            "Senhas são pessoais e intransferíveis.",
+            "Trocas de senha a cada 10 minutos são inviáveis e não definem o Need-to-Know."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "No setor de pagamentos de um banco, o sistema exige a regra dos 'Quatro Olhos' (Dual Control / Segregação): um analista preenche os dados da transferência internacional, mas o dinheiro só sai da conta após um segundo gerente diferente revisar e aprovar a operação com seu próprio token. Qual ameaça isso mitiga diretamente?",
+        options: [
+            "Fraudes unilaterais e erros operacionais graves cometidos por uma única pessoa sem supervisão.",
+            "Quedas de energia elétrica na rua.",
+            "Incêndios naturais na sala de servidores.",
+            "Infiltração de água da chuva pelo telhado."
+        ],
+        answer: 0,
+        explanations: [
+            "Ao exigir duas pessoas independentes para concluir a transação crítica, impede-se que um único indivíduo desvie fundos sozinho ou cometa um erro milionário de digitação.",
+            "Quedas de energia são mitigadas com UPS e geradores.",
+            "Incêndios são mitigados com sensores e gases inertes.",
+            "Infiltrações são problemas de infraestrutura predial."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Durante o processo seletivo para contratar um novo administrador de banco de dados que lidará com informações sigilosas, a empresa solicita um documento emitido pela Justiça/Polícia que comprove que o candidato não possui condenações criminais. Como a literatura da EXIN denomina esse documento?",
+        options: [
+            "Certificado de boa índole (Certificate of Good Conduct).",
+            "Acordo de Nível de Serviço (SLA).",
+            "Declaração de Aplicabilidade (SoA).",
+            "Plano de Recuperação de Desastres (DRP)."
+        ],
+        answer: 0,
+        explanations: [
+            "No vocabulário oficial da EXIN, o atestado de antecedentes criminais usado na verificação pré-emprego (screening) é chamado de Certificado de boa índole.",
+            "SLA é um contrato de metas de desempenho firmado com fornecedores.",
+            "SoA é o documento que lista os controles do Anexo A.",
+            "DRP é o plano técnico para restaurar a TI após desastres."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Uma indústria farmacêutica vai apresentar a fórmula de um novo medicamento ainda não patenteado para uma agência externa de marketing. Qual documento jurídico deve ser assinado antes da reunião para proibir formalmente que a agência revele esse segredo a terceiros?",
+        options: [
+            "Acordo de Não Divulgação (NDA - Non-Disclosure Agreement / Termo de Confidencialidade).",
+            "Certificado de Boa Índole.",
+            "Manual do Ar-Condicionado.",
+            "Ordem de Formatação de Disco."
+        ],
+        answer: 0,
+        explanations: [
+            "O NDA (Acordo de Não Divulgação) é o contrato legal que obriga as partes a manterem sigilo sobre informações confidenciais compartilhadas.",
+            "O certificado de boa índole apenas atesta ausência de antecedentes criminais de uma pessoa física.",
+            "Manuais de equipamentos não possuem valor jurídico de sigilo.",
+            "Formatação de disco é um procedimento técnico de TI."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Mesmo que um funcionário assine sua demissão e deixe a empresa hoje, por que as cláusulas do Acordo de Não Divulgação (NDA) costumam prever obrigações que continuam válidas por vários anos após o término do contrato de trabalho?",
+        options: [
+            "Para obrigar o ex-funcionário a continuar trabalhando de graça.",
+            "Para proteger os segredos comerciais e informações confidenciais que o ex-funcionário conheceu enquanto trabalhava na empresa, evitando que ele os entregue a concorrentes.",
+            "Para impedir que o ex-funcionário use a internet na casa dele.",
+            "Porque o crachá físico continua abrindo as portas para sempre."
+        ],
+        answer: 1,
+        explanations: [
+            "O vínculo trabalhista encerra-se na demissão; apenas o dever de sigilo permanece.",
+            "O conhecimento adquirido sobre segredos do negócio não pode ser apagado da memória da pessoa, por isso a obrigação legal de confidencialidade (NDA) sobrevive ao fim do emprego.",
+            "O NDA protege apenas dados corporativos confidenciais.",
+            "O crachá físico deve ser recolhido e bloqueado imediatamente no desligamento."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Uma empresa instala cercas iluminadas e câmeras no estacionamento; portas com vidro inquebrável na fachada; divisórias com leitor de crachá nos corredores de escritório; e paredes corta-fogo blindadas no data center. Quais são, em ordem do mais externo para o mais interno, os 4 Anéis de Proteção representados?",
+        options: [
+            "Anel externo ➔ Prédio ➔ Espaço de trabalho ➔ Área segura.",
+            "Área segura ➔ Área intermediária ➔ Prédio ➔ Anel externo.",
+            "Prédio ➔ Estacionamento ➔ Zona Desmilitarizada ➔ Nuvem.",
+            "Anel lógico ➔ Anel virtual ➔ Anel intermediário ➔ Cofre."
+        ],
+        answer: 0,
+        explanations: [
+            "Estacionamento/cercas = Anel externo; Fachada/portas = Prédio; Escritórios internos = Espaço de trabalho; Data center/cofre = Área segura.",
+            "A ordem está invertida e inclui 'Área intermediária', termo que não existe nos 4 anéis oficiais.",
+            "DMZ e Nuvem são conceitos de arquitetura lógica de rede, não anéis físicos.",
+            "Essas nomenclaturas não existem na literatura física da EXIN."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Um visitante chega à empresa para uma reunião comercial. De acordo com os controles de segurança física para áreas internas e seguras, qual procedimento deve ser adotado pela recepção?",
+        options: [
+            "Entregar um crachá de funcionário efetivo e deixá-lo circular sozinho pelo data center.",
+            "Registrar a entrada do visitante (nome, empresa, horário e quem vai visitar), fornecer um crachá que o distinga claramente como 'Visitante' e exigir que seja acompanhado (escoltado) durante sua permanência.",
+            "Pedir que ele entre pela porta de carga pegando carona com o entregador.",
+            "Emprestar a senha de rede do diretor para ele usar o Wi-Fi interno."
+        ],
+        answer: 1,
+        explanations: [
+            "Visitantes nunca devem receber crachás iguais aos de funcionários nem circular sem supervisão em áreas restritas.",
+            "O registro formal de entrada/saída, a identificação visual diferenciada e o acompanhamento (escolta) são controles essenciais para visitantes.",
+            "Isso incentivaria o Tailgating/Piggybacking, violando o controle perimetral.",
+            "Credenciais internas nunca devem ser compartilhadas com terceiros."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Um funcionário educado abre a porta restrita da área de TI com seu crachá e, por gentileza, segura a porta aberta para que uma pessoa desconhecida carregando caixas de papelão entre junto sem passar pelo leitor biométrico. Qual falha de segurança física acabou de ocorrer?",
+        options: [
+            "Tailgating / Piggybacking (Entrada de carona não autorizada).",
+            "Ataque de Negação de Serviço (DDoS).",
+            "Criptografia Híbrida.",
+            "Backup Incremental."
+        ],
+        answer: 0,
+        explanations: [
+            "Aproveitar-se da abertura de porta por um funcionário autorizado (por distração ou cortesia induzida) para entrar sem se autenticar caracteriza Tailgating/Piggybacking.",
+            "DDoS é um ataque lógico de sobrecarga de rede.",
+            "Criptografia híbrida é um método de proteção de dados digitais.",
+            "Backup incremental é uma rotina de cópia de segurança."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Na sala de servidores, o sistema de climatização falhou e a umidade relativa do ar caiu para níveis extremamente baixos (ar muito seco); na semana seguinte, outro defeito fez a umidade subir para quase 95% (ar muito úmido). Quais são os riscos respectivos desses dois extremos para os servidores?",
+        options: [
+            "Ar muito seco gera descargas de eletricidade estática que queimam placas; ar muito úmido gera condensação de água e oxidação/curto-circuito nos componentes.",
+            "Ar seco derrete os cabos de plástico; ar úmido apaga as senhas do banco de dados.",
+            "Nenhum risco, pois o ar-condicionado serve apenas para remover poeira.",
+            "Ar seco atrai vírus de computador; ar úmido atrai cavalos de troia."
+        ],
+        answer: 0,
+        explanations: [
+            "O controle higrométrico (umidade) do ar-condicionado no data center é vital porque baixa umidade favorece descargas eletrostáticas (ESD) e alta umidade condensa gotículas nos circuitos.",
+            "Umidade não derrete plástico nem altera registros lógicos específicos como senhas.",
+            "O ar-condicionado controla temperatura, umidade e filtragem de partículas.",
+            "Malwares são ameaças lógicas que não têm relação com a umidade do ar."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Qual é a sequência correta de atuação conjunta entre o Banco de Baterias (UPS / No-break) e o Gerador a Diesel quando ocorre um apagão elétrico prolongado de 8 horas na região do data center?",
+        options: [
+            "Os servidores desligam na hora e o gerador só liga no dia seguinte.",
+            "O UPS assume instantaneamente sem interromper os servidores, mantendo a energia pelos primeiros minutos enquanto o gerador a diesel dá a partida e estabiliza para assumir a carga pelas horas seguintes.",
+            "O gerador a diesel carrega as pilhas do mouse e o UPS refrigera a sala.",
+            "O UPS funciona a diesel por 8 horas e o gerador funciona apenas por 30 segundos."
+        ],
+        answer: 1,
+        explanations: [
+            "Se os servidores desligassem na hora, haveria perda de disponibilidade e corrupção de dados.",
+            "Como motores a diesel levam alguns segundos/minutos para dar partida e estabilizar a tensão, o UPS (baterias) faz a ponte imediata sem queda, passando a carga para o gerador em seguida.",
+            "A função de ambos é alimentar os servidores e equipamentos críticos do data center.",
+            "Quem funciona a diesel por longas horas é o gerador; o UPS usa baterias químicas de curta duração."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Um usuário baixa um programa gratuito que promete acelerar o computador. O programa realmente limpa arquivos temporários como prometido, mas, sem que o usuário saiba, também instala um módulo oculto que envia cópias de documentos para um servidor na internet. Qual malware é esse?",
+        options: [
+            "Trojan (Cavalo de Troia).",
+            "Worm puro de rede.",
+            "Falso Positivo.",
+            "Controle Detectivo."
+        ],
+        answer: 0,
+        explanations: [
+            "Realizar propositalmente atividades secundárias maliciosas e ocultas além da função útil aparente é a definição exata de Trojan na EXIN.",
+            "O Worm não se disfarça de utilitário; ele foca em se replicar autonomamente pela rede.",
+            "Falso positivo é um alerta de segurança disparado por engano.",
+            "Trata-se de uma ameaça (malware), não de um controle."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Centenas de computadores de uma empresa foram infectados em poucos minutos sem que nenhum funcionário tivesse aberto e-mails ou clicado em arquivos: o código malicioso explorou uma falha no protocolo de rede local e copiou a si mesmo de máquina em máquina formando uma rede zumbi (botnet). Qual malware agiu?",
+        options: [
+            "Worm (Verme).",
+            "Trojan estático.",
+            "Adware de navegador.",
+            "Certificado Digital."
+        ],
+        answer: 0,
+        explanations: [
+            "Criar uma rede de computadores contaminados ao se replicar de forma autônoma pela rede é a definição clássica de Worm.",
+            "Trojans não se replicam sozinhos pela rede; dependem de instalação/engano.",
+            "Adwares apenas exibem publicidade no navegador.",
+            "Certificado digital é uma ferramenta legítima de criptografia."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Um invasor instala secretamente um software (ou pequeno adaptador físico no cabo do teclado) cuja única função é gravar todas as teclas digitadas pelo diretor financeiro para capturar suas senhas bancárias e enviá-las ao criminoso. Como essa variante de Spyware é chamada?",
+        options: [
+            "Keylogger.",
+            "Firewall.",
+            "Mantrap.",
+            "UPS."
+        ],
+        answer: 0,
+        explanations: [
+            "O Keylogger é um tipo específico de spyware (de software ou hardware) projetado para registrar a digitação do usuário e enviá-la a terceiros.",
+            "Firewall é um controle de filtragem de rede.",
+            "Mantrap é uma eclusa física de portas intertravadas.",
+            "UPS é um banco de baterias contra quedas elétricas."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Por que uma vulnerabilidade recém-descoberta do tipo 'Dia-Zero' (Zero-Day) representa um risco tão elevado mesmo para organizações que mantêm sua rotina de atualização de patches em dia?",
+        options: [
+            "Porque ela só funciona no dia 1º de janeiro.",
+            "Porque a falha já está sendo explorada por atacantes, mas o fabricante do software teve 'zero dias' para criar e disponibilizar um patch oficial de correção.",
+            "Porque ela destrói fisicamente as paredes do prédio.",
+            "Porque ela desliga o gerador a diesel remotamente sem usar rede."
+        ],
+        answer: 1,
+        explanations: [
+            "O termo 'Zero-Day' não tem relação com datas do calendário.",
+            "Em um ataque Zero-Day, ainda não existe vacina (patch) ou assinatura conhecida do fabricante, exigindo controles compensatórios e detecção por anomalia.",
+            "Vulnerabilidades de software atuam no âmbito lógico, não na alvenaria.",
+            "Equipamentos isolados sem conexão de rede não sofrem ataques remotos de software."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Um criminoso telefona para um funcionário recém-contratado fingindo ser o técnico de suporte de TI da matriz. Com tom urgente e persuasivo, ele convence o funcionário a revelar sua senha de rede pelo telefone para 'evitar o bloqueio da folha de pagamento'. Qual técnica de ataque foi utilizada?",
+        options: [
+            "Engenharia Social (Pretexting / Vishing).",
+            "Força Bruta Criptográfica.",
+            "Injeção de SQL (SQL Injection).",
+            "Preenchimento de Tráfego."
+        ],
+        answer: 0,
+        explanations: [
+            "Manipular psicologicamente uma pessoa usando um pretexto falso de autoridade ou urgência para que ela entregue informações confidenciais é Engenharia Social.",
+            "Força bruta usa computadores testando milhões de combinações matemáticas, sem conversar com o usuário.",
+            "SQL Injection é um ataque técnico contra bancos de dados mal programados.",
+            "Preenchimento de tráfego é uma técnica defensiva de rede."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Uma empresa possui uma única rede local plana (flat network) onde os computadores da Recepção, do Marketing, do RH e os Servidores Financeiros estão todos conectados no mesmo segmento. Para melhorar a segurança interna e conter a propagação lateral caso uma máquina da recepção pegue um Worm, qual controle de rede deve ser aplicado?",
+        options: [
+            "Segmentação de rede (por meio de VLANs e sub-redes separadas por firewall interno).",
+            "Trocar os monitores de LCD por LED.",
+            "Aumentar a temperatura do ar-condicionado.",
+            "Distribuir a mesma senha para todos os setores."
+        ],
+        answer: 0,
+        explanations: [
+            "Segmentar a rede em zonas isoladas (VLANs/Sub-redes) garante confidencialidade entre setores e impede que um malware na recepção alcance diretamente os servidores financeiros.",
+            "Monitores não influenciam o tráfego de rede.",
+            "Aquecer a sala de servidores prejudica os equipamentos.",
+            "Compartilhar senhas agrava o risco de invasão."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Um funcionário em viagem precisa acessar o sistema interno da empresa usando o Wi-Fi do hotel. Ao ativar a VPN corporativa no seu notebook, de que forma a VPN protege os dados que ele transmite?",
+        options: [
+            "A VPN cria um túnel lógico criptografado entre o notebook e o gateway da empresa, impedindo que terceiros na rede do hotel ou na internet leiam ou alterem o tráfego.",
+            "A VPN apaga todos os vírus que já estavam instalados no pendrive do hotel.",
+            "A VPN impede que alguém olhe para a tela do notebook por cima do ombro dele no saguão.",
+            "A VPN substitui a necessidade de ter backup no servidor da matriz."
+        ],
+        answer: 0,
+        explanations: [
+            "A VPN (Virtual Private Network) encapsula e criptografa todo o tráfego em trânsito através de redes públicas inseguras.",
+            "VPN é um controle de comunicação segura, não um software antivírus.",
+            "Olhar a tela fisicamente (Shoulder Surfing) só é mitigado com filtro de privacidade físico e cuidado postural.",
+            "Criptografia de rede não substitui cópias de segurança de bancos de dados."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "O administrador de segurança instalou um sensor de rede conectado a uma porta de espelhamento (SPAN/Mirror Port) do switch principal. Esse equipamento analisa cópias dos pacotes e envia alertas ao SOC quando vê um ataque, mas não tem capacidade física de interromper os pacotes originais. Qual equipamento é esse?",
+        options: [
+            "IDS (Intrusion Detection System / Sistema de Detecção de Intrusão).",
+            "IPS (Intrusion Prevention System / Sistema de Prevenção de Intrusão).",
+            "Firewall de Bloqueio Ativo.",
+            "Gerador de Energia."
+        ],
+        answer: 0,
+        explanations: [
+            "O IDS opera fora da linha direta de tráfego (passivo/espelhado), atuando exclusivamente como controle detectivo que gera alertas.",
+            "O IPS opera em linha (in-line) e descarta ativamente os pacotes maliciosos.",
+            "O firewall fica em linha bloqueando conexões não autorizadas.",
+            "Gerador é um equipamento elétrico."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Um sensor de segurança de rede está configurado com regras tão rígidas e sensíveis que bloqueia dezenas de e-mails comerciais legítimos de clientes todos os dias, classificando-os erroneamente como ataques cibernéticos. Esse excesso de bloqueios indevidos caracteriza uma alta taxa de:",
+        options: [
+            "Falsos Positivos.",
+            "Falsos Negativos.",
+            "Acúmulo de Privilégios.",
+            "Criptografia Assimétrica."
+        ],
+        answer: 0,
+        explanations: [
+            "Quando o sistema aponta como 'ataque positivo' algo que na verdade é tráfego normal e benigno, temos um Falso Positivo (que prejudica a disponibilidade do negócio).",
+            "Falso negativo é quando o ataque é real, mas o sistema diz que nada aconteceu.",
+            "Acúmulo de privilégios é uma falha de gestão de acessos de RH.",
+            "Criptografia é um método de cifragem de dados."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Duas empresas precisam transferir um arquivo de 500 Gigabytes pela rede de forma confidencial e no menor tempo possível. Elas já compartilharam uma chave secreta previamente por um canal seguro. Qual tipo de algoritmo criptográfico é o mais indicado para cifrar esse grande volume de dados rapidamente?",
+        options: [
+            "Criptografia Simétrica.",
+            "Criptografia Assimétrica pura.",
+            "Função Hash sem chave.",
+            "Lista de Revogação (CRL)."
+        ],
+        answer: 0,
+        explanations: [
+            "A criptografia simétrica (de chave única/compartilhada) exige muito menos processamento matemático, sendo ideal para cifrar grandes volumes de dados em alta velocidade.",
+            "A criptografia assimétrica é até mil vezes mais lenta, sendo inviável para arquivos gigantescos.",
+            "Funções hash são irreversíveis: se aplicarem hash no arquivo, o destinatário nunca conseguirá recuperar os 500 GB originais.",
+            "CRL é apenas uma lista de certificados cancelados."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Carlos precisa enviar uma mensagem confidencial para o diretor usando criptografia assimétrica. Na pasta de rede pública da empresa estão disponíveis: a Chave Pública do diretor e a Chave Pública de Carlos. Qual chave Carlos deve usar para cifrar a mensagem de modo que apenas o diretor consiga abri-la?",
+        options: [
+            "A Chave Pública do diretor.",
+            "A Chave Privada de Carlos.",
+            "A Chave Pública de Carlos.",
+            "Nenhuma chave, pois a chave pública é aberta."
+        ],
+        answer: 0,
+        explanations: [
+            "Na criptografia assimétrica, para garantir Confidencialidade, cifra-se com a Chave Pública do destinatário (diretor), pois somente a Chave Privada do diretor conseguirá decifrá-la.",
+            "Se Carlos usar sua própria chave privada, qualquer pessoa com a chave pública de Carlos poderá abrir (isso serve para Assinatura Digital, não para confidencialidade).",
+            "Se cifrar com a chave pública de Carlos, o próprio diretor não conseguirá abrir.",
+            "Sem cifrar com a chave pública do destinatário, a mensagem viajará em texto claro."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "A diretora de uma empresa assina digitalmente um comunicado oficial usando sua Chave Privada. Quando os funcionários recebem o comunicado, qual chave o computador deles utiliza automaticamente para verificar se a assinatura da diretora é válida e autêntica?",
+        options: [
+            "A Chave Pública da diretora.",
+            "A Chave Privada da diretora.",
+            "A senha pessoal do Wi-Fi de cada funcionário.",
+            "O código PIN do crachá da recepção."
+        ],
+        answer: 0,
+        explanations: [
+            "Na assinatura digital assimétrica, o autor assina com sua Chave Privada (secreta) e qualquer destinatário valida a autenticidade e integridade usando a Chave Pública correspondente do autor.",
+            "A chave privada da diretora é secreta e jamais é distribuída aos funcionários.",
+            "Senhas de Wi-Fi não têm relação matemática com o par de chaves da diretora.",
+            "PINs de crachá são controles físicos locais."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Um site de software disponibiliza um instalador para download e publica na página o código SHA-256 correspondente ao arquivo original. Quando o usuário baixa o arquivo e calcula o SHA-256 na sua máquina, o resultado dá exatamente igual ao publicado no site. O que isso comprova?",
+        options: [
+            "Que a Integridade do arquivo foi preservada (o arquivo não foi corrompido nem alterado durante o download).",
+            "Que o arquivo foi criptografado e ninguém mais na internet pode baixá-lo.",
+            "Que o servidor do site possui gerador a diesel.",
+            "Que o computador do usuário nunca precisará de backup."
+        ],
+        answer: 0,
+        explanations: [
+            "Qualquer alteração de um único bit no arquivo mudaria completamente o resumo Hash (SHA-256); hashes idênticos comprovam a integridade do arquivo.",
+            "O Hash não esconde o conteúdo do arquivo (não garante confidencialidade).",
+            "Hash criptográfico não informa nada sobre a infraestrutura elétrica do servidor.",
+            "A verificação de download não substitui rotinas de backup locais."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Por que um criminoso não consegue simplesmente criar um par de chaves assimétricas em casa dizendo 'Eu sou o Banco Central' e enganar os navegadores dos clientes que utilizam uma Infraestrutura de Chave Pública (ICP / PKI)?",
+        options: [
+            "Porque na ICP o certificado digital precisa ser assinado por uma Autoridade Certificadora (CA) confiável, que verifica e atesta a qual pessoa ou sistema aquela chave pública realmente pertence.",
+            "Porque chaves assimétricas só podem ser criadas em computadores sem acesso à internet.",
+            "Porque o firewall doméstico bloqueia números primos.",
+            "Porque a chave pública é mantida em segredo absoluto dentro do cofre do banco."
+        ],
+        answer: 0,
+        explanations: [
+            "A função essencial de uma ICP (PKI) é justamente vincular com garantia (via CA) uma identidade real verificada a uma chave pública específica.",
+            "Qualquer computador pode gerar pares de chaves matemáticos, mas sem a assinatura de uma CA confiável o navegador alertará que o certificado é inválido.",
+            "Firewalls não filtram cálculos matemáticos locais.",
+            "A chave pública é pública por definição; quem fica em segredo é a chave privada."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Uma analista financeira nota que arquivos de clientes sumiram misteriosamente da sua pasta de rede. Seguindo corretamente o fluxo de gerenciamento de incidentes da literatura da EXIN, por que ela deve acionar primeiro o Help Desk em vez de ligar direto para o CISO da empresa?",
+        options: [
+            "Porque o CISO não trabalha durante o dia.",
+            "Porque incidentes não devem ser escalados verticalmente de imediato: o Help Desk faz a triagem inicial (verificando se é realmente um incidente de segurança ou apenas um erro operacional/pasta movida) e registra o chamado padronizado.",
+            "Porque é proibido falar com o CISO sem a presença de um advogado.",
+            "Porque o Help Desk é o único setor autorizado a alterar a estratégia de negócios da empresa."
+        ],
+        answer: 1,
+        explanations: [
+            "O motivo é processual e organizacional, não de horário de expediente.",
+            "Centralizar o primeiro contato no Help Desk garante registro padronizado, aplicação de procedimentos iniciais e filtra falsos alarmes antes de acionar especialistas ou gestores.",
+            "Não há exigência jurídica de advogados para comunicação interna.",
+            "Quem define a estratégia de negócios é a Gestão Geral (Alta Direção)."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Durante o registro inicial de um incidente de segurança reportado por telefone ao Help Desk, qual conjunto de informações compõe o registro básico obrigatório que não pode faltar?",
+        options: [
+            "O nome da pessoa que notifica o incidente, a data e hora do relato, a descrição do que foi observado e as eventuais consequências.",
+            "Apenas o endereço MAC da placa-mãe e o código-fonte em linguagem Assembly.",
+            "O histórico escolar do funcionário e a marca da cadeira onde ele está sentado.",
+            "Apenas a assinatura do auditor externo."
+        ],
+        answer: 0,
+        explanations: [
+            "O registro inicial no Help Desk exige identificar quem está reportando (nome), quando (data/hora), o quê (descrição) e os impactos aparentes (consequências).",
+            "Detalhes técnicos profundos são apurados posteriormente pela equipe de suporte/segurança.",
+            "Dados irrelevantes não compõem o registro de incidentes.",
+            "O auditor externo não atua no balcão de atendimento de chamados."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "No gerenciamento de continuidade de negócios, qual é o objetivo específico da 'Análise de Impacto no Negócio' (BIA - Business Impact Analysis) realizada durante a fase de planejamento?",
+        options: [
+            "Instalar antivírus nos computadores do setor comercial.",
+            "Identificar quais são os processos e sistemas mais críticos da organização, estimar os prejuízos causados pela sua parada ao longo do tempo e definir as prioridades e metas de recuperação (como RTO e RPO).",
+            "Demitir funcionários que esqueceram o crachá em casa.",
+            "Escolher a cor do logotipo da empresa."
+        ],
+        answer: 1,
+        explanations: [
+            "Instalar antivírus é uma tarefa operacional de proteção contra malware.",
+            "A BIA levanta a criticidade de cada processo de negócio para determinar o que precisa voltar a funcionar primeiro após um desastre e em quanto tempo.",
+            "Questões disciplinares de crachá pertencem à gestão de RH/acesso físico.",
+            "Identidade visual de marketing não faz parte da continuidade de negócios."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Uma corretora de valores define em sua BIA que: (1) se o sistema de ordens cair, ele precisa voltar ao ar em até 30 minutos; (2) quando voltar, só pode ter perdido no máximo os últimos 5 minutos de transações gravadas. Se a equipe de TI faz backups apenas uma vez por dia (a cada 24 horas), qual meta está sendo violada?",
+        options: [
+            "O RPO (Recovery Point Objective) de 5 minutos está sendo violado, pois um backup a cada 24 horas pode gerar perda de até 24 horas de dados.",
+            "O MTBF do monitor está sendo violado.",
+            "Apenas a Confidencialidade está sendo violada.",
+            "Nenhuma meta, pois backup diário garante perda zero."
+        ],
+        answer: 0,
+        explanations: [
+            "Como o RPO determina a perda máxima de dados medida em tempo (5 min), fazer cópias apenas a cada 24h deixa uma janela de perda inaceitável.",
+            "MTBF é a estimativa de horas entre falhas físicas de fabricação de um hardware.",
+            "O problema refere-se à Disponibilidade e Integridade/Recuperação de dados, não ao sigilo.",
+            "Se o servidor queimar 23 horas após o backup diário, 23 horas de dados serão perdidas."
+        ]
+    },
+    {
+        domain: "DOM2",
+        q: "Uma empresa aluga um espaço secundário de contingência que já possui energia elétrica, ar-condicionado, links de internet ativos e servidores físicos instalados nas prateleiras. Porém, em caso de desastre na sede, a equipe precisará levar ou baixar as últimas fitas de backup e carregar os dados nos servidores, levando cerca de 8 horas para operar. Que tipo de site é esse?",
+        options: [
+            "Warm Site (Site Morno).",
+            "Cold Site (Site Frio).",
+            "Hot Site espelhado em tempo real.",
+            "Anel Externo."
+        ],
+        answer: 0,
+        explanations: [
+            "O Warm Site é o modelo intermediário: já possui o hardware e conectividade instalados, mas não está espelhado em tempo real, exigindo carregar os backups para assumir a operação.",
+            "No Cold Site não há servidores instalados (é apenas a sala vazia com infraestrutura predial).",
+            "No Hot Site os dados já estão sincronizados em tempo real, assumindo em minutos.",
+            "Anel externo é o perímetro físico do terreno."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Uma empresa realiza um Backup Completo (Full) no domingo à noite. Na segunda, terça e quarta-feira à noite, executa Backups Diferenciais. Na quinta-feira de manhã, o disco principal queima. Quais mídias o administrador deve inserir para restaurar todos os dados até o estado de quarta-feira à noite?",
+        options: [
+            "Apenas duas mídias: o Backup Completo de domingo e o último Backup Diferencial de quarta-feira.",
+            "Quatro mídias: o Completo de domingo mais os diferenciais de segunda, terça e quarta.",
+            "Apenas o Diferencial de segunda-feira.",
+            "Nenhuma mídia, pois o backup diferencial apaga o servidor."
+        ],
+        answer: 0,
+        explanations: [
+            "Como o backup Diferencial não limpa o archive bit, o diferencial de quarta-feira já contém tudo o que mudou na segunda, na terça e na quarta desde o último Full de domingo.",
+            "Exigir todas as mídias diárias em sequência é característica do backup Incremental, e não do Diferencial.",
+            "O diferencial de segunda não teria os dados criados na terça e na quarta, nem a base de domingo.",
+            "O backup diferencial é um método seguro e rápido de restauração."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Por que um plano de continuidade de negócios (BCP/DRP) que foi apenas escrito no papel e guardado na gaveta do diretor, sem nunca passar por simulações ou exercícios práticos (testes), é considerado ineficaz em uma auditoria ISO/IEC 27001?",
+        options: [
+            "Porque o papel amarela com o tempo.",
+            "Porque sem testes periódicos não é possível saber se os procedimentos realmente funcionam na prática, se as pessoas sabem como agir sob pressão e se o RTO/RPO será atingido.",
+            "Porque a ISO 27001 proíbe imprimir planos em papel.",
+            "Porque os testes servem apenas para gastar o combustível do gerador."
+        ],
+        answer: 1,
+        explanations: [
+            "A conservação estética do papel não é o critério técnico da auditoria.",
+            "Planos de continuidade e backups precisam ser testados regularmente para identificar falhas ocultas, atualizar contatos e treinar as equipes antes que uma crise real aconteça.",
+            "Pelo contrário, é recomendável ter cópias impressas do BCP fora do prédio caso o servidor de documentos esteja fora do ar durante o desastre.",
+            "Testar o gerador sob carga é uma prática legítima e necessária de manutenção preventiva."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Um desenvolvedor contratado por uma empresa cria um algoritmo inovador durante seu expediente de trabalho para otimizar as entregas da companhia. Qual ramo da legislação protege os direitos da empresa sobre esse código-fonte contra cópias ilegais ou pirataria por concorrentes?",
+        options: [
+            "Direitos de Propriedade Intelectual (PI / Direitos Autorais e Patentes).",
+            "Norma voluntária ISO/IEC 27005.",
+            "Código de Trânsito.",
+            "Apenas o manual do firewall."
+        ],
+        answer: 0,
+        explanations: [
+            "As leis de Propriedade Intelectual (PI) e Direitos Autorais protegem criações da mente, como softwares, bancos de dados originais, marcas e segredos industriais.",
+            "A ISO 27005 é um guia técnico de gestão de riscos, não uma lei de propriedade.",
+            "Legislação de trânsito não regula direitos autorais de software.",
+            "Manuais técnicos não têm força de lei civil ou penal."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Para evitar processos por violação de Direitos de Propriedade Intelectual (PI) no uso de softwares comerciais dentro da empresa, qual controle organizacional e técnico deve ser mantido pela administração?",
+        options: [
+            "Manter um inventário atualizado de licenças de software, proibir a instalação de programas não homologados/piratas e auditar periodicamente as máquinas.",
+            "Permitir que cada funcionário baixe programas craqueados da internet.",
+            "Desligar os computadores durante as visitas de auditoria.",
+            "Trocar o nome dos arquivos executáveis para esconder o software."
+        ],
+        answer: 0,
+        explanations: [
+            "O controle estrito de licenciamento e bloqueio de instalações não autorizadas garante a conformidade com a lei de propriedade intelectual e evita malwares embutidos em softwares piratas.",
+            "Softwares piratas violam a lei (gerando multas pesadas) e são uma das maiores fontes de Trojans.",
+            "Ocultar máquinas de auditores é fraude grave de conformidade.",
+            "Renomear arquivos não legaliza o uso nem engana ferramentas de auditoria de software."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Sob a ótica do Regulamento Geral sobre a Proteção de Dados (GDPR / LGPD), qual das informações abaixo é classificada como 'Dado Pessoal' e exige controles rigorosos de privacidade?",
+        options: [
+            "Qualquer informação relacionada a uma pessoa física identificada ou identificável (como nome, CPF, e-mail nominal, endereço residencial ou prontuário médico).",
+            "O número total agregado de cadeiras compradas por uma fábrica no ano passado.",
+            "A temperatura média do oceano Atlântico.",
+            "O catálogo público de preços dos produtos vendidos pela loja."
+        ],
+        answer: 0,
+        explanations: [
+            "O GDPR e a LGPD protegem qualquer dado que identifique diretamente ou permita identificar indiretamente uma pessoa natural viva.",
+            "Dados estatísticos patrimoniais de pessoas jurídicas não são dados pessoais.",
+            "Dados climáticos da natureza não se referem a pessoas físicas.",
+            "Tabelas públicas de preços de mercadorias são dados comerciais, não pessoais."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Uma rede de farmácias coleta dados de saúde dos clientes. Para realizar um estudo sobre quais bairros compram mais vitaminas no inverno, a equipe de TI remove de forma definitiva e irreversível os nomes, CPFs e telefones da planilha antes de entregá-la aos analistas, de modo que seja impossível descobrir quem comprou o quê. Qual técnica foi usada?",
+        options: [
+            "Anonimização de dados.",
+            "Engenharia Social.",
+            "Escalamento Vertical.",
+            "Falso Negativo."
+        ],
+        answer: 0,
+        explanations: [
+            "Quando o vínculo entre o dado e o indivíduo é removido de forma irreversível (impossibilitando reidentificar a pessoa), o dado passa a ser Anonimizado.",
+            "Engenharia social é uma técnica de ataque psicológico.",
+            "Escalamento vertical é o acionamento da chefia em incidentes.",
+            "Falso negativo é a falha de um sensor em detectar um ataque."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Diferente da Anonimização irreversível, qual técnica de privacidade substitui o nome real do titular por um código ou identificador indireto (ex: 'Paciente #8492'), mantendo uma tabela separada e protegida a sete chaves que permite reverter o código caso um médico autorizado precise avisar o paciente sobre um exame?",
+        options: [
+            "Pseudonimização.",
+            "Destruição física de mídia.",
+            "Ataque de Força Bruta.",
+            "Cold Site."
+        ],
+        answer: 0,
+        explanations: [
+            "Na Pseudonimização, os identificadores diretos são substituídos por um pseudônimo/código, reduzindo o risco na análise diária, mas permitindo a reidentificação controlada por quem detém a chave/tabela adicional.",
+            "A destruição física inutiliza o suporte de armazenamento por completo.",
+            "Força bruta é um método de ataque para adivinhar senhas.",
+            "Cold site é uma instalação física vazia para contingência."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Quando uma organização decide terceirizar a gestão do seu Help Desk e dos seus servidores para um provedor externo, onde devem constar formalmente as metas de disponibilidade (ex: 99,9% no ar), os tempos máximos de resposta a incidentes, o direito de auditoria e as penalidades em caso de falha?",
+        options: [
+            "No Acordo de Nível de Serviço (SLA - Service Level Agreement) / Contrato formalizado entre as partes.",
+            "Apenas em uma conversa verbal informal durante o almoço.",
+            "Em um post nas redes sociais do fornecedor.",
+            "No Certificado de Boa Índole do porteiro."
+        ],
+        answer: 0,
+        explanations: [
+            "O SLA (parte integrante do contrato/acordo formal) é o instrumento que define métricas mensuráveis de desempenho, requisitos de segurança e responsabilidades do fornecedor.",
+            "Acordos verbais não oferecem garantia jurídica nem auditabilidade.",
+            "Publicações publicitárias não substituem cláusulas contratuais de segurança.",
+            "O certificado de boa índole é um documento individual de antecedentes criminais."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Um funcionário precisa trabalhar de um café público usando seu laptop corporativo. Além de ativar a VPN para proteger os dados em trânsito, qual controle organizacional/comportamental ele deve adotar no local para evitar o vazamento visual e físico de informações?",
+        options: [
+            "Posicionar-se de costas para a parede (ou usar filtro de privacidade na tela contra Shoulder Surfing) e bloquear a tela (Clear Screen) imediatamente se precisar levantar para ir ao balcão.",
+            "Deixar o laptop aberto e desbloqueado sobre a mesa enquanto vai ao banheiro para marcar lugar.",
+            "Ditar a senha do banco em voz alta pelo telefone para o colega.",
+            "Conectar pen drives encontrados no chão do café para ver de quem são."
+        ],
+        answer: 0,
+        explanations: [
+            "Proteger o ângulo de visão da tela e aplicar a política de Tela Limpa (bloqueio imediato de sessão ao se afastar) são medidas essenciais no trabalho móvel.",
+            "Deixar o equipamento desbloqueado em local público expõe tanto ao furto físico quanto ao acesso lógico imediato.",
+            "Falar informações confidenciais em voz alta em locais públicos viola a confidencialidade.",
+            "Inserir pen drives desconhecidos é uma das principais causas de infecção por malware (ameaça humana)."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Por que os registros de eventos (Logs de Auditoria) dos servidores críticos devem ser protegidos contra modificação e, preferencialmente, copiados em tempo real para um servidor central de logs dedicado e isolado (Syslog / SIEM) onde nem mesmo o administrador comum do servidor original tenha permissão de apagar arquivos?",
+        options: [
+            "Para deixar o disco rígido do servidor original vazio para instalar jogos.",
+            "Para garantir a Integridade e a Auditabilidade das evidências: se um invasor (ou administrador mal-intencionado) comprometer o servidor, ele não conseguirá apagar seus próprios rastros nos logs.",
+            "Porque logs guardados no mesmo servidor consomem toda a bateria do no-break.",
+            "Porque a norma proíbe que logs tenham data e hora."
+        ],
+        answer: 1,
+        explanations: [
+            "Servidores corporativos nunca devem ser usados para jogos.",
+            "A primeira ação de um invasor após ganhar privilégio de administrador é tentar apagar os logs locais para esconder o crime; isolar e proteger os logs garante o Não-repúdio e a investigação forense.",
+            "Arquivos de texto de log não afetam significativamente o consumo elétrico do UPS.",
+            "Todos os logs devem obrigatoriamente ter data e hora exatas."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Durante a investigação de um ataque cibernético que envolveu três servidores internos e o firewall da empresa, a equipe percebe que o relógio do Servidor A estava adiantado em 15 minutos, o do Servidor B estava atrasado em 1 hora e o do Firewall estava com a data do ano anterior. Qual controle da ISO/IEC 27002 faltou para viabilizar a correlação dos logs?",
+        options: [
+            "Sincronização de relógios (Clock Synchronization, ex: via protocolo NTP) com uma fonte de tempo única e confiável.",
+            "Desfragmentação manual dos cabos de rede.",
+            "Troca das cadeiras do escritório.",
+            "Instalação de vidro inquebrável no monitor."
+        ],
+        answer: 0,
+        explanations: [
+            "A sincronização de relógios (NTP) é obrigatória para que as trilhas de auditoria (logs) de diferentes equipamentos possam ser reconstruídas na ordem cronológica exata durante uma perícia ou resposta a incidentes.",
+            "Cabos de rede não sofrem desfragmentação.",
+            "Ergonomia de móveis não afeta o relógio do sistema operacional.",
+            "Vidro inquebrável é um controle físico predial."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Uma organização publica mensalmente dezenas de correções (patches) nos seus servidores. De acordo com o processo de Gestão de Vulnerabilidades Técnicas da ISO/IEC 27002, qual deve ser o critério para priorizar quais patches devem ser testados e aplicados primeiro?",
+        options: [
+            "Ordem alfabética do nome do fabricante do software.",
+            "O grau de severidade do risco (combinando a criticidade do ativo para o negócio, a exposição da vulnerabilidade e a existência de ataques ativos explorando a falha).",
+            "Aplicar primeiro apenas os patches que mudam o papel de parede do sistema.",
+            "Sortear os patches jogando uma moeda no final do ano."
+        ],
+        answer: 1,
+        explanations: [
+            "Ordem alfabética ignora completamente a urgência de falhas críticas em sistemas expostos.",
+            "A gestão de vulnerabilidades é orientada a riscos: sistemas críticos ou expostos à internet com falhas severas têm prioridade máxima de correção.",
+            "Atualizações meramente estéticas têm prioridade mínima em relação a correções de segurança.",
+            "Adiamento aleatório deixa brechas conhecidas abertas para exploração por meses."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Por que o uso de um software cujo fabricante encerrou oficialmente o suporte técnico (End-of-Life / Fim de Vida Útil, como versões antigas de sistemas operacionais) representa uma vulnerabilidade grave na visão da ISO/IEC 27002?",
+        options: [
+            "Porque as letras da tela ficam apagadas após o fim do suporte.",
+            "Porque o fabricante deixa de lançar patches e atualizações de segurança para novas falhas descobertas, deixando o sistema permanentemente exposto a ataques.",
+            "Porque o mouse para de funcionar no dia seguinte ao fim do suporte.",
+            "Porque o computador passa a gastar o triplo de papel na impressora."
+        ],
+        answer: 1,
+        explanations: [
+            "O funcionamento visual do software não muda com o fim do suporte comercial.",
+            "Sem suporte oficial, qualquer vulnerabilidade nova descoberta naquele software nunca receberá correção (patch), exigindo atualização (upgrade) ou isolamento estrito da máquina.",
+            "Periféricos continuam operando normalmente.",
+            "O fim de suporte não altera o volume de impressão."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Uma empresa adota a política 'BYOD' (Bring Your Own Device), permitindo que os funcionários utilizem seus próprios smartphones e notebooks pessoais para acessar o e-mail e os sistemas da empresa. Qual é o principal desafio de segurança que uma política específica de BYOD precisa regular?",
+        options: [
+            "Escolher a cor da capinha do celular de cada funcionário.",
+            "Separar e proteger os dados corporativos dentro de um aparelho que pertence ao funcionário (exigindo criptografia, bloqueio por tela/PIN e capacidade de apagar remotamente os dados da empresa em caso de perda ou demissão).",
+            "Obrigar o funcionário a doar o celular pessoal para a empresa.",
+            "Proibir que o funcionário faça ligações pessoais no final de semana."
+        ],
+        answer: 1,
+        explanations: [
+            "Aspectos estéticos não fazem parte da segurança da informação.",
+            "No BYOD, a empresa não é dona do hardware, mas continua dona da informação corporativa; por isso exige contêineres criptografados, senha no aparelho e limpeza remota (Remote Wipe) dos dados empresariais.",
+            "Se o aparelho fosse da empresa, não seria BYOD (Bring Your Own Device).",
+            "O aparelho pertence ao colaborador, que pode usá-lo na vida pessoal desde que os dados corporativos estejam isolados e protegidos."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Um executivo esquece seu smartphone corporativo dentro de um táxi. Assim que ele avisa o Help Desk, a equipe de TI aciona um comando pela central de gerenciamento de dispositivos móveis (MDM) que apaga instantaneamente todos os arquivos e contas de e-mail do aparelho à distância. Como se chama esse controle?",
+        options: [
+            "Apagamento Remoto (Remote Wipe).",
+            "Preenchimento de Tráfego.",
+            "Backup Completo.",
+            "Análise Qualitativa."
+        ],
+        answer: 0,
+        explanations: [
+            "O Remote Wipe (Apagamento/Sanitização Remota) é um controle repressivo/corretivo essencial para proteger a confidencialidade de dados em dispositivos móveis perdidos ou furtados.",
+            "Preenchimento de tráfego mascara o volume de pacotes em redes.",
+            "Backup copia dados para guarda, não apaga dispositivos perdidos.",
+            "Análise qualitativa é um método de avaliação de riscos."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Em um sistema de autenticação biométrica (como leitor de impressão digital ou íris), o administrador precisa ajustar a sensibilidade do aparelho. Se ele deixar o leitor 'tolerante demais', qualquer dedo parecido pode abrir a porta; se deixar 'rígido demais', até o próprio diretor terá sua digital recusada várias vezes. Como se chamam esses dois erros biométricos?",
+        options: [
+            "Falsa Aceitação (deixar um impostor entrar - grave para a segurança) e Falsa Rejeição (barrar um usuário legítimo - ruim para a disponibilidade/usabilidade).",
+            "Criptografia Simétrica e Criptografia Assimétrica.",
+            "Backup Incremental e Backup Diferencial.",
+            "Dano Direto e Dano Indireto."
+        ],
+        answer: 0,
+        explanations: [
+            "Na biometria, a Taxa de Falsa Aceitação (FAR - False Acceptance Rate, um Falso Negativo de segurança) permite acesso indevido; a Taxa de Falsa Rejeição (FRR - False Rejection Rate, um Falso Positivo) nega acesso a quem tem direito.",
+            "Estes são métodos matemáticos de cifragem.",
+            "Estes são tipos de cópia de segurança.",
+            "Estes são tipos de impacto financeiro/operacional pós-incidente."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Qual é a principal vantagem de segurança ao implementar o 'Single Sign-On' (SSO - Autenticação Única) em uma empresa onde o funcionário antes precisava decorar 15 senhas diferentes para usar 15 sistemas internos?",
+        options: [
+            "Reduz a fadiga de senhas (evitando que o usuário anote as 15 senhas em papéis na mesa ou crie senhas fracas) e permite centralizar o bloqueio imediato de todos os acessos em um único ponto.",
+            "Elimina a necessidade de usar firewalls na empresa.",
+            "Torna impossível que alguém roube a senha principal do usuário.",
+            "Garante que o servidor nunca fique sem energia elétrica."
+        ],
+        answer: 0,
+        explanations: [
+            "O SSO melhora a usabilidade e a segurança ao exigir que o usuário memorize uma única credencial forte (preferencialmente com MFA), porém exige proteção máxima dessa credencial central (pois se vazar, dá acesso a tudo).",
+            "O SSO gerencia autenticação de usuários, não filtragem de pacotes de rede.",
+            "Se a credencial única do SSO for comprometida, o invasor acessa todos os sistemas vinculados; por isso o SSO deve ser combinado com MFA.",
+            "Autenticação lógica não interfere no fornecimento elétrico."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Para proteger as redes sem fio (Wi-Fi) de um escritório contra visitantes e transeuntes na calçada, qual combinação de controles arquitetônicos e técnicos é recomendada pela ISO/IEC 27002?",
+        options: [
+            "Deixar o Wi-Fi aberto sem senha, mas pedir que as pessoas na rua não usem.",
+            "Utilizar criptografia forte no protocolo sem fio (ex: WPA2/WPA3 Enterprise) e separar totalmente a rede Wi-Fi de visitantes (Guest Network) da rede corporativa interna.",
+            "Apenas esconder o nome da rede (SSID) sem colocar senha ou criptografia.",
+            "Colocar o roteador Wi-Fi dentro de um cofre de chumbo fechado."
+        ],
+        answer: 1,
+        explanations: [
+            "Redes abertas permitem interceptação imediata de tráfego e invasão da LAN.",
+            "Criptografar o tráfego sem fio e isolar os visitantes em uma VLAN separada (que só acessa a internet, sem enxergar os servidores internos) são os controles essenciais de Wi-Fi.",
+            "Ocultar o SSID sem criptografia não protege a rede, pois qualquer sniffer gratuito descobre o nome da rede em segundos.",
+            "Fechar o roteador em um cofre metálico bloquearia as ondas de rádio, inutilizando o Wi-Fi."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Ao descartar computadores antigos da recepção, o técnico de TI decide usar um 'Desmagnetizador' (Degausser) potente para destruir os dados antes de mandar as peças para a reciclagem. Em qual tipo de mídia o desmagnetizador funciona perfeitamente e em qual ele NÃO tem efeito algum?",
+        options: [
+            "Funciona em mídias magnéticas (como HDs tradicionais magnéticos e fitas de backup), mas NÃO funciona em mídias eletrônicas de estado sólido (como SSDs, Pen drives e CDs/DVDs ópticos).",
+            "Funciona apenas em papel impresso e não funciona em fitas.",
+            "Funciona apenas em pen drives e não funciona em discos rígidos magnéticos.",
+            "Apaga qualquer material existente no universo, inclusive folhas de papel."
+        ],
+        answer: 0,
+        explanations: [
+            "O Degausser aplica um campo magnético intenso que destrói os domínios magnéticos de HDs antigos e fitas; porém, SSDs e Pen drives usam chips de memória Flash (não magnéticos), exigindo criptografia/Wipe ou trituração física.",
+            "Papel não é mídia magnética; exige fragmentadora (shredder) ou incineração.",
+            "A afirmação inverteu o funcionamento físico: pen drives são imunes à desmagnetização.",
+            "Mídias ópticas (CD/DVD), estado sólido (SSD) e papel não são apagados por campo magnético."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Qual é a regra fundamental de independência exigida pela norma ISO/IEC 27001 para a escolha dos profissionais que realizarão a 'Auditoria Interna' do SGSI?",
+        options: [
+            "O próprio gerente de TI deve auditar e aprovar os backups que ele mesmo configurou.",
+            "Os auditores devem ser selecionados de modo a garantir a objetividade e a imparcialidade do processo: um auditor não pode auditar o seu próprio trabalho ou setor direto.",
+            "A auditoria interna só pode ser feita pelo presidente da república.",
+            "Os auditores internos não precisam conhecer nada sobre a norma ISO 27001."
+        ],
+        answer: 1,
+        explanations: [
+            "Auditar o próprio trabalho gera conflito de interesses e invalida a imparcialidade da auditoria.",
+            "A Cláusula 9.2 da ISO 27001 exige independência e imparcialidade (pode ser um profissional de outro departamento treinado ou uma consultoria contratada, desde que não audite o que ele mesmo executa).",
+            "Auditorias internas são organizadas pela própria empresa.",
+            "Os auditores precisam ter competência comprovada sobre os requisitos da norma."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Durante uma auditoria do SGSI, o auditor verifica que a empresa exige em sua política que 'todos os pen drives sejam criptografados', mas ao inspecionar 10 funcionários, descobre que 8 deles usam pen drives sem criptografia alguma. Como o auditor registra formalmente esse desvio no relatório?",
+        options: [
+            "Como uma Não Conformidade (Non-conformity), exigindo análise de causa raiz e ação corretiva.",
+            "Como um elogio à produtividade da equipe.",
+            "Como um Falso Positivo do antivírus.",
+            "Como uma estratégia de Evitação de Risco."
+        ],
+        answer: 0,
+        explanations: [
+            "O não atendimento a um requisito da norma ou a uma regra estabelecida pela própria política do SGSI da empresa constitui formalmente uma Não Conformidade.",
+            "Violar a política interna é uma falha de segurança, não um mérito.",
+            "Trata-se de uma constatação humana de auditoria, não de um alerta de software.",
+            "Usar mídias desprotegidas aumenta o risco em vez de evitá-lo."
+        ]
+    },
+    {
+        domain: "DOM4",
+        q: "Qual é o papel da 'Análise Crítica pela Direção' (Management Review), realizada periodicamente na fase 'Check' do ciclo PDCA da ISO/IEC 27001?",
+        options: [
+            "A alta direção reúne-se para revisar os indicadores do SGSI, resultados de auditorias, status das ações corretivas e mudanças no negócio, garantindo que o SGSI continue adequado, suficiente e eficaz.",
+            "Os diretores reúnem-se para crimpar cabos de rede e limpar o pó dos teclados.",
+            "O Help Desk demite a diretoria da empresa.",
+            "A direção apaga todas as políticas de segurança para economizar espaço no servidor."
+        ],
+        answer: 0,
+        explanations: [
+            "Na Cláusula 9.3, a Alta Direção analisa criticamente o desempenho do SGSI em nível estratégico e decide sobre recursos e melhorias necessárias.",
+            "Tarefas técnicas de manutenção cabem à equipe operacional de TI.",
+            "O Help Desk é um órgão operacional subordinado à estrutura da empresa.",
+            "A revisão serve para aprimorar e manter o SGSI ativo, nunca para destruí-lo."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Para garantir que um servidor de arquivos continue funcionando normalmente mesmo que um dos seus discos rígidos queime de repente durante o expediente, qual tecnologia de redundância de discos é utilizada?",
+        options: [
+            "RAID (Redundant Array of Independent Disks - ex: espelhamento RAID 1 ou paridade RAID 5/6).",
+            "Criptografia Assimétrica RSA.",
+            "Filtro de Privacidade no monitor.",
+            "Acordo de Não Divulgação (NDA)."
+        ],
+        answer: 0,
+        explanations: [
+            "O RAID combina múltiplos discos físicos em uma unidade lógica redundante: se um disco físico pifar, os demais mantêm o servidor operando sem queda (alta disponibilidade).",
+            "Criptografia protege o sigilo, mas se o único disco queimar, os dados somem.",
+            "Filtro de monitor protege apenas contra visualização lateral.",
+            "NDA é um contrato jurídico."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "Por que um sistema 'RAID' (espelhamento de discos dentro do mesmo servidor) NÃO substitui a obrigação de realizar 'Backups' periódicos guardados fora do servidor?",
+        options: [
+            "Porque se um vírus (como Ransomware) criptografar um arquivo ou se um administrador apagar uma tabela por engano, o RAID copiará a destruição instantaneamente para os dois discos espelhados!",
+            "Porque o RAID só funciona aos domingos.",
+            "Porque discos em RAID não aceitam arquivos de texto.",
+            "Na verdade, o RAID substitui totalmente o backup na norma ISO 27002."
+        ],
+        answer: 0,
+        explanations: [
+            "RAID protege apenas contra a queima física de um disco (Disponibilidade imediata); se houver exclusão lógica, corrupção, ransomware ou incêndio no prédio, o espelhamento replica a perda, sendo indispensável o Backup histórico e offsite.",
+            "O RAID opera continuamente 24/7 em tempo real.",
+            "O RAID aceita qualquer tipo de arquivo do sistema operacional.",
+            "RAID e Backup têm finalidades complementares e nunca substituem um ao outro."
+        ]
+    },
+    {
+        domain: "DOM3",
+        q: "No desenvolvimento de uma aplicação web corporativa, o programador deixa de validar o que o usuário digita no campo de 'Busca', permitindo que um invasor digite comandos de banco de dados naquele campo e extraia toda a tabela de clientes. Qual vulnerabilidade de desenvolvimento permitiu esse ataque de SQL Injection?",
+        options: [
+            "Falta de validação e higienização de dados de entrada (Input Validation).",
+            "Falta de ar-condicionado no data center.",
+            "Uso de crachá sem logotipo.",
+            "Excesso de backups incrementais."
+        ],
+        answer: 0,
+        explanations: [
+            "No desenvolvimento seguro de sistemas, toda entrada fornecida pelo usuário deve ser tratada como não confiável e validada/filtrada para impedir injeção de comandos (SQL Injection, XSS).",
+            "Climatização é um controle físico que não afeta o código da aplicação web.",
+            "Crachás sem logotipo são uma boa prática de segurança física.",
+            "Backups não causam falhas de programação no site."
+        ]
     }
+);
 ];
 
 
