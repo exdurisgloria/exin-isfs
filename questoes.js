@@ -2074,8 +2074,7 @@ const extraQuestions = [
             "Escalamento refere-se ao fluxo de atendimento de incidentes.",
             "Tailgating e Mantrap pertencem ao domínio de segurança física perimetral."
         ]
-    },
-    // ==========================================
+    },// ==========================================
 // LOTE 3: +75 QUESTÕES FOUNDATION (TOTAL: 200 QUESTÕES)
 // Cole este bloco no final do seu arquivo questoes.js
 // ==========================================
@@ -3542,7 +3541,7 @@ extraQuestions.push(
             "Backups não causam falhas de programação no site."
         ]
     }
-);
+)
 ];
 
 
