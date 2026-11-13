@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador EXIN ISFS & ISO 27001 Foundation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .perspective { perspective: 1000px; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 h-full flex flex-col font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Cabeçalho -->
+    <header class="bg-slate-800 border-b border-slate-700 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-indigo-600 p-2.5 rounded-xl shadow-lg shadow-indigo-500/30 text-white font-bold text-xl">🛡️</div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-white">EXIN ISFS Foundation</h1>
+                    <p class="text-xs text-slate-400">Plataforma de Treinamento Intensivo • ISO/IEC 27001 & 27002</p>
+                </div>
+            </div>
+            <!-- Navegação por Abas -->
+            <nav class="flex bg-slate-900 p-1 rounded-xl border border-slate-700 overflow-x-auto max-w-full">
+                <button onclick="switchTab('simulado')" id="tab-simulado" class="px-4 py-2.5 text-sm font-medium rounded-lg transition-all bg-indigo-600 text-white shadow whitespace-nowrap">Simulado e Treino</button>
+                <button onclick="switchTab('flashcards')" id="tab-flashcards" class="px-4 py-2.5 text-sm font-medium rounded-lg transition-all text-slate-400 hover:text-white whitespace-nowrap">Flashcards</button>
+                <button onclick="switchTab('glossario')" id="tab-glossario" class="px-4 py-2.5 text-sm font-medium rounded-lg transition-all text-slate-400 hover:text-white whitespace-nowrap">Glossário</button>
+                <button onclick="switchTab('conceitos')" id="tab-conceitos" class="px-4 py-2.5 text-sm font-bold rounded-lg transition-all text-emerald-400 hover:text-emerald-300 border border-emerald-900/50 bg-emerald-950/20 whitespace-nowrap">🧠 Entendendo o Conceito</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-6 sm:p-8 overflow-y-auto">
+
+        <!-- ========================================== -->
+        <!-- SEÇÃO 1: SIMULADOS E TREINO                -->
+        <!-- ========================================== -->
+        <section id="view-simulado" class="space-y-6">
+            
+            <!-- TELA INICIAL: MENU PRINCIPAL + PAINEL LATERAL DE HISTÓRICO -->
+            <div id="quiz-start-menu" class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                
+                <!-- COLUNA ESQUERDA (2/3): CONFIGURAÇÃO E INÍCIO -->
+                <div class="lg:col-span-2 bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl">
+                    <div class="mb-6 border-b border-slate-700 pb-4">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-1">Central de Simulados e Treinamento</h2>
+                        <p class="text-slate-400 text-xs sm:text-sm">Personalize a fonte de questões, a distribuição por domínio e o modo de avaliação.</p>
+                    </div>
+
+                    <!-- PAINEL DE CONFIGURAÇÕES (FONTE E DOMÍNIO) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+                        
+                        <!-- 1. Seleção de Fonte de Questões -->
+                        <div class="p-5 bg-slate-900/60 border border-slate-700 rounded-2xl shadow-inner flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-indigo-400 font-bold mb-3.5 text-xs uppercase tracking-widest flex items-center gap-2">
+                                    <span>📚 1. Fonte das Questões</span>
+                                </h3>
+                                <div class="space-y-2.5">
+                                    <label class="flex items-center justify-between p-3 rounded-xl border border-slate-700/80 bg-slate-800/50 hover:border-indigo-500/50 cursor-pointer transition-all">
+                                        <div class="flex items-center gap-2.5">
+                                            <input type="radio" name="q-source" value="oficial" class="w-4 h-4 text-indigo-600 bg-slate-800 border-slate-600" checked>
+                                            <span class="text-xs sm:text-sm font-medium text-slate-200">Apenas Oficiais EXIN</span>
+                                        </div>
+                                        <span class="text-xs bg-indigo-950 text-indigo-300 px-2.5 py-0.5 rounded-md border border-indigo-800/50">40 Qs</span>
+                                    </label>
+
+                                    <label class="flex items-center justify-between p-3 rounded-xl border border-slate-700/80 bg-slate-800/50 hover:border-indigo-500/50 cursor-pointer transition-all">
+                                        <div class="flex items-center gap-2.5">
+                                            <input type="radio" name="q-source" value="misto" class="w-4 h-4 text-indigo-600 bg-slate-800 border-slate-600">
+                                            <span class="text-xs sm:text-sm font-medium text-slate-200">Oficiais + Desafios IA</span>
+                                        </div>
+                                        <span id="total-pool-badge" class="text-xs bg-slate-800 text-slate-300 px-2.5 py-0.5 rounded-md border border-slate-700">125 Qs</span>
+                                    </label>
+
+                                    <label class="flex items-center justify-between p-3 rounded-xl border border-rose-900/40 bg-rose-950/10 hover:border-rose-500/50 cursor-pointer transition-all">
+                                        <div class="flex items-center gap-2.5">
+                                            <input type="radio" name="q-source" value="erros" class="w-4 h-4 text-rose-600 bg-slate-800 border-slate-600">
+                                            <div>
+                                                <span class="text-xs sm:text-sm font-medium text-rose-200 block">🎯 Caderno de Erros</span>
+                                                <span class="text-[10px] text-slate-400">Sai ao acertar 2x seguidas</span>
+                                            </div>
+                                        </div>
+                                        <span id="error-notebook-badge" class="text-xs font-bold bg-rose-950 text-rose-300 px-2.5 py-0.5 rounded-md border border-rose-800">0 Qs</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center text-[11px] text-slate-400">
+                                <span>Domine suas falhas recorrentes</span>
+                                <button onclick="clearErrorNotebook()" id="clear-errors-btn" class="text-rose-400 hover:text-rose-300 underline hidden">Limpar Caderno</button>
+                            </div>
+                        </div>
+
+                        <!-- 2. Filtro e Proporção por Domínio do Edital -->
+                        <div class="p-5 bg-slate-900/60 border border-slate-700 rounded-2xl shadow-inner flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-emerald-400 font-bold mb-3.5 text-xs uppercase tracking-widest flex items-center gap-2">
+                                    <span>📊 2. Distribuição de Domínio</span>
+                                </h3>
+                                <label for="q-domain" class="block text-xs text-slate-400 mb-2">Selecione como sortear os tópicos da prova:</label>
+                                <select id="q-domain" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-indigo-500 mb-4">
+                                    <option value="proporcional">⚖️ Proporção Oficial EXIN (Recomendado)</option>
+                                    <option value="aleatorio">🎲 Todos os Domínios (100% Aleatório)</option>
+                                    <option value="DOM1">📘 Domínio 1: Conceitos e CIA (25%)</option>
+                                    <option value="DOM2">⚠️ Domínio 2: Ameaças e Riscos (30%)</option>
+                                    <option value="DOM3">🔒 Domínio 3: Controles Físicos/Lógicos (25%)</option>
+                                    <option value="DOM4">🏛️ Domínio 4: Governança, ISO e Leis (20%)</option>
+                                </select>
+
+                                <div class="bg-slate-800/60 border border-slate-700/70 rounded-xl p-3 text-[11px] text-slate-300 space-y-1">
+                                    <div class="font-semibold text-slate-200 mb-1">Pesos Oficiais na Prova EXIN (40 Qs):</div>
+                                    <div class="flex justify-between"><span>• Ameaças e Riscos:</span><span class="text-indigo-300 font-mono">30% (~12 Qs)</span></div>
+                                    <div class="flex justify-between"><span>• Conceitos e CIA:</span><span class="text-indigo-300 font-mono">25% (~10 Qs)</span></div>
+                                    <div class="flex justify-between"><span>• Controles (Fís/Lóg/Org):</span><span class="text-indigo-300 font-mono">25% (~10 Qs)</span></div>
+                                    <div class="flex justify-between"><span>• Governança e Normas:</span><span class="text-indigo-300 font-mono">20% (~8 Qs)</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BOTÕES DE INÍCIO -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <button onclick="startQuiz('treino')" class="flex flex-col items-center p-6 bg-slate-900 border border-slate-700 rounded-2xl hover:border-indigo-500 hover:bg-slate-800/80 transition-all text-left shadow-lg group">
+                            <div class="text-4xl mb-2.5 group-hover:scale-110 transition-transform">🏋️</div>
+                            <h3 class="text-lg font-bold text-indigo-400 mb-1.5">Novo Modo Treino</h3>
+                            <p class="text-xs text-slate-400 text-center leading-relaxed">Sem tempo limite. Engenharia reversa imediata a cada clique e salvamento automático para continuar depois.</p>
+                        </button>
+                        <button onclick="startQuiz('simulado')" class="flex flex-col items-center p-6 bg-slate-900 border border-slate-700 rounded-2xl hover:border-emerald-500 hover:bg-slate-800/80 transition-all text-left shadow-lg group">
+                            <div class="text-4xl mb-2.5 group-hover:scale-110 transition-transform">⏱️</div>
+                            <h3 class="text-lg font-bold text-emerald-400 mb-1.5">Novo Simulado Oficial</h3>
+                            <p class="text-xs text-slate-400 text-center leading-relaxed">60 minutos cronometrados, navegação livre (1 a 40), bloqueio de abas externas e nota final com gabarito.</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- COLUNA DIREITA (1/3): TREINO EM ANDAMENTO + HISTÓRICO DE TENTATIVAS -->
+                <div class="lg:col-span-1 bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl flex flex-col max-h-[82vh]">
+                    <div class="flex justify-between items-center border-b border-slate-700 pb-3.5 mb-4">
+                        <div>
+                            <h3 class="text-base font-bold text-white flex items-center gap-2">📈 Seu Histórico & Sessões</h3>
+                            <p class="text-[11px] text-slate-400">Acompanhe sua evolução e retome treinos</p>
+                        </div>
+                        <button onclick="clearAttemptHistory()" id="btn-clear-history" class="text-[11px] text-slate-400 hover:text-rose-400 underline hidden">Limpar</button>
+                    </div>
+
+                    <!-- CARD DE TREINO EM ANDAMENTO (SÓ APARECE SE HOUVER SESSÃO NÃO FINALIZADA) -->
+                    <div id="saved-training-card" class="hidden mb-4 p-4 rounded-xl border-2 border-amber-500/70 bg-amber-950/25 shadow-lg">
+                        <div class="flex justify-between items-start gap-2 mb-2">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-500 text-slate-950">⏸️ Modo Treino em Andamento</span>
+                            <button onclick="discardSavedTraining()" class="text-[11px] text-slate-400 hover:text-rose-400" title="Descartar sessão salva">✖ Descartar</button>
+                        </div>
+                        <p id="saved-training-info" class="text-xs text-slate-200 font-medium mb-1">Respondidas: 0/40 • Acertos: 0</p>
+                        <p id="saved-training-meta" class="text-[11px] text-slate-400 mb-3">Tempo decorrido: 00m 00s</p>
+                        <button onclick="resumeSavedTraining()" class="w-full py-2.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-1.5">
+                            <span>▶️ Continuar Treino de Onde Parei</span>
+                        </button>
+                    </div>
+
+                    <!-- LISTA DE TENTATIVAS FINALIZADAS -->
+                    <div id="attempt-history-list" class="flex-1 overflow-y-auto space-y-3 pr-1">
+                        <!-- Itens de histórico injetados via JS -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CONTAINER DA PROVA ATIVA -->
+            <div id="quiz-active-container" class="hidden space-y-6">
+                
+                <!-- Mapa de Questões (Navegação Livre 1 a N) -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-lg">
+                    <div class="flex flex-wrap justify-between items-center gap-2 mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">🧭 Mapa de Navegação da Prova</span>
+                        <div class="flex flex-wrap items-center gap-3 text-[11px] text-slate-400">
+                            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-indigo-600 inline-block"></span> Respondida</span>
+                            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span> Marcada (🚩)</span>
+                            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-slate-700 inline-block"></span> Pendente</span>
+                        </div>
+                    </div>
+                    <div id="quiz-question-map" class="grid grid-cols-8 sm:grid-cols-10 md:grid-cols-20 gap-1.5">
+                        <!-- Botões 1..40 injetados via JS -->
+                    </div>
+                </div>
+
+                <!-- Card da Questão Atual -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl">
+                    <div class="flex flex-wrap justify-between items-center gap-4 mb-6 pb-4 border-b border-slate-700">
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <span id="quiz-mode-badge" class="text-xs font-bold uppercase tracking-wider px-2.5 py-1.5 rounded-lg border">Modo</span>
+                            <span id="quiz-progress" class="text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-950/60 px-3 py-1.5 rounded-lg border border-indigo-800/50">Questão 1 de 40</span>
+                            <span id="quiz-domain-badge" class="text-xs font-medium text-slate-300 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-700">Domínio</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-3">
+                            <button onclick="toggleFlagCurrentQuestion()" id="btn-flag-question" class="text-xs font-semibold px-3.5 py-1.5 rounded-lg border border-slate-600 bg-slate-900 text-slate-300 hover:border-amber-500 hover:text-amber-300 transition-all flex items-center gap-1.5">
+                                <span>🚩</span> <span id="flag-btn-text">Marcar para Revisão</span>
+                            </button>
+                            <div id="quiz-status-indicator" class="flex items-center gap-2 text-sm font-bold"></div>
+                        </div>
+                    </div>
+                    
+                    <h2 id="quiz-question" class="text-lg sm:text-2xl font-semibold text-slate-100 mb-6 leading-relaxed">Carregando questão...</h2>
+                    
+                    <div id="quiz-notebook-feedback" class="hidden mb-4 px-4 py-2.5 rounded-xl text-xs font-semibold border"></div>
+
+                    <div id="quiz-options" class="space-y-3.5">
+                        <!-- Alternativas injetadas via JS -->
+                    </div>
+
+                    <!-- Barra de Navegação Inferior -->
+                    <div class="mt-8 pt-6 border-t border-slate-700/80 flex flex-wrap justify-between items-center gap-4">
+                        <button onclick="handleExitQuizButton()" id="quiz-exit-btn" class="text-xs sm:text-sm text-slate-300 hover:text-amber-400 transition-colors font-medium">
+                            💾 Pausar e Salvar Progresso
+                        </button>
+                        
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button id="quiz-prev-btn" onclick="prevQuestion()" class="bg-slate-900 hover:bg-slate-700 text-slate-200 border border-slate-600 px-5 py-2.5 rounded-xl text-sm font-medium transition-all">⬅️ Anterior</button>
+                            <button id="quiz-next-btn" onclick="nextQuestion()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2.5 rounded-xl text-sm font-medium transition-all shadow-lg shadow-indigo-600/20">Próxima ➡️</button>
+                            <button id="quiz-submit-btn" onclick="confirmFinishQuiz()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-xl text-sm font-bold transition-all shadow-lg shadow-emerald-600/20">🏁 Finalizar Prova</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESULTADO FINAL E REVISÃO DETALHADA PÓS-SIMULADO -->
+            <div id="quiz-results" class="hidden space-y-8">
+                
+                <!-- Resumo do Desempenho -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8 text-center shadow-xl">
+                    <div id="result-icon" class="text-6xl mb-3">🏆</div>
+                    <h3 id="result-title" class="text-2xl sm:text-3xl font-bold text-white mb-2">Simulado Concluído!</h3>
+                    <p id="quiz-final-score" class="text-slate-200 mb-1 text-xl font-semibold">Você acertou X de Y questões.</p>
+                    <p id="quiz-percentage" class="text-slate-400 mb-2 text-sm">Percentual de acerto: 0% (Mínimo EXIN: 65%)</p>
+                    <p id="quiz-time-spent" class="text-xs text-indigo-300 mb-6"></p>
+
+                    <!-- Diagnóstico por Domínio do Edital -->
+                    <div class="max-w-3xl mx-auto bg-slate-900/70 border border-slate-700 rounded-2xl p-6 text-left mb-8">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-4">📊 Diagnóstico por Domínio do Edital</h4>
+                        <div id="domain-breakdown-container" class="space-y-3">
+                            <!-- Barras de progresso por domínio injetadas via JS -->
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button onclick="showStartMenu()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3 rounded-xl font-medium transition-all shadow-lg shadow-indigo-600/20">Voltar ao Menu Inicial</button>
+                    </div>
+                </div>
+
+                <!-- Revisão Detalhada Questão por Questão (Engenharia Reversa Completa) -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-700 pb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">🔍 Revisão Detalhada do Gabarito (Engenharia Reversa)</h3>
+                            <p class="text-xs text-slate-400 mt-1">Analise cada alternativa das questões realizadas nesta sessão.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="renderQuizReview('all')" id="review-filter-all" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white">Todas</button>
+                            <button onclick="renderQuizReview('wrong')" id="review-filter-wrong" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-rose-300 border border-rose-800/60 hover:bg-rose-950/50">Apenas Erros / Em Branco</button>
+                            <button onclick="renderQuizReview('flagged')" id="review-filter-flagged" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-amber-300 border border-amber-800/60 hover:bg-amber-950/50">Marcadas com 🚩</button>
+                        </div>
+                    </div>
+
+                    <div id="quiz-review-list" class="space-y-6">
+                        <!-- Questões revisadas injetadas via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SEÇÃO 2: FLASHCARDS INTERATIVOS            -->
+        <!-- ========================================== -->
+        <section id="view-flashcards" class="hidden space-y-6">
+            <div class="bg-slate-800/70 border border-slate-700 rounded-2xl p-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white">Revisão Ativa (Flashcards)</h2>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Filtre por tópico e marque os cartões que você já dominou para focar apenas nos pendentes.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                    <select id="fc-category-filter" onchange="initFlashcards()" class="bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-indigo-500 flex-1 md:w-72">
+                        <option value="all">📚 Todas as Categorias do Glossário</option>
+                    </select>
+                    <div class="flex items-center gap-2 bg-slate-900 px-3.5 py-2 rounded-xl border border-slate-700 text-xs">
+                        <span id="fc-mastered-status" class="text-emerald-400 font-semibold">Dominados: 0</span>
+                        <button onclick="resetMasteredFlashcards()" class="text-slate-400 hover:text-white underline ml-2" title="Restaurar todos os cartões dominados">Resetar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estado quando todos os cartões do filtro foram dominados -->
+            <div id="fc-empty-state" class="hidden bg-slate-800 border border-slate-700 rounded-2xl p-12 text-center max-w-2xl mx-auto">
+                <div class="text-5xl mb-3">🎉</div>
+                <h3 class="text-xl font-bold text-white mb-2">Você dominou todos os Flashcards desta seleção!</h3>
+                <p class="text-sm text-slate-400 mb-6">Escolha outra categoria no filtro acima ou restaure os cartões dominados para revisar novamente.</p>
+                <button onclick="resetMasteredFlashcards()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2.5 rounded-xl text-sm font-medium">🔄 Restaurar Todos os Cartões</button>
+            </div>
+
+            <!-- Cartão Interativo -->
+            <div id="fc-Interactive-wrapper">
+                <div class="max-w-3xl mx-auto cursor-pointer perspective w-full" onclick="flipCard()">
+                    <div id="flashcard-container" class="bg-slate-800 border border-slate-700 rounded-2xl p-8 sm:p-10 min-h-[340px] flex flex-col justify-between shadow-2xl transition-all duration-300 hover:border-indigo-500">
+                        <div class="text-xs font-bold text-indigo-400 uppercase tracking-widest flex justify-between items-center border-b border-slate-700/50 pb-3">
+                            <span id="fc-category" class="truncate pr-4">Categoria</span>
+                            <span id="fc-counter" class="whitespace-nowrap bg-slate-900 px-3 py-1 rounded-full border border-slate-700">1 / X</span>
+                        </div>
+                        <div class="my-auto py-8 text-center flex flex-col items-center justify-center w-full">
+                            <h3 id="fc-term" class="text-2xl sm:text-4xl font-bold text-white tracking-tight">Termo</h3>
+                            <div id="fc-back-content" class="hidden flex-col items-center space-y-6 w-full">
+                                <p id="fc-def" class="text-base sm:text-xl text-slate-200 leading-relaxed max-w-2xl">Definição...</p>
+                                <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-700/80 w-full mt-4 text-left shadow-inner">
+                                    <strong class="text-emerald-400 block mb-2 text-xs uppercase tracking-widest font-bold">💡 Exemplo Prático:</strong>
+                                    <span id="fc-example" class="text-sm sm:text-base text-slate-300 leading-relaxed">Exemplo...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center text-xs font-semibold text-slate-500 border-t border-slate-700/50 pt-4 mt-4 uppercase tracking-widest transition-colors" id="fc-hint">
+                            👉 Clique em qualquer lugar do cartão para virar
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles dos Flashcards -->
+                <div class="flex flex-wrap justify-center items-center gap-3 mt-6 max-w-3xl mx-auto">
+                    <button onclick="prevCard()" class="bg-slate-800 hover:bg-slate-700 border border-slate-600 px-5 py-2.5 rounded-xl text-sm font-medium transition-all text-white">⬅️ Anterior</button>
+                    <button onclick="nextCard()" class="bg-amber-950/50 hover:bg-amber-900/60 border border-amber-700/60 px-5 py-2.5 rounded-xl text-sm font-medium transition-all text-amber-300">🔄 Revisar Depois</button>
+                    <button onclick="markCardMastered()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-xl text-sm font-bold transition-all shadow-lg shadow-emerald-600/20">✅ Já Dominei</button>
+                    <button onclick="shuffleCards()" class="bg-slate-800 hover:bg-indigo-900/50 border border-slate-600 px-5 py-2.5 rounded-xl text-sm font-medium transition-all text-indigo-300">🔀 Embaralhar</button>
+                    <button onclick="nextCard()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2.5 rounded-xl text-sm font-medium transition-all shadow-lg shadow-indigo-600/20">Próximo ➡️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SEÇÃO 3: GLOSSÁRIO                         -->
+        <!-- ========================================== -->
+        <section id="view-glossario" class="hidden space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-2">
+                <div>
+                    <h2 class="text-2xl font-bold text-white">Glossário Exclusivo Foundation</h2>
+                    <p class="text-xs text-slate-400 mt-1">Conceitos fundamentais e exemplos práticos baseados na ISO 27001 e EXIN ISFS</p>
+                </div>
+                <input type="text" id="glossary-search" oninput="filterGlossary()" placeholder="Pesquisar termo ou sigla..." class="bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:border-indigo-500 w-full sm:w-80 shadow">
+            </div>
+            <div id="glossary-list" class="space-y-6"></div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SEÇÃO 4: ENTENDENDO O CONCEITO             -->
+        <!-- ========================================== -->
+        <section id="view-conceitos" class="hidden space-y-6">
+            <div class="bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-lg space-y-4">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white flex items-center gap-2">🧠 Guia Didático: Entendendo o Conceito</h2>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-1">
+                            Explicações aprofundadas dos 19 módulos do edital, com analogias práticas, macetes de memorização e alertas da banca.
+                        </p>
+                    </div>
+                    <input type="text" id="conceitos-search" oninput="filterConceitos()" placeholder="Pesquisar conceito, analogia ou macete..." class="bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:border-emerald-500 w-full md:w-80 shadow">
+                </div>
+
+                <!-- Filtros por Domínio -->
+                <div class="flex flex-wrap gap-2 pt-3 border-t border-slate-700/70">
+                    <button onclick="setConceitoDomain('ALL')" id="btn-cdom-ALL" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 text-white transition-all">Todos (19)</button>
+                    <button onclick="setConceitoDomain('DOM1')" id="btn-cdom-DOM1" class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900 text-slate-300 border border-slate-700 hover:border-emerald-500 transition-all">📘 1. Conceitos & CIA</button>
+                    <button onclick="setConceitoDomain('DOM2')" id="btn-cdom-DOM2" class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900 text-slate-300 border border-slate-700 hover:border-emerald-500 transition-all">⚠️ 2. Riscos, Ameaças & BCM</button>
+                    <button onclick="setConceitoDomain('DOM3')" id="btn-cdom-DOM3" class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900 text-slate-300 border border-slate-700 hover:border-emerald-500 transition-all">🔒 3. Controles Físicos & Lógicos</button>
+                    <button onclick="setConceitoDomain('DOM4')" id="btn-cdom-DOM4" class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900 text-slate-300 border border-slate-700 hover:border-emerald-500 transition-all">🏛️ 4. Governança, ISO & Leis</button>
+                </div>
+            </div>
+
+            <!-- Layout Principal: Índice Lateral + Área de Módulos -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+                <aside class="lg:col-span-1 bg-slate-800 border border-slate-700 rounded-2xl p-4 shadow-lg lg:sticky lg:top-6 max-h-[75vh] overflow-y-auto">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 px-2">📑 Índice de Módulos</h3>
+                    <div id="conceitos-index" class="space-y-1"></div>
+                </aside>
+
+                <div id="conceitos-list" class="lg:col-span-3 space-y-6"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-800 border-t border-slate-700 py-4 text-center text-xs text-slate-400">
+        EXIN ISFS & ISO 27001 • Progresso do Modo Treino, Histórico de Tentativas e Caderno de Erros salvos localmente.
+    </footer>
+
+    <!-- Importação dos arquivos de dados externos -->
+    <script src="questoes.js"></script>
+    <script src="glossario.js"></script>
+    <script src="conceitos.js"></script>
+
+    <!-- Lógica Completa da Aplicação -->
+    <script>
+        // Estado da Prova
+        let activeQuestions = [];
+        let currentQIndex = 0;
+        let score = 0;
+        let quizMode = 'treino';
+        let timerInterval = null;
+        let timeLeft = 3600;
+        let totalTimeAllocated = 3600;
+        let trainingElapsedSeconds = 0;
+        let currentSessionSourceLabel = 'Oficiais EXIN';
+
+        // Estado dos Flashcards
+        let flashcardDeck = [];
+        let currentCardIndex = 0;
+        let isCardFlipped = false;
+
+        // ==========================================
+        // 1. CLASSIFICADOR AUTOMÁTICO DE DOMÍNIOS EXIN
+        // ==========================================
+        const EXIN_DOMAINS = {
+            DOM1: { code: "DOM1", name: "1. Conceitos e Confiabilidade (CIA)", weight: 0.25 },
+            DOM2: { code: "DOM2", name: "2. Ameaças e Gestão de Riscos", weight: 0.30 },
+            DOM3: { code: "DOM3", name: "3. Controles (Físicos, Técnicos e Org.)", weight: 0.25 },
+            DOM4: { code: "DOM4", name: "4. Governança, ISO e Legislação", weight: 0.20 }
+        };
+
+        function cleanCite(text) {
+            if (!text) return "";
+            return String(text).replace(/\[cite:\s*[\d,\s]+\]/gi, '').trim();
+        }
+
+        function formatDuration(totalSeconds) {
+            const sec = Math.max(0, Math.floor(totalSeconds || 0));
+            const m = Math.floor(sec / 60).toString().padStart(2, '0');
+            const s = (sec % 60).toString().padStart(2, '0');
+            return `${m}m ${s}s`;
+        }
+
+        function detectQuestionDomain(qObj) {
+            if (qObj.domain && EXIN_DOMAINS[qObj.domain]) return qObj.domain;
+            const text = (qObj.q + " " + (qObj.options ? qObj.options.join(" ") : "")).toLowerCase();
+
+            if (/iso\/iec|27001|27002|27000|27005|gdpr|lgpd|legisla|lei|propriedade intelectual|ansi|nist|sgsi|pdca|declaração de aplicabilidade|soa|auditoria|auditabilidade|ciso|policy officer|fornecedor|terceiriz|subcontrat|due care|due diligence|política de segurança|código de conduta|nda/.test(text)) {
+                return "DOM4";
+            }
+            if (/risco|ameaça|vulnerabilidade|ale|sle|aro|qualitativa|quantitativa|fator de exposição|dano indireto|dano direto|hospital|malware|trojan|worm|vírus|bomba lógica|spyware|ransomware|rootkit|backdoor|engenharia social|phishing|incidente|help desk|escalamento|contenção|rto|rpo|bcp|drp|pcn|prd|continuidade|stand-by|hotsite|cold site|warm site/.test(text)) {
+                return "DOM2";
+            }
+            if (/fatura|dados e informação|significado|gerenciamento da informação|confidencialidade|integridade|disponibilidade|confiabilidade da informação|parkeriano|posse ou controle|utilidade|não-repúdio|não repúdio|irretratabilidade|autenticidade|classificação da informação|proprietário do ativo|asset owner/.test(text)) {
+                return "DOM1";
+            }
+            return "DOM3";
+        }
+
+        // ==========================================
+        // 2. HISTÓRICO DE TENTATIVAS & SALVAMENTO DO MODO TREINO
+        // ==========================================
+        function getAttemptHistory() {
+            try {
+                return JSON.parse(localStorage.getItem('exin_attempt_history') || '[]');
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveAttemptToHistory(attemptObj) {
+            const history = getAttemptHistory();
+            history.unshift(attemptObj); // Mais recente no topo
+            localStorage.setItem('exin_attempt_history', JSON.stringify(history.slice(0, 50)));
+        }
+
+        function clearAttemptHistory() {
+            if (confirm("Deseja apagar todo o histórico de tentativas concluídas?")) {
+                localStorage.removeItem('exin_attempt_history');
+                renderHistoryPanel();
+            }
+        }
+
+        function saveTrainingProgress() {
+            if (quizMode !== 'treino' || activeQuestions.length === 0) return;
+            const state = {
+                activeQuestions,
+                currentQIndex,
+                score,
+                trainingElapsedSeconds,
+                sourceLabel: currentSessionSourceLabel,
+                updatedAt: Date.now()
+            };
+            localStorage.setItem('exin_saved_training_session', JSON.stringify(state));
+        }
+
+        function getSavedTrainingProgress() {
+            try {
+                const raw = localStorage.getItem('exin_saved_training_session');
+                return raw ? JSON.parse(raw) : null;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function clearSavedTrainingProgress() {
+            localStorage.removeItem('exin_saved_training_session');
+        }
+
+        function discardSavedTraining() {
+            if (confirm("Deseja descartar o Modo Treino salvo em andamento?")) {
+                clearSavedTrainingProgress();
+                renderHistoryPanel();
+            }
+        }
+
+        function renderHistoryPanel() {
+            // 1. Card de Treino em Andamento
+            const savedCard = document.getElementById('saved-training-card');
+            const savedSession = getSavedTrainingProgress();
+
+            if (savedSession && Array.isArray(savedSession.activeQuestions) && savedSession.activeQuestions.length > 0) {
+                const total = savedSession.activeQuestions.length;
+                const answered = savedSession.activeQuestions.filter(q => q.userAnswer !== null).length;
+                savedCard.classList.remove('hidden');
+                document.getElementById('saved-training-info').innerText = `Respondidas: ${answered} de ${total} • Acertos até agora: ${savedSession.score}`;
+                document.getElementById('saved-training-meta').innerText = `⏱️ Tempo: ${formatDuration(savedSession.trainingElapsedSeconds)} • Fonte: ${savedSession.sourceLabel || 'Padrão'}`;
+            } else {
+                savedCard.classList.add('hidden');
+            }
+
+            // 2. Lista de Tentativas Finalizadas
+            const listContainer = document.getElementById('attempt-history-list');
+            const clearBtn = document.getElementById('btn-clear-history');
+            const history = getAttemptHistory();
+            listContainer.innerHTML = '';
+
+            if (history.length === 0) {
+                clearBtn.classList.add('hidden');
+                listContainer.innerHTML = `
+                    <div class="text-center py-10 px-4 border border-dashed border-slate-700 rounded-xl text-slate-400 text-xs">
+                        Nenhuma tentativa finalizada ainda. Conclua um Simulado Oficial ou Modo Treino para ver seu histórico de desempenho aqui!
+                    </div>
+                `;
+                return;
+            }
+
+            clearBtn.classList.remove('hidden');
+
+            history.forEach(item => {
+                const isSimulado = item.mode === 'simulado';
+                const modeBadge = isSimulado
+                    ? `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-950 text-indigo-300 border border-indigo-700/60">⏱️ Simulado Oficial</span>`
+                    : `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-300 border border-slate-600">🏋️ Modo Treino</span>`;
+
+                const statusBadge = item.passed
+                    ? `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-700/60">🏆 Aprovado</span>`
+                    : `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-950 text-rose-300 border border-rose-700/60">❌ Reprovado</span>`;
+
+                const card = document.createElement('div');
+                card.className = "p-3.5 rounded-xl bg-slate-900/70 border border-slate-700/80 hover:border-slate-600 transition-all space-y-2";
+                card.innerHTML = `
+                    <div class="flex justify-between items-center gap-1 flex-wrap">
+                        ${modeBadge}
+                        ${statusBadge}
+                    </div>
+                    <div class="flex justify-between items-baseline">
+                        <span class="text-sm font-bold text-white">${item.score} de ${item.total} acertos <span class="${item.passed ? 'text-emerald-400' : 'text-rose-400'}">(${item.percentage}%)</span></span>
+                        <span class="text-xs font-mono text-slate-300">⏱️ ${formatDuration(item.timeSeconds)}</span>
+                    </div>
+                    <div class="flex justify-between items-center text-[10px] text-slate-400 pt-1 border-t border-slate-800">
+                        <span class="truncate max-w-[160px]">${item.sourceLabel || 'Geral'}</span>
+                        <span>${item.dateStr}</span>
+                    </div>
+                `;
+                listContainer.appendChild(card);
+            });
+        }
+
+        // ==========================================
+        // 3. CADERNO DE ERROS INTELIGENTE (LOCALSTORAGE)
+        // ==========================================
+        function getErrorNotebook() {
+            try {
+                return JSON.parse(localStorage.getItem('exin_error_notebook') || '{}');
+            } catch (e) {
+                return {};
+            }
+        }
+
+        function saveErrorNotebook(notebook) {
+            localStorage.setItem('exin_error_notebook', JSON.stringify(notebook));
+            updateStartMenuBadges();
+        }
+
+        function recordQuestionAttempt(qObj, isCorrect) {
+            const notebook = getErrorNotebook();
+            const key = qObj.q.trim();
+
+            if (!isCorrect) {
+                notebook[key] = {
+                    q: qObj.q,
+                    options: qObj.options,
+                    answer: qObj.answer,
+                    explanation: qObj.explanation || "",
+                    explanations: qObj.explanations || null,
+                    domain: detectQuestionDomain(qObj),
+                    streak: 0,
+                    updatedAt: Date.now()
+                };
+                saveErrorNotebook(notebook);
+                return { status: "added", streak: 0 };
+            } else {
+                if (notebook[key]) {
+                    notebook[key].streak = (notebook[key].streak || 0) + 1;
+                    if (notebook[key].streak >= 2) {
+                        delete notebook[key];
+                        saveErrorNotebook(notebook);
+                        return { status: "graduated", streak: 2 };
+                    } else {
+                        saveErrorNotebook(notebook);
+                        return { status: "progress", streak: notebook[key].streak };
+                    }
+                }
+                return { status: "clean", streak: 0 };
+            }
+        }
+
+        function clearErrorNotebook() {
+            if (confirm("Deseja limpar todas as questões salvas no Caderno de Erros?")) {
+                localStorage.removeItem('exin_error_notebook');
+                updateStartMenuBadges();
+            }
+        }
+
+        // ==========================================
+        // 4. OBTENÇÃO E SORTEIO DE QUESTÕES
+        // ==========================================
+        function getRawPools() {
+            let official = [];
+            let extra = [];
+
+            if (typeof officialQuestions !== 'undefined') {
+                official = [...officialQuestions];
+            } else if (typeof allQuestions !== 'undefined') {
+                official = allQuestions.slice(0, 40);
+            }
+
+            if (typeof extraQuestions !== 'undefined') {
+                extra = [...extraQuestions];
+            } else if (typeof allQuestions !== 'undefined' && allQuestions.length > 40) {
+                extra = allQuestions.slice(40);
+            }
+
+            return { official, extra };
+        }
+
+        function updateStartMenuBadges() {
+            const { official, extra } = getRawPools();
+            const totalPoolBadge = document.getElementById('total-pool-badge');
+            if (totalPoolBadge) totalPoolBadge.innerText = `${official.length + extra.length} Qs`;
+
+            const notebook = getErrorNotebook();
+            const errCount = Object.keys(notebook).length;
+            const errBadge = document.getElementById('error-notebook-badge');
+            const clearBtn = document.getElementById('clear-errors-btn');
+            if (errBadge) errBadge.innerText = `${errCount} Qs`;
+            if (clearBtn) {
+                if (errCount > 0) clearBtn.classList.remove('hidden');
+                else clearBtn.classList.add('hidden');
+            }
+            renderHistoryPanel();
+        }
+
+        function buildExamQuestions() {
+            const source = document.querySelector('input[name="q-source"]:checked').value;
+            const domainFilter = document.getElementById('q-domain').value;
+            const { official, extra } = getRawPools();
+
+            let basePool = [];
+            if (source === 'oficial') {
+                basePool = [...official];
+                currentSessionSourceLabel = "Oficiais EXIN";
+            } else if (source === 'misto') {
+                basePool = [...official, ...extra];
+                currentSessionSourceLabel = "Oficiais + Desafios IA";
+            } else if (source === 'erros') {
+                const notebook = getErrorNotebook();
+                basePool = Object.values(notebook);
+                currentSessionSourceLabel = "Caderno de Erros";
+                if (basePool.length === 0) {
+                    alert("O seu Caderno de Erros está vazio no momento! Erre questões no Modo Treino ou Simulado para que elas apareçam aqui.");
+                    return [];
+                }
+            }
+
+            const enrichedPool = basePool.map(q => ({
+                ...q,
+                domain: detectQuestionDomain(q),
+                userAnswer: null,
+                flagged: false,
+                evaluatedInSession: false
+            }));
+
+            if (['DOM1', 'DOM2', 'DOM3', 'DOM4'].includes(domainFilter)) {
+                const filtered = enrichedPool.filter(q => q.domain === domainFilter);
+                if (filtered.length === 0) {
+                    alert("Nenhuma questão encontrada para este domínio na fonte selecionada.");
+                    return [];
+                }
+                currentSessionSourceLabel += ` (${domainFilter})`;
+                return filtered.sort(() => 0.5 - Math.random()).slice(0, 40);
+            }
+
+            if (domainFilter === 'proporcional' && enrichedPool.length >= 40) {
+                const byDom = { DOM1: [], DOM2: [], DOM3: [], DOM4: [] };
+                enrichedPool.forEach(q => byDom[q.domain].push(q));
+                Object.keys(byDom).forEach(k => byDom[k].sort(() => 0.5 - Math.random()));
+
+                const targets = { DOM1: 10, DOM2: 12, DOM3: 10, DOM4: 8 };
+                let selected = [];
+                let leftovers = [];
+
+                Object.keys(targets).forEach(dom => {
+                    const count = targets[dom];
+                    selected.push(...byDom[dom].slice(0, count));
+                    leftovers.push(...byDom[dom].slice(count));
+                });
+
+                if (selected.length < 40) {
+                    leftovers.sort(() => 0.5 - Math.random());
+                    selected.push(...leftovers.slice(0, 40 - selected.length));
+                }
+
+                return selected.sort(() => 0.5 - Math.random());
+            }
+
+            return enrichedPool.sort(() => 0.5 - Math.random()).slice(0, 40);
+        }
+
+        // ==========================================
+        // 5. NAVEGAÇÃO ENTRE ABAS E BLOQUEIO
+        // ==========================================
+        function toggleTabsLock(isLocked) {
+            const tabsToLock = ['tab-flashcards', 'tab-glossario', 'tab-conceitos'];
+            tabsToLock.forEach(tabId => {
+                const btn = document.getElementById(tabId);
+                btn.disabled = isLocked;
+                if (isLocked) {
+                    btn.classList.add('opacity-40', 'cursor-not-allowed');
+                    btn.title = "Aba bloqueada durante o Simulado Oficial.";
+                } else {
+                    btn.classList.remove('opacity-40', 'cursor-not-allowed');
+                    btn.title = "";
+                }
+            });
+        }
+
+        function switchTab(tabName) {
+            if (document.getElementById(`tab-${tabName}`).disabled) return;
+
+            ['simulado', 'flashcards', 'glossario', 'conceitos'].forEach(t => {
+                document.getElementById(`view-${t}`).classList.add('hidden');
+                const btn = document.getElementById(`tab-${t}`);
+                if (t === 'conceitos') {
+                    btn.className = "px-4 py-2.5 text-sm font-bold rounded-lg transition-all text-emerald-400 hover:text-emerald-300 border border-emerald-900/50 bg-emerald-950/20 whitespace-nowrap";
+                } else {
+                    btn.className = "px-4 py-2.5 text-sm font-medium rounded-lg transition-all text-slate-400 hover:text-white whitespace-nowrap";
+                }
+            });
+
+            document.getElementById(`view-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabName}`);
+            
+            if (tabName === 'conceitos') {
+                activeBtn.className = "px-4 py-2.5 text-sm font-bold rounded-lg transition-all text-white bg-emerald-600 shadow-lg shadow-emerald-900/20 whitespace-nowrap";
+                renderConceitos();
+            } else {
+                activeBtn.className = "px-4 py-2.5 text-sm font-medium rounded-lg transition-all bg-indigo-600 text-white shadow whitespace-nowrap";
+            }
+            
+            if (tabName === 'glossario') renderGlossary();
+            if (tabName === 'flashcards') {
+                populateFlashcardCategories();
+                if (flashcardDeck.length === 0) initFlashcards();
+            }
+        }
+
+        // ==========================================
+        // 6. EXECUÇÃO DO SIMULADO E TREINO
+        // ==========================================
+        function showStartMenu() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            toggleTabsLock(false);
+            updateStartMenuBadges();
+            document.getElementById('quiz-start-menu').classList.remove('hidden');
+            document.getElementById('quiz-active-container').classList.add('hidden');
+            document.getElementById('quiz-results').classList.add('hidden');
+        }
+
+        function handleExitQuizButton() {
+            if (quizMode === 'treino') {
+                saveTrainingProgress();
+                showStartMenu();
+            } else {
+                if (confirm("No Simulado Oficial, sair agora cancelará a tentativa sem salvar. Deseja realmente sair?")) {
+                    showStartMenu();
+                }
+            }
+        }
+
+        function startQuiz(mode) {
+            if (mode === 'treino' && getSavedTrainingProgress()) {
+                if (!confirm("Você possui um Modo Treino salvo em andamento. Iniciar um novo irá substituir o treino salvo anterior. Deseja iniciar um novo mesmo assim?")) {
+                    return;
+                }
+                clearSavedTrainingProgress();
+            }
+
+            const selectedQuestions = buildExamQuestions();
+            if (selectedQuestions.length === 0) return;
+
+            activeQuestions = selectedQuestions;
+            quizMode = mode;
+            currentQIndex = 0;
+            score = 0;
+            trainingElapsedSeconds = 0;
+
+            launchActiveQuizUI();
+            if (quizMode === 'treino') saveTrainingProgress();
+        }
+
+        function resumeSavedTraining() {
+            const saved = getSavedTrainingProgress();
+            if (!saved || !saved.activeQuestions) return;
+
+            activeQuestions = saved.activeQuestions;
+            currentQIndex = saved.currentQIndex || 0;
+            score = saved.score || 0;
+            trainingElapsedSeconds = saved.trainingElapsedSeconds || 0;
+            currentSessionSourceLabel = saved.sourceLabel || 'Modo Treino';
+            quizMode = 'treino';
+
+            launchActiveQuizUI();
+        }
+
+        function launchActiveQuizUI() {
+            toggleTabsLock(quizMode === 'simulado');
+
+            document.getElementById('quiz-start-menu').classList.add('hidden');
+            document.getElementById('quiz-results').classList.add('hidden');
+            document.getElementById('quiz-active-container').classList.remove('hidden');
+
+            const modeBadge = document.getElementById('quiz-mode-badge');
+            const exitBtn = document.getElementById('quiz-exit-btn');
+            const indicator = document.getElementById('quiz-status-indicator');
+
+            if (quizMode === 'simulado') {
+                modeBadge.className = "text-xs font-bold uppercase tracking-wider px-2.5 py-1.5 rounded-lg border bg-emerald-950/60 text-emerald-300 border-emerald-700/60";
+                modeBadge.innerText = "⏱️ Simulado Oficial";
+                exitBtn.innerText = "✖ Cancelar Simulado";
+                indicator.innerHTML = `<span class="text-rose-400 bg-rose-950/50 px-3.5 py-1.5 rounded-lg border border-rose-800/50 flex items-center gap-1.5"><span>⏱️</span> <span id="timer-display" class="font-mono">60:00</span></span>`;
+                startSimuladoCountdown();
+            } else {
+                modeBadge.className = "text-xs font-bold uppercase tracking-wider px-2.5 py-1.5 rounded-lg border bg-indigo-950/60 text-indigo-300 border-indigo-700/60";
+                modeBadge.innerText = "🏋️ Modo Treino";
+                exitBtn.innerText = "💾 Pausar e Salvar Progresso";
+                indicator.innerHTML = `
+                    <span class="text-slate-300 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-700 font-mono text-xs flex items-center gap-1">⏱️ <span id="training-timer-display">00:00</span></span>
+                    <span class="text-emerald-400 bg-emerald-950/50 px-3.5 py-1.5 rounded-lg border border-emerald-800/50">Acertos: <span id="score-display">${score}</span></span>
+                `;
+                startTrainingStopwatch();
+            }
+
+            loadQuestion();
+        }
+
+        function startSimuladoCountdown() {
+            totalTimeAllocated = 3600;
+            timeLeft = 3600;
+            updateSimuladoTimerDisplay();
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateSimuladoTimerDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    alert("⏱️ O tempo de 60 minutos esgotou! O Simulado Oficial será finalizado e corrigido agora.");
+                    finishQuiz();
+                }
+            }, 1000);
+        }
+
+        function updateSimuladoTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+            const seconds = (timeLeft % 60).toString().padStart(2, '0');
+            const display = document.getElementById('timer-display');
+            if (display) display.innerText = `${minutes}:${seconds}`;
+        }
+
+        function startTrainingStopwatch() {
+            updateTrainingTimerDisplay();
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                trainingElapsedSeconds++;
+                updateTrainingTimerDisplay();
+                if (trainingElapsedSeconds % 5 === 0) {
+                    saveTrainingProgress();
+                }
+            }, 1000);
+        }
+
+        function updateTrainingTimerDisplay() {
+            const minutes = Math.floor(trainingElapsedSeconds / 60).toString().padStart(2, '0');
+            const seconds = (trainingElapsedSeconds % 60).toString().padStart(2, '0');
+            const display = document.getElementById('training-timer-display');
+            if (display) display.innerText = `${minutes}:${seconds}`;
+        }
+
+        function renderQuestionMap() {
+            const mapContainer = document.getElementById('quiz-question-map');
+            mapContainer.innerHTML = '';
+
+            activeQuestions.forEach((q, idx) => {
+                const btn = document.createElement('button');
+                btn.innerText = idx + 1;
+                let baseClass = "h-8 rounded-lg text-xs font-bold transition-all border flex items-center justify-center ";
+
+                if (q.flagged) {
+                    baseClass += "bg-amber-500/20 border-amber-500 text-amber-300 ";
+                } else if (q.userAnswer !== null) {
+                    if (quizMode === 'treino') {
+                        baseClass += (q.userAnswer === q.answer)
+                            ? "bg-emerald-600/30 border-emerald-500 text-emerald-200 "
+                            : "bg-rose-600/30 border-rose-500 text-rose-200 ";
+                    } else {
+                        baseClass += "bg-indigo-600/40 border-indigo-500 text-indigo-100 ";
+                    }
+                } else {
+                    baseClass += "bg-slate-900 border-slate-700 text-slate-400 hover:border-slate-500 ";
+                }
+
+                if (idx === currentQIndex) {
+                    baseClass += "ring-2 ring-white scale-105 ";
+                }
+
+                btn.className = baseClass;
+                btn.onclick = () => {
+                    currentQIndex = idx;
+                    if (quizMode === 'treino') saveTrainingProgress();
+                    loadQuestion();
+                };
+                mapContainer.appendChild(btn);
+            });
+        }
+
+        function toggleFlagCurrentQuestion() {
+            const q = activeQuestions[currentQIndex];
+            q.flagged = !q.flagged;
+            updateFlagButtonUI(q.flagged);
+            renderQuestionMap();
+            if (quizMode === 'treino') saveTrainingProgress();
+        }
+
+        function updateFlagButtonUI(isFlagged) {
+            const btn = document.getElementById('btn-flag-question');
+            const txt = document.getElementById('flag-btn-text');
+            if (isFlagged) {
+                btn.className = "text-xs font-bold px-3.5 py-1.5 rounded-lg border border-amber-500 bg-amber-950/60 text-amber-300 transition-all flex items-center gap-1.5 shadow";
+                txt.innerText = "Marcada para Revisão";
+            } else {
+                btn.className = "text-xs font-semibold px-3.5 py-1.5 rounded-lg border border-slate-600 bg-slate-900 text-slate-300 hover:border-amber-500 hover:text-amber-300 transition-all flex items-center gap-1.5";
+                txt.innerText = "Marcar para Revisão";
+            }
+        }
+
+        function loadQuestion() {
+            const q = activeQuestions[currentQIndex];
+            document.getElementById('quiz-progress').innerText = `Questão ${currentQIndex + 1} de ${activeQuestions.length}`;
+            document.getElementById('quiz-domain-badge').innerText = EXIN_DOMAINS[q.domain].name;
+            document.getElementById('quiz-question').innerText = cleanCite(q.q);
+
+            const nbFeedback = document.getElementById('quiz-notebook-feedback');
+            nbFeedback.classList.add('hidden');
+
+            if (quizMode === 'treino') {
+                const scoreEl = document.getElementById('score-display');
+                if (scoreEl) scoreEl.innerText = score;
+            }
+
+            updateFlagButtonUI(q.flagged);
+            renderQuestionMap();
+
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 sm:p-5 rounded-xl border border-slate-700 bg-slate-900/50 hover:bg-slate-700/50 hover:border-slate-600 transition-all text-sm sm:text-base text-slate-200 shadow-sm";
+                btn.innerText = cleanCite(opt);
+                btn.onclick = () => selectOption(idx);
+                optionsContainer.appendChild(btn);
+            });
+
+            if (q.userAnswer !== null) {
+                applyOptionStyles(q, q.userAnswer);
+            }
+
+            document.getElementById('quiz-prev-btn').disabled = (currentQIndex === 0);
+            document.getElementById('quiz-prev-btn').classList.toggle('opacity-40', currentQIndex === 0);
+            document.getElementById('quiz-next-btn').disabled = (currentQIndex === activeQuestions.length - 1);
+            document.getElementById('quiz-next-btn').classList.toggle('opacity-40', currentQIndex === activeQuestions.length - 1);
+        }
+
+        function getOptionExplanation(q, idx) {
+            if (q.explanations && q.explanations[idx]) return cleanCite(q.explanations[idx]);
+            return (idx === q.answer)
+                ? cleanCite(q.explanation || "Alternativa correta conforme gabarito oficial.")
+                : "Alternativa incorreta conforme a literatura oficial da EXIN.";
+        }
+
+        function applyOptionStyles(q, selectedIdx) {
+            const buttons = document.getElementById('quiz-options').children;
+
+            if (quizMode === 'treino') {
+                for (let i = 0; i < buttons.length; i++) {
+                    buttons[i].disabled = true;
+                    const expl = getOptionExplanation(q, i);
+                    const expDiv = document.createElement('div');
+                    expDiv.className = "mt-3.5 p-3.5 rounded-xl border text-xs sm:text-sm font-normal normal-case tracking-normal shadow-inner";
+
+                    if (i === q.answer) {
+                        buttons[i].className = "w-full text-left p-4 sm:p-5 rounded-xl border border-emerald-600 bg-emerald-950/40 text-emerald-200 font-medium ring-2 ring-emerald-500/30 transition-all flex flex-col";
+                        expDiv.classList.add("border-emerald-800/60", "bg-emerald-900/30", "text-emerald-100");
+                        expDiv.innerHTML = `<strong class="text-emerald-400 block mb-1 text-[11px] uppercase tracking-widest">✅ Por que esta é a correta:</strong> ${expl}`;
+                    } else if (i === selectedIdx) {
+                        buttons[i].className = "w-full text-left p-4 sm:p-5 rounded-xl border border-rose-600 bg-rose-950/40 text-rose-200 font-medium ring-2 ring-rose-500/30 transition-all flex flex-col";
+                        expDiv.classList.add("border-rose-800/60", "bg-rose-900/30", "text-rose-100");
+                        expDiv.innerHTML = `<strong class="text-rose-400 block mb-1 text-[11px] uppercase tracking-widest">❌ Por que você errou:</strong> ${expl}`;
+                    } else {
+                        buttons[i].className = "w-full text-left p-4 sm:p-5 rounded-xl border border-slate-700 bg-slate-900/40 text-slate-400 opacity-90 transition-all flex flex-col";
+                        expDiv.classList.add("border-slate-700/50", "bg-slate-800/50", "text-slate-300");
+                        expDiv.innerHTML = `<strong class="text-slate-500 block mb-1 text-[11px] uppercase tracking-widest">❌ Por que está incorreta:</strong> ${expl}`;
+                    }
+                    buttons[i].appendChild(expDiv);
+                }
+            } else {
+                for (let i = 0; i < buttons.length; i++) {
+                    if (i === selectedIdx) {
+                        buttons[i].className = "w-full text-left p-4 sm:p-5 rounded-xl border border-indigo-500 bg-indigo-950/50 text-indigo-100 text-sm sm:text-base font-medium ring-2 ring-indigo-500/50";
+                    } else {
+                        buttons[i].className = "w-full text-left p-4 sm:p-5 rounded-xl border border-slate-700 bg-slate-900/50 hover:bg-slate-700/50 transition-all text-sm sm:text-base text-slate-300";
+                    }
+                }
+            }
+        }
+
+        function selectOption(selectedIdx) {
+            const q = activeQuestions[currentQIndex];
+            if (quizMode === 'treino' && q.evaluatedInSession) return;
+
+            q.userAnswer = selectedIdx;
+
+            if (quizMode === 'treino') {
+                q.evaluatedInSession = true;
+                const isCorrect = (selectedIdx === q.answer);
+                if (isCorrect) {
+                    score++;
+                    document.getElementById('score-display').innerText = score;
+                }
+                const nbResult = recordQuestionAttempt(q, isCorrect);
+                showNotebookBanner(nbResult);
+                saveTrainingProgress();
+            }
+
+            applyOptionStyles(q, selectedIdx);
+            renderQuestionMap();
+        }
+
+        function showNotebookBanner(nbResult) {
+            const el = document.getElementById('quiz-notebook-feedback');
+            el.classList.remove('hidden');
+            if (nbResult.status === 'added') {
+                el.className = "mb-4 px-4 py-2.5 rounded-xl text-xs font-semibold border border-rose-800 bg-rose-950/40 text-rose-300";
+                el.innerText = "📌 Questão adicionada ao seu Caderno de Erros Inteligente (precisa de 2 acertos seguidos para sair).";
+            } else if (nbResult.status === 'progress') {
+                el.className = "mb-4 px-4 py-2.5 rounded-xl text-xs font-semibold border border-amber-800 bg-amber-950/40 text-amber-300";
+                el.innerText = "🎯 Caderno de Erros: 1 de 2 acertos consecutivos alcançados! Acerte mais uma vez para dominar.";
+            } else if (nbResult.status === 'graduated') {
+                el.className = "mb-4 px-4 py-2.5 rounded-xl text-xs font-semibold border border-emerald-800 bg-emerald-950/40 text-emerald-300";
+                el.innerText = "🏆 Você acertou 2 vezes seguidas! Questão dominada e removida do Caderno de Erros.";
+            } else {
+                el.classList.add('hidden');
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQIndex > 0) {
+                currentQIndex--;
+                if (quizMode === 'treino') saveTrainingProgress();
+                loadQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQIndex < activeQuestions.length - 1) {
+                currentQIndex++;
+                if (quizMode === 'treino') saveTrainingProgress();
+                loadQuestion();
+            }
+        }
+
+        function confirmFinishQuiz() {
+            const unanswered = activeQuestions.filter(q => q.userAnswer === null).length;
+            const flagged = activeQuestions.filter(q => q.flagged).length;
+
+            let msg = "Deseja finalizar e corrigir a prova agora?";
+            if (unanswered > 0 || flagged > 0) {
+                msg = `Atenção:\n• Questões em branco: ${unanswered}\n• Questões marcadas para revisão (🚩): ${flagged}\n\nDeseja finalizar mesmo assim?`;
+            }
+            if (confirm(msg)) {
+                finishQuiz();
+            }
+        }
+
+        function finishQuiz() {
+            clearInterval(timerInterval);
+            toggleTabsLock(false);
+
+            if (quizMode === 'treino') {
+                clearSavedTrainingProgress();
+            }
+
+            score = 0;
+            const domainStats = {
+                DOM1: { total: 0, correct: 0 },
+                DOM2: { total: 0, correct: 0 },
+                DOM3: { total: 0, correct: 0 },
+                DOM4: { total: 0, correct: 0 }
+            };
+
+            activeQuestions.forEach(q => {
+                const isCorrect = (q.userAnswer === q.answer);
+                if (isCorrect) score++;
+                if (domainStats[q.domain]) {
+                    domainStats[q.domain].total++;
+                    if (isCorrect) domainStats[q.domain].correct++;
+                }
+                if (quizMode === 'simulado' || !q.evaluatedInSession) {
+                    recordQuestionAttempt(q, isCorrect);
+                }
+            });
+
+            document.getElementById('quiz-active-container').classList.add('hidden');
+            document.getElementById('quiz-results').classList.remove('hidden');
+
+            const total = activeQuestions.length;
+            const percentage = Math.round((score / total) * 100);
+            const passed = percentage >= 65;
+
+            const timeSpentSeconds = (quizMode === 'simulado')
+                ? (totalTimeAllocated - timeLeft)
+                : trainingElapsedSeconds;
+
+            // Registra no Histórico de Tentativas
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' }) + ' às ' + now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+            saveAttemptToHistory({
+                mode: quizMode,
+                score,
+                total,
+                percentage,
+                passed,
+                timeSeconds: timeSpentSeconds,
+                sourceLabel: currentSessionSourceLabel,
+                dateStr
+            });
+
+            document.getElementById('quiz-final-score').innerText = `Você acertou ${score} de ${total} questões.`;
+            document.getElementById('quiz-percentage').innerText = `Aproveitamento: ${percentage}% (Exigência Oficial EXIN: 65%)`;
+
+            const timeSpentEl = document.getElementById('quiz-time-spent');
+            timeSpentEl.innerText = `${quizMode === 'simulado' ? '⏱️ Simulado Oficial' : '🏋️ Modo Treino'} • Tempo total: ${formatDuration(timeSpentSeconds)}`;
+
+            const icon = document.getElementById('result-icon');
+            const title = document.getElementById('result-title');
+
+            if (passed) {
+                icon.innerText = "🏆";
+                title.innerText = "Aprovado!";
+                title.className = "text-2xl sm:text-3xl font-bold text-emerald-400 mb-2";
+            } else {
+                icon.innerText = "⚠️";
+                title.innerText = "Reprovado (Abaixo de 65%)";
+                title.className = "text-2xl sm:text-3xl font-bold text-rose-400 mb-2";
+            }
+
+            renderDomainBreakdown(domainStats);
+            renderQuizReview('all');
+        }
+
+        function renderDomainBreakdown(domainStats) {
+            const container = document.getElementById('domain-breakdown-container');
+            container.innerHTML = '';
+
+            Object.keys(EXIN_DOMAINS).forEach(key => {
+                const stat = domainStats[key];
+                if (stat.total === 0) return;
+                const pct = Math.round((stat.correct / stat.total) * 100);
+                const barColor = pct >= 65 ? 'bg-emerald-500' : 'bg-rose-500';
+
+                const row = document.createElement('div');
+                row.innerHTML = `
+                    <div class="flex justify-between text-xs sm:text-sm mb-1">
+                        <span class="text-slate-200 font-medium">${EXIN_DOMAINS[key].name}</span>
+                        <span class="font-mono ${pct >= 65 ? 'text-emerald-400' : 'text-rose-400'} font-bold">${stat.correct}/${stat.total} (${pct}%)</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden border border-slate-700">
+                        <div class="${barColor} h-full transition-all" style="width: ${pct}%"></div>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        function renderQuizReview(filterType = 'all') {
+            const container = document.getElementById('quiz-review-list');
+            container.innerHTML = '';
+
+            const filtered = activeQuestions.map((q, idx) => ({ ...q, originalIndex: idx })).filter(q => {
+                if (filterType === 'wrong') return q.userAnswer !== q.answer;
+                if (filterType === 'flagged') return q.flagged;
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<p class="text-slate-400 text-sm text-center py-8">Nenhuma questão encontrada para este filtro.</p>';
+                return;
+            }
+
+            filtered.forEach(item => {
+                const isCorrect = (item.userAnswer === item.answer);
+                const isBlank = (item.userAnswer === null);
+
+                const statusBadge = isCorrect
+                    ? '<span class="px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-950 text-emerald-300 border border-emerald-700">✅ Acertou</span>'
+                    : (isBlank
+                        ? '<span class="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-950 text-amber-300 border border-amber-700">⚪ Em Branco</span>'
+                        : '<span class="px-2.5 py-1 rounded-md text-xs font-bold bg-rose-950 text-rose-300 border border-rose-700">❌ Errou</span>');
+
+                const flagBadge = item.flagged
+                    ? '<span class="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500">🚩 Revisão</span>'
+                    : '';
+
+                let optionsHtml = '<div class="space-y-3 mt-4">';
+                item.options.forEach((opt, idx) => {
+                    const expl = getOptionExplanation(item, idx);
+                    let boxClass = "p-4 rounded-xl border text-sm ";
+                    let tag = "";
+
+                    if (idx === item.answer) {
+                        boxClass += "border-emerald-600 bg-emerald-950/30 text-emerald-100";
+                        tag = `<span class="text-emerald-400 font-bold text-xs uppercase block mb-1">✅ Alternativa Correta${item.userAnswer === idx ? ' (Sua Escolha)' : ''}:</span>`;
+                    } else if (idx === item.userAnswer) {
+                        boxClass += "border-rose-600 bg-rose-950/30 text-rose-100";
+                        tag = `<span class="text-rose-400 font-bold text-xs uppercase block mb-1">❌ Sua Escolha (Incorreta):</span>`;
+                    } else {
+                        boxClass += "border-slate-700 bg-slate-900/40 text-slate-300";
+                        tag = `<span class="text-slate-400 font-bold text-xs uppercase block mb-1">Distrator Incorreto:</span>`;
+                    }
+
+                    optionsHtml += `
+                        <div class="${boxClass}">
+                            <div class="font-semibold mb-2">${cleanCite(opt)}</div>
+                            <div class="text-xs sm:text-sm opacity-90 pt-2 border-t border-slate-700/60">
+                                ${tag} ${expl}
+                            </div>
+                        </div>
+                    `;
+                });
+                optionsHtml += '</div>';
+
+                const card = document.createElement('div');
+                card.className = "bg-slate-900/60 border border-slate-700 p-6 rounded-2xl shadow";
+                card.innerHTML = `
+                    <div class="flex flex-wrap justify-between items-center gap-2 mb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-indigo-400 font-bold text-sm">Questão ${item.originalIndex + 1}</span>
+                            <span class="text-xs text-slate-400 bg-slate-800 px-2.5 py-1 rounded border border-slate-700">${EXIN_DOMAINS[item.domain].name}</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            ${flagBadge}
+                            ${statusBadge}
+                        </div>
+                    </div>
+                    <h4 class="text-base sm:text-lg font-bold text-white leading-relaxed">${cleanCite(item.q)}</h4>
+                    ${optionsHtml}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // ==========================================
+        // 7. FLASHCARDS COM FILTRO E "JÁ DOMINEI"
+        // ==========================================
+        function getMasteredCards() {
+            try {
+                return JSON.parse(localStorage.getItem('exin_mastered_cards') || '[]');
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function populateFlashcardCategories() {
+            const select = document.getElementById('fc-category-filter');
+            if (!select || typeof glossaryCategories === 'undefined') return;
+            if (select.options.length > 1) return;
+
+            glossaryCategories.forEach(cat => {
+                const opt = document.createElement('option');
+                opt.value = cat.category;
+                opt.innerText = cat.category;
+                select.appendChild(opt);
+            });
+        }
+
+        function initFlashcards() {
+            flashcardDeck = [];
+            if (typeof glossaryCategories === 'undefined') return;
+
+            const selectedCat = document.getElementById('fc-category-filter')
+                ? document.getElementById('fc-category-filter').value
+                : 'all';
+            const mastered = getMasteredCards();
+
+            let totalTermsCount = 0;
+            glossaryCategories.forEach(cat => {
+                cat.terms.forEach(t => {
+                    totalTermsCount++;
+                    const matchesCategory = (selectedCat === 'all' || cat.category === selectedCat);
+                    const isMastered = mastered.includes(t.term);
+                    if (matchesCategory && !isMastered) {
+                        flashcardDeck.push({
+                            category: cat.category,
+                            term: t.term,
+                            definition: t.definition,
+                            example: t.example
+                        });
+                    }
+                });
+            });
+
+            const statusEl = document.getElementById('fc-mastered-status');
+            if (statusEl) statusEl.innerText = `Dominados: ${mastered.length} / ${totalTermsCount}`;
+
+            currentCardIndex = 0;
+            renderFlashcard();
+        }
+
+        function renderFlashcard() {
+            const emptyState = document.getElementById('fc-empty-state');
+            const wrapper = document.getElementById('fc-Interactive-wrapper');
+
+            if (flashcardDeck.length === 0) {
+                if (emptyState) emptyState.classList.remove('hidden');
+                if (wrapper) wrapper.classList.add('hidden');
+                return;
+            }
+
+            if (emptyState) emptyState.classList.add('hidden');
+            if (wrapper) wrapper.classList.remove('hidden');
+
+            isCardFlipped = false;
+            if (currentCardIndex >= flashcardDeck.length) currentCardIndex = 0;
+            const card = flashcardDeck[currentCardIndex];
+
+            document.getElementById('fc-category').innerText = card.category;
+            document.getElementById('fc-counter').innerText = `${currentCardIndex + 1} / ${flashcardDeck.length}`;
+            document.getElementById('fc-term').innerText = card.term;
+            document.getElementById('fc-term').classList.remove('hidden');
+            document.getElementById('fc-def').innerText = card.definition;
+            document.getElementById('fc-example').innerText = card.example;
+            document.getElementById('fc-back-content').classList.add('hidden');
+            document.getElementById('fc-back-content').classList.remove('flex');
+            document.getElementById('flashcard-container').className = "bg-slate-800 border border-slate-700 rounded-2xl p-8 sm:p-10 min-h-[340px] flex flex-col justify-between shadow-2xl transition-all duration-300 hover:border-indigo-500";
+            document.getElementById('fc-hint').innerText = "👉 Clique em qualquer lugar do cartão para virar";
+        }
+
+        function flipCard() {
+            if (flashcardDeck.length === 0) return;
+            const container = document.getElementById('flashcard-container');
+            const term = document.getElementById('fc-term');
+            const back = document.getElementById('fc-back-content');
+            const hint = document.getElementById('fc-hint');
+
+            if (!isCardFlipped) {
+                term.classList.add('hidden');
+                back.classList.remove('hidden');
+                back.classList.add('flex');
+                container.className = "bg-indigo-950/40 border border-indigo-500/60 rounded-2xl p-8 sm:p-10 min-h-[340px] flex flex-col justify-between shadow-2xl transition-all duration-300";
+                hint.innerText = "👉 Clique para voltar à frente do cartão";
+                isCardFlipped = true;
+            } else {
+                term.classList.remove('hidden');
+                back.classList.add('hidden');
+                back.classList.remove('flex');
+                container.className = "bg-slate-800 border border-slate-700 rounded-2xl p-8 sm:p-10 min-h-[340px] flex flex-col justify-between shadow-2xl transition-all duration-300 hover:border-indigo-500";
+                hint.innerText = "👉 Clique em qualquer lugar do cartão para virar";
+                isCardFlipped = false;
+            }
+        }
+
+        function markCardMastered() {
+            if (flashcardDeck.length === 0) return;
+            const currentCard = flashcardDeck[currentCardIndex];
+            const mastered = getMasteredCards();
+            if (!mastered.includes(currentCard.term)) {
+                mastered.push(currentCard.term);
+                localStorage.setItem('exin_mastered_cards', JSON.stringify(mastered));
+            }
+            initFlashcards();
+        }
+
+        function resetMasteredFlashcards() {
+            localStorage.removeItem('exin_mastered_cards');
+            initFlashcards();
+        }
+
+        function nextCard() {
+            if (flashcardDeck.length === 0) return;
+            currentCardIndex = (currentCardIndex + 1) % flashcardDeck.length;
+            renderFlashcard();
+        }
+
+        function prevCard() {
+            if (flashcardDeck.length === 0) return;
+            currentCardIndex = (currentCardIndex - 1 + flashcardDeck.length) % flashcardDeck.length;
+            renderFlashcard();
+        }
+
+        function shuffleCards() {
+            if (flashcardDeck.length === 0) return;
+            flashcardDeck.sort(() => 0.5 - Math.random());
+            currentCardIndex = 0;
+            renderFlashcard();
+        }
+
+        // ==========================================
+        // 8. GLOSSÁRIO E ENTENDENDO O CONCEITO
+        // ==========================================
+        function renderGlossary(filter = '') {
+            const container = document.getElementById('glossary-list');
+            container.innerHTML = '';
+            if (typeof glossaryCategories === 'undefined') return;
+            let hasResults = false;
+
+            glossaryCategories.forEach(cat => {
+                const filteredTerms = cat.terms.filter(item =>
+                    item.term.toLowerCase().includes(filter.toLowerCase()) ||
+                    item.definition.toLowerCase().includes(filter.toLowerCase()) ||
+                    item.example.toLowerCase().includes(filter.toLowerCase())
+                );
+                if (filteredTerms.length > 0) {
+                    hasResults = true;
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = "space-y-4 mb-8";
+                    const heading = document.createElement('h3');
+                    heading.className = "text-lg font-bold text-indigo-400 border-b border-slate-700 pb-2 mb-4 tracking-wide";
+                    heading.innerText = cat.category;
+                    categoryDiv.appendChild(heading);
+
+                    const grid = document.createElement('div');
+                    grid.className = "grid grid-cols-1 md:grid-cols-2 gap-6";
+                    filteredTerms.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = "bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-lg space-y-3 flex flex-col justify-between hover:border-slate-600 transition-all";
+                        card.innerHTML = `
+                            <div>
+                                <h4 class="font-bold text-white text-lg mb-2">${item.term}</h4>
+                                <p class="text-sm sm:text-base text-slate-300 leading-relaxed"><strong class="text-indigo-300">Conceito:</strong> ${item.definition}</p>
+                            </div>
+                            <div class="text-xs sm:text-sm text-slate-300 bg-slate-900/70 p-4 rounded-xl border border-slate-700/80 mt-3 shadow-inner">
+                                <strong class="text-emerald-400 block mb-1 text-xs uppercase tracking-wider font-semibold">💡 Exemplo Prático Aplicado:</strong> ${item.example}
+                            </div>
+                        `;
+                        grid.appendChild(card);
+                    });
+                    categoryDiv.appendChild(grid);
+                    container.appendChild(categoryDiv);
+                }
+            });
+            if (!hasResults) container.innerHTML = '<p class="text-slate-400 text-sm col-span-2 text-center py-12">Nenhum termo encontrado.</p>';
+        }
+
+        function filterGlossary() {
+            renderGlossary(document.getElementById('glossary-search').value);
+        }
+
+        let activeConceitoDomain = 'ALL';
+
+        function setConceitoDomain(dom) {
+            activeConceitoDomain = dom;
+            ['ALL', 'DOM1', 'DOM2', 'DOM3', 'DOM4'].forEach(d => {
+                const btn = document.getElementById(`btn-cdom-${d}`);
+                if (!btn) return;
+                if (d === dom) {
+                    btn.className = "px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 text-white shadow transition-all";
+                } else {
+                    btn.className = "px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900 text-slate-300 border border-slate-700 hover:border-emerald-500 transition-all";
+                }
+            });
+            filterConceitos();
+        }
+
+        function renderConceitos(filter = '') {
+            const container = document.getElementById('conceitos-list');
+            const indexContainer = document.getElementById('conceitos-index');
+            container.innerHTML = '';
+            if (indexContainer) indexContainer.innerHTML = '';
+
+            if (typeof conceitosDidaticos === 'undefined') {
+                container.innerHTML = '<p class="text-slate-400 text-center">Arquivo conceitos.js não carregado.</p>';
+                return;
+            }
+
+            const q = filter.toLowerCase();
+            const filtered = conceitosDidaticos.filter(item => {
+                const matchesDom = (activeConceitoDomain === 'ALL' || item.domain === activeConceitoDomain);
+                const itensText = item.itens ? item.itens.map(i => i.titulo + " " + i.desc).join(" ") : "";
+                const matchesSearch = item.tema.toLowerCase().includes(q) ||
+                    (item.analogiaTitulo && item.analogiaTitulo.toLowerCase().includes(q)) ||
+                    item.analogia.toLowerCase().includes(q) ||
+                    (item.macete && item.macete.toLowerCase().includes(q)) ||
+                    (item.resumo && item.resumo.toLowerCase().includes(q)) ||
+                    itensText.toLowerCase().includes(q) ||
+                    item.dicaProva.toLowerCase().includes(q);
+                return matchesDom && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<p class="text-slate-400 text-sm text-center py-12 bg-slate-800 rounded-2xl border border-slate-700">Nenhum módulo encontrado para este filtro.</p>';
+                return;
+            }
+
+            filtered.forEach(item => {
+                if (indexContainer) {
+                    const navBtn = document.createElement('button');
+                    navBtn.className = "w-full text-left px-3 py-2 rounded-lg text-xs text-slate-300 hover:bg-slate-700/70 hover:text-white transition-all truncate block";
+                    navBtn.innerText = cleanCite(item.tema);
+                    navBtn.onclick = () => {
+                        const target = document.getElementById(`modulo-card-${item.id}`);
+                        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    };
+                    indexContainer.appendChild(navBtn);
+                }
+
+                const domName = (item.domain && EXIN_DOMAINS[item.domain]) ? EXIN_DOMAINS[item.domain].name : "Geral";
+                const card = document.createElement('div');
+                card.id = `modulo-card-${item.id}`;
+                card.className = "bg-slate-800 border border-slate-700 p-6 sm:p-8 rounded-2xl shadow-xl flex flex-col scroll-mt-6";
+
+                const analogiaHtml = `
+                    <div class="bg-emerald-950/30 border border-emerald-700/50 p-4 sm:p-5 rounded-xl">
+                        <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-widest mb-1.5">
+                            <span>💡 Analogia Fácil: ${cleanCite(item.analogiaTitulo || "")}</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-emerald-100 leading-relaxed">${cleanCite(item.analogia)}</p>
+                    </div>
+                `;
+
+                const maceteHtml = item.macete ? `
+                    <div class="bg-amber-950/30 border border-amber-600/50 p-4 sm:p-5 rounded-xl">
+                        <div class="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-widest mb-1.5">
+                            <span>⚡ Macete de Fixação (Gatilho Rápido):</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-amber-100 font-medium leading-relaxed">${cleanCite(item.macete)}</p>
+                    </div>
+                ` : '';
+
+                let itensHtml = '';
+                if (item.itens && Array.isArray(item.itens)) {
+                    itensHtml = '<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-5">';
+                    item.itens.forEach(sub => {
+                        itensHtml += `
+                            <div class="bg-slate-900/75 border border-slate-700/80 p-5 rounded-xl flex flex-col justify-start hover:border-slate-600 transition-all">
+                                <h4 class="font-bold text-indigo-300 text-sm sm:text-base mb-2 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-indigo-500 inline-block shrink-0"></span>
+                                    <span>${cleanCite(sub.titulo)}</span>
+                                </h4>
+                                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${cleanCite(sub.desc)}</p>
+                            </div>
+                        `;
+                    });
+                    itensHtml += '</div>';
+                }
+
+                const pegadinhaHtml = `
+                    <div class="bg-indigo-950/40 p-4 sm:p-5 rounded-xl border border-indigo-500/30 shadow-inner">
+                        <strong class="text-indigo-400 block mb-1 text-xs uppercase tracking-widest font-bold">🎯 Alerta de Pegadinha na Prova:</strong>
+                        <p class="text-xs sm:text-sm text-indigo-100 leading-relaxed">${cleanCite(item.dicaProva)}</p>
+                    </div>
+                `;
+
+                card.innerHTML = `
+                    <div class="border-b border-slate-700 pb-4 mb-5">
+                        <span class="text-[11px] font-semibold text-slate-400 bg-slate-900 px-2.5 py-1 rounded border border-slate-700 inline-block mb-2">${domName}</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">${cleanCite(item.tema)}</h3>
+                        ${item.resumo ? `<p class="text-sm sm:text-base text-slate-300 leading-relaxed">${cleanCite(item.resumo)}</p>` : ''}
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        ${analogiaHtml}
+                        ${maceteHtml}
+                    </div>
+                    ${itensHtml}
+                    ${pegadinhaHtml}
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        function filterConceitos() {
+            renderConceitos(document.getElementById('conceitos-search').value);
+        }
+
+        window.onload = () => {
+            showStartMenu();
+            populateFlashcardCategories();
+            initFlashcards();
+        };
+    </script>
+</body>
+</html>
