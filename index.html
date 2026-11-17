@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <!-- Navegação por Abass (Grade 2x2 no Mobile / Linha no Desktop) -->
+            <!-- Navegação por Abas (Grade 2x2 no Mobile / Linha no Desktop) -->
             <nav class="grid grid-cols-2 sm:flex bg-slate-900 p-1 rounded-xl border border-slate-700 w-full md:w-auto gap-1">
                 <button onclick="switchTab('simulado')" id="tab-simulado" class="px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium rounded-lg transition-all bg-indigo-600 text-white shadow text-center whitespace-nowrap">
                     📝 Simulado & Treino
@@ -50,6 +50,11 @@
 
     <!-- Conteúdo Principal -->
     <main class="flex-1 max-w-7xl w-full mx-auto px-3 py-4 sm:p-6 lg:p-8">
+
+        <!-- Alerta caso questoes.js tenha erro de sintaxe -->
+        <div id="syntax-error-banner" class="hidden mb-6 p-4 rounded-2xl border-2 border-rose-500 bg-rose-950/50 text-rose-200 text-xs sm:text-sm font-medium">
+            ⚠️ <strong>Atenção:</strong> O arquivo <code>questoes.js</code> não pôde ser carregado (provável erro de sintaxe, vírgula ou colchete faltando). Verifique o arquivo <code>questoes.js</code>.
+        </div>
 
         <!-- ========================================== -->
         <!-- SEÇÃO 1: SIMULADOS E TREINO                -->
@@ -81,7 +86,7 @@
                                             <input type="radio" name="q-source" value="oficial" class="w-4 h-4 text-indigo-600 bg-slate-800 border-slate-600 shrink-0" checked>
                                             <span class="text-xs sm:text-sm font-medium text-slate-200">Apenas Oficiais EXIN</span>
                                         </div>
-                                        <span class="text-[11px] bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded-md border border-indigo-800/50 shrink-0">40 Qs</span>
+                                        <span id="official-pool-badge" class="text-[11px] bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded-md border border-indigo-800/50 shrink-0">0 Qs</span>
                                     </label>
 
                                     <label class="flex items-center justify-between p-3 rounded-xl border border-slate-700/80 bg-slate-800/50 hover:border-indigo-500/50 cursor-pointer transition-all">
@@ -89,7 +94,7 @@
                                             <input type="radio" name="q-source" value="misto" class="w-4 h-4 text-indigo-600 bg-slate-800 border-slate-600 shrink-0">
                                             <span class="text-xs sm:text-sm font-medium text-slate-200">Oficiais + Desafios IA</span>
                                         </div>
-                                        <span id="total-pool-badge" class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700 shrink-0">400 Qs</span>
+                                        <span id="total-pool-badge" class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700 shrink-0">0 Qs</span>
                                     </label>
 
                                     <label class="flex items-center justify-between p-3 rounded-xl border border-rose-900/40 bg-rose-950/10 hover:border-rose-500/50 cursor-pointer transition-all">
@@ -294,9 +299,9 @@
                             <p class="text-xs text-slate-400 mt-0.5">Analise cada alternativa das questões realizadas nesta sessão.</p>
                         </div>
                         <div class="flex flex-wrap gap-2 w-full sm:w-auto">
-                            <button onclick="renderQuizReview('all')" class="flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white">Todas</button>
-                            <button onclick="renderQuizReview('wrong')" class="flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-rose-300 border border-rose-800/60 hover:bg-rose-950/50">Erros / Branco</button>
-                            <button onclick="renderQuizReview('flagged')" class="flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-amber-300 border border-amber-800/60 hover:bg-amber-950/50">Marcadas 🚩</button>
+                            <button id="review-filter-all" onclick="renderQuizReview('all')" class="flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white transition-all">Todas</button>
+                            <button id="review-filter-wrong" onclick="renderQuizReview('wrong')" class="flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-rose-300 border border-rose-800/60 hover:bg-rose-950/50 transition-all">Erros / Branco</button>
+                            <button id="review-filter-flagged" onclick="renderQuizReview('flagged')" class="flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-amber-300 border border-amber-800/60 hover:bg-amber-950/50 transition-all">Marcadas 🚩</button>
                         </div>
                     </div>
 
@@ -669,15 +674,15 @@
             let official = [];
             let extra = [];
 
-            if (typeof officialQuestions !== 'undefined') {
+            if (typeof officialQuestions !== 'undefined' && Array.isArray(officialQuestions)) {
                 official = [...officialQuestions];
-            } else if (typeof allQuestions !== 'undefined') {
+            } else if (typeof allQuestions !== 'undefined' && Array.isArray(allQuestions)) {
                 official = allQuestions.slice(0, 40);
             }
 
-            if (typeof extraQuestions !== 'undefined') {
+            if (typeof extraQuestions !== 'undefined' && Array.isArray(extraQuestions)) {
                 extra = [...extraQuestions];
-            } else if (typeof allQuestions !== 'undefined' && allQuestions.length > 40) {
+            } else if (typeof allQuestions !== 'undefined' && Array.isArray(allQuestions) && allQuestions.length > 40) {
                 extra = allQuestions.slice(40);
             }
 
@@ -686,6 +691,18 @@
 
         function updateStartMenuBadges() {
             const { official, extra } = getRawPools();
+            const errorBanner = document.getElementById('syntax-error-banner');
+            if (errorBanner) {
+                if (official.length === 0 && extra.length === 0) {
+                    errorBanner.classList.remove('hidden');
+                } else {
+                    errorBanner.classList.add('hidden');
+                }
+            }
+
+            const officialPoolBadge = document.getElementById('official-pool-badge');
+            if (officialPoolBadge) officialPoolBadge.innerText = `${official.length} Qs`;
+
             const totalPoolBadge = document.getElementById('total-pool-badge');
             if (totalPoolBadge) totalPoolBadge.innerText = `${official.length + extra.length} Qs`;
 
@@ -721,6 +738,11 @@
                     alert("O seu Caderno de Erros está vazio no momento! Erre questões no Modo Treino ou Simulado para que elas apareçam aqui.");
                     return [];
                 }
+            }
+
+            if (basePool.length === 0) {
+                alert("Nenhuma questão disponível na fonte selecionada. Verifique se o arquivo questoes.js está carregado corretamente.");
+                return [];
             }
 
             const enrichedPool = basePool.map(q => ({
@@ -1250,6 +1272,22 @@
         }
 
         function renderQuizReview(filterType = 'all') {
+            const btnAll = document.getElementById('review-filter-all');
+            const btnWrong = document.getElementById('review-filter-wrong');
+            const btnFlagged = document.getElementById('review-filter-flagged');
+
+            if (btnAll && btnWrong && btnFlagged) {
+                btnAll.className = filterType === 'all'
+                    ? "flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white shadow transition-all"
+                    : "flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-800 transition-all";
+                btnWrong.className = filterType === 'wrong'
+                    ? "flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-rose-600 text-white shadow transition-all"
+                    : "flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-rose-300 border border-rose-800/60 hover:bg-rose-950/50 transition-all";
+                btnFlagged.className = filterType === 'flagged'
+                    ? "flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 shadow transition-all"
+                    : "flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-amber-300 border border-amber-800/60 hover:bg-amber-950/50 transition-all";
+            }
+
             const container = document.getElementById('quiz-review-list');
             container.innerHTML = '';
 
@@ -1651,4 +1689,4 @@
         };
     </script>
 </body>
-</html>
+</html> 
