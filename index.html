@@ -110,9 +110,12 @@
                                 </div>
                             </div>
 
-                            <div class="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center text-[11px] text-slate-400">
-                                <span>Domine suas falhas recorrentes</span>
-                                <button onclick="clearErrorNotebook()" id="clear-errors-btn" class="text-rose-400 hover:text-rose-300 underline hidden">Limpar Caderno</button>
+                            <div class="mt-4 pt-3 border-t border-slate-800 flex flex-wrap justify-between items-center gap-2 text-[11px] text-slate-400">
+                                <span id="seen-questions-status" class="text-indigo-300 font-medium">Inéditas: 0/0</span>
+                                <div class="flex items-center gap-3">
+                                    <button onclick="resetSeenQuestions()" id="reset-seen-btn" class="text-slate-400 hover:text-indigo-300 underline hidden">Zerar Vistas</button>
+                                    <button onclick="clearErrorNotebook()" id="clear-errors-btn" class="text-rose-400 hover:text-rose-300 underline hidden">Limpar Caderno</button>
+                                </div>
                             </div>
                         </div>
 
@@ -502,6 +505,49 @@
             return "DOM3";
         }
 
+        // ==========================================
+        // RASTREADOR DE QUESTÕES INÉDITAS / JÁ VISTAS
+        // ==========================================
+        function getSeenQuestionsMap() {
+            try {
+                return JSON.parse(localStorage.getItem('exin_seen_questions') || '{}');
+            } catch (e) {
+                return {};
+            }
+        }
+
+        function markQuestionAsSeen(qObj) {
+            if (!qObj || !qObj.q) return;
+            const seenMap = getSeenQuestionsMap();
+            const key = qObj.q.trim();
+            seenMap[key] = (seenMap[key] || 0) + 1;
+            localStorage.setItem('exin_seen_questions', JSON.stringify(seenMap));
+        }
+
+        function resetSeenQuestions() {
+            if (confirm("Deseja zerar o histórico de questões já respondidas para que todas voltem a ter a mesma prioridade no sorteio?")) {
+                localStorage.removeItem('exin_seen_questions');
+                updateStartMenuBadges();
+            }
+        }
+
+        function sortPrioritizingUnseen(questionsArray) {
+            const seenMap = getSeenQuestionsMap();
+            return questionsArray
+                .map(q => ({
+                    item: q,
+                    seenCount: seenMap[q.q.trim()] || 0,
+                    rand: Math.random()
+                }))
+                .sort((a, b) => {
+                    if (a.seenCount !== b.seenCount) {
+                        return a.seenCount - b.seenCount;
+                    }
+                    return a.rand - b.rand;
+                })
+                .map(entry => entry.item);
+        }
+
         function getAttemptHistory() {
             try {
                 return JSON.parse(localStorage.getItem('exin_attempt_history') || '[]');
@@ -700,11 +746,27 @@
                 }
             }
 
+            const totalAll = official.length + extra.length;
             const officialPoolBadge = document.getElementById('official-pool-badge');
             if (officialPoolBadge) officialPoolBadge.innerText = `${official.length} Qs`;
 
             const totalPoolBadge = document.getElementById('total-pool-badge');
-            if (totalPoolBadge) totalPoolBadge.innerText = `${official.length + extra.length} Qs`;
+            if (totalPoolBadge) totalPoolBadge.innerText = `${totalAll} Qs`;
+
+            const seenMap = getSeenQuestionsMap();
+            const allPool = [...official, ...extra];
+            const seenUniqueCount = allPool.filter(q => (seenMap[q.q.trim()] || 0) > 0).length;
+            const unseenCount = Math.max(0, totalAll - seenUniqueCount);
+
+            const seenStatusEl = document.getElementById('seen-questions-status');
+            const resetSeenBtn = document.getElementById('reset-seen-btn');
+            if (seenStatusEl) {
+                seenStatusEl.innerText = `Inéditas: ${unseenCount}/${totalAll} (Já vistas: ${seenUniqueCount})`;
+            }
+            if (resetSeenBtn) {
+                if (seenUniqueCount > 0) resetSeenBtn.classList.remove('hidden');
+                else resetSeenBtn.classList.add('hidden');
+            }
 
             const notebook = getErrorNotebook();
             const errCount = Object.keys(notebook).length;
@@ -760,13 +822,15 @@
                     return [];
                 }
                 currentSessionSourceLabel += ` (${domainFilter})`;
-                return filtered.sort(() => 0.5 - Math.random()).slice(0, 40);
+                return sortPrioritizingUnseen(filtered).slice(0, 40);
             }
 
             if (domainFilter === 'proporcional' && enrichedPool.length >= 40) {
                 const byDom = { DOM1: [], DOM2: [], DOM3: [], DOM4: [] };
                 enrichedPool.forEach(q => byDom[q.domain].push(q));
-                Object.keys(byDom).forEach(k => byDom[k].sort(() => 0.5 - Math.random()));
+                Object.keys(byDom).forEach(k => {
+                    byDom[k] = sortPrioritizingUnseen(byDom[k]);
+                });
 
                 const targets = { DOM1: 10, DOM2: 12, DOM3: 10, DOM4: 8 };
                 let selected = [];
@@ -779,14 +843,14 @@
                 });
 
                 if (selected.length < 40) {
-                    leftovers.sort(() => 0.5 - Math.random());
+                    leftovers = sortPrioritizingUnseen(leftovers);
                     selected.push(...leftovers.slice(0, 40 - selected.length));
                 }
 
                 return selected.sort(() => 0.5 - Math.random());
             }
 
-            return enrichedPool.sort(() => 0.5 - Math.random()).slice(0, 40);
+            return sortPrioritizingUnseen(enrichedPool).slice(0, 40);
         }
 
         function toggleTabsLock(isLocked) {
@@ -1117,6 +1181,7 @@
                     document.getElementById('score-display').innerText = score;
                 }
                 const nbResult = recordQuestionAttempt(q, isCorrect);
+                markQuestionAsSeen(q);
                 showNotebookBanner(nbResult);
                 saveTrainingProgress();
             }
@@ -1196,6 +1261,7 @@
                 }
                 if (quizMode === 'simulado' || !q.evaluatedInSession) {
                     recordQuestionAttempt(q, isCorrect);
+                    if (q.userAnswer !== null) markQuestionAsSeen(q);
                 }
             });
 
@@ -1689,4 +1755,4 @@
         };
     </script>
 </body>
-</html> 
+</html>

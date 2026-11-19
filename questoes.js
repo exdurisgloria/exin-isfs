@@ -1751,5 +1751,1805 @@ const extraQuestions = [
             "Incorreta: o balanceamento custo-benefício baseia-se na ALE (perda anual esperada), não em percentual fixo do ativo.",
             "Incorreta: como a eficácia é de 80%, ainda restam 20% de risco residual (R$ 10.000/ano)."
         ]
+    },
+    // 61 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Ao estabelecer o orçamento de segurança para diferentes ativos de informação, um gestor aplica o mesmo nível máximo de criptografia e controle físico tanto para o cardápio interno quanto para fórmulas industriais secretas. Qual princípio de gestão da informação foi violado?",
+        options: [
+            "Proporcionalidade entre o valor do ativo e o custo dos controles.",
+            "Obrigatoriedade de classificação uniforme no Anexo A.",
+            "Garantia de disponibilidade absoluta para documentos públicos.",
+            "Segregação entre custodiante e proprietário do ativo."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Controles devem ser proporcionais ao valor e à sensibilidade do ativo.",
+            "A norma não exige proteção idêntica para ativos de criticidades distintas.",
+            "O excesso de proteção impacta custo e usabilidade sem justificativa de risco.",
+            "O cenário trata de calibração de controles, não de papéis de custódia."
+        ]
+    },
+    // 62 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Uma organização recebe um arquivo eletrônico sem corrupção de bits, mas sem qualquer mecanismo que comprove se o remetente declarado foi realmente quem o produziu. Qual atributo de segurança permanece sem verificação?",
+        options: [
+            "Completude.",
+            "Autenticidade.",
+            "Disponibilidade.",
+            "Utilidade."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Completude refere-se à totalidade dos dados sem omissões.",
+            "Autenticidade valida a genuinidade da origem ou identidade declarada.",
+            "O arquivo já foi recebido e está acessível.",
+            "Utilidade refere-se à capacidade prática de interpretar o formato."
+        ]
+    },
+    // 63 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "No ciclo de vida da informação corporativa, qual etapa exige a aplicação de políticas de retenção legal e sanitização para evitar a exposição residual de dados obsoletos?",
+        options: [
+            "Coleta e criação inicial.",
+            "Processamento operacional.",
+            "Arquivamento e descarte seguro.",
+            "Designação e rotulagem visual."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A coleta inicia o ciclo de vida do dado.",
+            "O processamento refere-se ao uso ativo da informação.",
+            "O encerramento do ciclo exige retenção controlada e destruição segura.",
+            "A rotulagem ocorre logo após a classificação do ativo."
+        ]
+    },
+    // 64 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Por que uma ameaça interna (Insider Threat) costuma exigir controles adicionais de auditoria e segregação além das defesas perimetrais tradicionais?",
+        options: [
+            "Porque firewalls de borda operam apenas em redes sem fio.",
+            "Porque o agente interno já possui credenciais legítimas e acesso físico aos anéis internos.",
+            "Porque ameaças internas não geram danos diretos à organização.",
+            "Porque a ISO/IEC 27001 isenta colaboradores internos de controle de acesso."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Firewalls de borda protegem o perímetro geral de rede.",
+            "O acesso prévio autorizado permite contornar barreiras externas.",
+            "Ações internas podem causar impactos críticos de confidencialidade e integridade.",
+            "Todos os colaboradores estão sujeitos às políticas de acesso e auditoria."
+        ]
+    },
+    // 65 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Durante o planejamento de continuidade de negócios, qual é o propósito central da Análise de Impacto no Negócio (BIA)?",
+        options: [
+            "Substituir a avaliação de vulnerabilidades técnicas da rede.",
+            "Identificar processos críticos, estimar impactos de parada e definir prioridades de recuperação (RTO/RPO).",
+            "Selecionar fornecedores de antivírus para estações de trabalho.",
+            "Emitir a certificação formal de conformidade da ISO/IEC 27001."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A BIA complementa a análise de riscos com foco na continuidade.",
+            "A BIA hierarquiza a criticidade dos processos e estabelece metas de retomada.",
+            "Escolha de ferramentas de endpoint pertence à operação de segurança.",
+            "A certificação é emitida por organismo auditor independente."
+        ]
+    },
+    // 66 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Um colaborador identifica uma porta de acesso restrito com a trava danificada, sem sinais de invasão, e reporta ao Help Desk antes que ocorra qualquer incidente. Como essa notificação deve ser classificada?",
+        options: [
+            "Incidente crítico em andamento.",
+            "Fraqueza de segurança (Security Weakness).",
+            "Evento de falso positivo.",
+            "Dano indireto físico."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Não houve exploração nem comprometimento operacional.",
+            "Defeitos em controles ainda não explorados constituem fraquezas de segurança.",
+            "Falso positivo refere-se a alertas indevidos de sensores.",
+            "Não ocorreu sinistro ou prejuízo colateral."
+        ]
+    },
+    // 67 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Após a implantação de todos os controles planejados no tratamento de riscos, ainda persiste uma fração de exposição chamada de Risco Residual. Qual ação de governança é exigida pela ISO/IEC 27001 quanto a esse risco?",
+        options: [
+            "Eliminá-lo integralmente até atingir risco zero absoluto.",
+            "Omiti-lo da documentação para evitar apontamentos em auditoria.",
+            "Submetê-lo à aprovação e aceitação formal pela Alta Direção ou Proprietários de Risco.",
+            "Transferi-lo automaticamente ao Help Desk operacional."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Risco zero absoluto não existe em ambientes operacionais reais.",
+            "A transparência documental é requisito de auditabilidade.",
+            "A aceitação do risco residual é uma decisão executiva formal.",
+            "O Help Desk atua no suporte operacional, sem autoridade para aceitar riscos."
+        ]
+    },
+    // 68 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Um atacante realiza levantamento prévio sobre o diretor financeiro de uma corporação e envia uma mensagem fraudulenta altamente personalizada explorando um projeto real em andamento. Essa técnica de engenharia social é classificada como:",
+        options: [
+            "Phishing genérico em massa.",
+            "Spear Phishing / Whaling.",
+            "Ataque de força bruta.",
+            "Preenchimento de tráfego."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Phishing em massa utiliza mensagens padronizadas sem personalização.",
+            "Ataques direcionados a alvos específicos e executivos de topo são Spear Phishing/Whaling.",
+            "Força bruta envolve tentativas automatizadas de credenciais.",
+            "Preenchimento de tráfego é uma contramedida defensiva."
+        ]
+    },
+    // 69 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Um diretor possui alto nível hierárquico na empresa, mas tem seu acesso bloqueado a prontuários médicos de funcionários do setor de saúde ocupacional por não necessitar dessas informações em suas atribuições. Qual princípio está sendo aplicado?",
+        options: [
+            "Necessidade de Saber (Need-to-Know).",
+            "Controle de Acesso Discricionário (DAC).",
+            "Autenticação Única (SSO).",
+            "Escalonamento Hierárquico."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Need-to-Know restringe o acesso apenas às informações exigidas pela função atual.",
+            "DAC delega a decisão de compartilhamento ao criador do recurso.",
+            "SSO centraliza a autenticação em uma única credencial.",
+            "Escalonamento hierárquico refere-se à gestão de crises e incidentes."
+        ]
+    },
+    // 70 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Para proteger as informações de notebooks corporativos utilizados em viagens, qual combinação de controles protege, respectivamente, os dados em repouso e os dados em trânsito?",
+        options: [
+            "VPN e Firewall de borda.",
+            "Criptografia de disco completo e túnel VPN/TLS.",
+            "Assinatura digital e função Hash.",
+            "Backup incremental e RAID 1."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Ambos atuam sobre o tráfego de rede, sem cifrar o disco local.",
+            "Criptografia de disco protege dados armazenados; VPN/TLS protege dados transmitidos.",
+            "Assinatura e hash focam em integridade e autenticidade.",
+            "Backup e RAID focam em disponibilidade e recuperação."
+        ]
+    },
+    // 71 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Qual é o principal risco de segurança associado à manutenção de sistemas operacionais em fim de vida útil (End-of-Life) conectados à rede corporativa?",
+        options: [
+            "Aumento imediato no consumo de energia dos servidores.",
+            "Ausência de atualizações e patches oficiais do fabricante para novas vulnerabilidades descobertas.",
+            "Incompatibilidade automática com sistemas de combate a incêndio.",
+            "Exclusão automática dos logs de auditoria."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "O ciclo de suporte do software não altera o consumo elétrico.",
+            "Sem patches oficiais, brechas recém-descobertas permanecem abertas permanentemente.",
+            "Sistemas físicos ambientais operam de forma independente do sistema operacional.",
+            "O fim de suporte não apaga arquivos de log existentes."
+        ]
+    },
+    // 72 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Em um escritório corporativo que oferece acesso Wi-Fi tanto para colaboradores quanto para visitantes externos, qual prática de arquitetura de rede reduz o risco de acesso lateral aos servidores internos?",
+        options: [
+            "Ocultar apenas o nome da rede (SSID) mantendo uma única sub-rede compartilhada.",
+            "Aplicar criptografia forte na rede corporativa e isolar o Wi-Fi de visitantes em uma VLAN separada sem acesso à LAN interna.",
+            "Permitir acesso aberto sem senha para evitar que visitantes peçam credenciais à recepção.",
+            "Desativar o firewall interno entre a rede sem fio e o data center."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Ocultar o SSID não impede a descoberta nem isola o tráfego lateral.",
+            "Criptografia robusta e segmentação lógica isolam visitantes dos ativos internos.",
+            "Redes abertas expõem o tráfego a interceptação imediata.",
+            "Desativar firewalls internos amplia a superfície de ataque."
+        ]
+    },
+    // 73 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Por que a implementação de espelhamento de discos (RAID) em um servidor de arquivos não elimina a necessidade de backups externos (offsite)?",
+        options: [
+            "Porque o RAID protege apenas contra falha física de disco, mas replica imediatamente exclusões acidentais, corrupções lógicas ou criptografia por ransomware.",
+            "Porque o RAID funciona apenas durante o horário comercial.",
+            "Porque discos em RAID não permitem o uso de controle de acesso RBAC.",
+            "Porque o RAID substitui apenas o backup diferencial, mas não o completo."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "RAID garante disponibilidade de hardware, não histórico isolado contra danos lógicos ou desastres locais.",
+            "Arranjos RAID operam continuamente.",
+            "Redundância de disco é independente do modelo lógico de permissões.",
+            "RAID e backup possuem finalidades complementares e distintas."
+        ]
+    },
+    // 74 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Em ambientes corporativos com circulação de visitantes e equipes terceirizadas de limpeza, qual controle organizacional visa diretamente prevenir a exposição visual de documentos e sessões abertas fora do expediente?",
+        options: [
+            "Política de Mesa Limpa e Tela Limpa (Clear Desk and Clear Screen).",
+            "Balanceamento de Carga de Aplicações.",
+            "Lista de Revogação de Certificados (CRL).",
+            "Análise Quantitativa de Riscos."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Guardar documentos e bloquear estações reduz riscos de acesso físico e visual indevido.",
+            "Balanceamento de carga distribui tráfego entre servidores.",
+            "CRL gerencia certificados digitais revogados.",
+            "Análise quantitativa calcula impactos financeiros de riscos."
+        ]
+    },
+    // 75 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Uma empresa precisa descartar definitivamente lotes de fitas magnéticas antigas e unidades SSD contendo dados confidenciais. Qual afirmação sobre métodos de sanitização está correta?",
+        options: [
+            "A formatação rápida garante a destruição irrecuperável dos dados em ambos os tipos de mídia.",
+            "A desmagnetização (Degaussing) é eficaz em mídias magnéticas, mas ineficaz em unidades SSD de memória flash.",
+            "A desmagnetização destrói tanto fitas magnéticas quanto papéis impressos e SSDs.",
+            "Esvaziar a lixeira do sistema operacional atende integralmente aos requisitos de descarte seguro."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Formatação rápida remove apenas ponteiros de índice, permitindo recuperação.",
+            "Campos magnéticos apagam mídias magnéticas, enquanto SSDs exigem wipe específico ou destruição física.",
+            "Papel e memória flash não sofrem efeito de campos magnéticos.",
+            "Exclusão comum mantém dados residuais recuperáveis no disco."
+        ]
+    },
+    // 76 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "No contexto de avaliação de conformidade da ISO/IEC 27001, como se classificam, respectivamente, uma auditoria interna feita pela própria empresa, uma auditoria realizada por um cliente em seu fornecedor e uma auditoria conduzida por um organismo certificador independente?",
+        options: [
+            "Terceira parte, segunda parte e primeira parte.",
+            "Primeira parte, segunda parte e terceira parte.",
+            "Segunda parte, primeira parte e terceira parte.",
+            "Auditoria técnica, auditoria financeira e auditoria legal."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A ordem entre primeira e terceira parte está invertida.",
+            "1ª parte é interna; 2ª parte avalia fornecedores; 3ª parte é externa independente para certificação.",
+            "A ordem entre primeira e segunda parte está invertida.",
+            "A classificação normativa baseia-se na relação de independência entre as partes."
+        ]
+    },
+    // 77 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Para garantir conformidade com a legislação de Direitos de Propriedade Intelectual (PI) no ambiente corporativo, qual conjunto de controles é recomendado pela ISO/IEC 27002?",
+        options: [
+            "Manter inventário de licenças de software, restringir instalações não autorizadas e realizar revisões periódicas de conformidade.",
+            "Permitir que cada departamento utilize softwares sem licença apenas em ambientes de teste.",
+            "Substituir todos os contratos de licença por acordos verbais com os desenvolvedores.",
+            "Desativar o controle de ativos digitais durante auditorias externas."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Gestão de licenças e bloqueio de software não homologado mitigam riscos legais e de malware.",
+            "Ambientes de teste também estão sujeitos às leis de propriedade intelectual.",
+            "Conformidade legal exige comprovação documental formal.",
+            "Ocultar ativos viola a auditabilidade e a conformidade."
+        ]
+    },
+    // 78 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Sob a perspectiva de proteção de dados pessoais (GDPR/LGPD), qual é a diferença técnica entre Anonimização e Pseudonimização?",
+        options: [
+            "A anonimização remove o vínculo com o titular de forma irreversível; a pseudonimização substitui identificadores diretos por códigos, permitindo reidentificação mediante informação adicional protegida.",
+            "A pseudonimização é irreversível, enquanto a anonimização permite reverter o nome do cliente com uma senha simples.",
+            "Ambas são sinônimos exatos e retiram o dado do escopo das leis de privacidade.",
+            "A anonimização aplica-se apenas a registros físicos, enquanto a pseudonimização aplica-se apenas a redes Wi-Fi."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Anonimização impede reidentificação definitiva; pseudonimização mantém reversibilidade controlada.",
+            "Os conceitos de reversibilidade foram invertidos.",
+            "Dados pseudonimizados ainda continuam sujeitos às regras de proteção de dados pessoais.",
+            "Ambas são técnicas de tratamento aplicáveis a dados pessoais."
+        ]
+    },
+    // 79 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Após um incidente grave com potencial desdobramento judicial, por que a coleta de evidências digitais deve seguir procedimentos rigorosos de Cadeia de Custódia?",
+        options: [
+            "Para permitir que os administradores editem os registros antes do envio ao juiz.",
+            "Para preservar a integridade, a autenticidade e a admissibilidade legal das provas coletadas.",
+            "Para reduzir o tamanho dos arquivos de log no servidor de backup.",
+            "Para dispensar a necessidade de notificação ao Help Desk."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Alterar evidências invalida o valor probatório e caracteriza fraude.",
+            "A cadeia de custódia comprova quem coletou, armazenou e manuseou a prova sem adulteração.",
+            "Preservação forense visa integridade jurídica, não compressão de armazenamento.",
+            "O fluxo inicial de notificação de incidentes permanece obrigatório."
+        ]
+    },
+    // 80 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Na governança de segurança da informação, como se diferenciam os conceitos complementares de 'Due Diligence' e 'Due Care'?",
+        options: [
+            "Due Diligence refere-se à investigação e compreensão prévia dos riscos; Due Care refere-se à ação prática de implementar e manter controles razoáveis de proteção.",
+            "Due Care é a auditoria externa de certificação; Due Diligence é o pagamento de multas regulatórias.",
+            "Due Diligence aplica-se apenas a contratos de trabalho; Due Care aplica-se apenas a sistemas de ar-condicionado.",
+            "Ambos os termos indicam a transferência total da responsabilidade legal para seguradoras."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Due Diligence envolve pesquisar e avaliar riscos; Due Care consiste em agir responsavelmente implementando controles.",
+            "Ambos são princípios contínuos de governança e gestão prudente.",
+            "Aplicam-se de forma ampla a toda a gestão de riscos e segurança da organização.",
+            "A responsabilização final (Accountability) nunca é transferida integralmente."
+        ]
+    },
+    // 81 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Uma organização avalia o impacto da perda de um repositório de projetos para definir o nível de segurança adequado. Qual critério reflete corretamente a valoração de um ativo de informação segundo a literatura da EXIN?",
+        options: [
+            "O custo de reconstrução dos dados e o impacto comercial ou legal de sua divulgação indevida.",
+            "Exclusivamente o tamanho físico ocupado pelo arquivo no armazenamento em disco.",
+            "Apenas o valor de compra do servidor onde o banco de dados está hospedado.",
+            "O conteúdo bruto do dado analisado de forma isolada, sem considerar seu contexto de uso."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "O valor considera esforço de reconstrução, criticidade operacional e impacto de exposição.",
+            "Volume de armazenamento não define sensibilidade nem importância estratégica.",
+            "O valor do hardware é distinto do valor da informação que ele processa.",
+            "Dados isolados sem contexto não refletem o valor real para o negócio."
+        ]
+    },
+    // 82 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Durante uma reunião executiva em um restaurante público, dois gestores discutem em voz alta detalhes sigilosos de uma aquisição corporativa. Qual afirmação relaciona corretamente esse episódio ao escopo da Segurança da Informação?",
+        options: [
+            "O episódio está fora do escopo, pois a Segurança da Informação abrange apenas dados digitais em redes.",
+            "O episódio viola a confidencialidade dentro do escopo da Segurança da Informação, que protege dados em qualquer meio, inclusive verbal.",
+            "Trata-se de uma falha exclusiva de Segurança de TI, exigindo correção via firewall de aplicação.",
+            "Não há violação de segurança, pois informações faladas não podem ser classificadas pelo proprietário."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Restringir-se a meios digitais define apenas a Segurança de TI.",
+            "A Segurança da Informação protege o ativo independentemente do suporte (digital, papel ou verbal).",
+            "Controles de rede não mitigam exposição verbal em ambientes públicos.",
+            "Informações sigilosas mantêm sua classificação mesmo quando comunicadas oralmente."
+        ]
+    },
+    // 83 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Na integração entre dois sistemas financeiros, uma falha de mapeamento faz com que todos os registros sejam transferidos sem omissão, mas com as datas de vencimento deslocadas em um dia. Qual atributo específico foi comprometido?",
+        options: [
+            "Disponibilidade do canal de comunicação.",
+            "Confidencialidade dos dados em trânsito.",
+            "Exatidão, como subaspecto da Integridade.",
+            "Posse física da infraestrutura de banco de dados."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A transferência ocorreu normalmente, preservando a disponibilidade.",
+            "Não houve acesso ou leitura por terceiros não autorizados.",
+            "Registros presentes porém incorretos violam a exatidão (Integridade).",
+            "A custódia física dos servidores permaneceu inalterada."
+        ]
+    },
+    // 84 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Durante a revisão anual de ativos, percebe-se que os controles técnicos de criptografia aplicados a uma pasta confidencial estão operando corretamente, mas o rótulo do documento nunca foi atualizado após a perda de validade comercial. A responsabilidade por manter os controles técnicos e a responsabilidade por revisar a classificação pertencem, respectivamente, a:",
+        options: [
+            "Proprietário do Ativo e Custodiante.",
+            "Custodiante e Proprietário do Ativo.",
+            "Auditor Interno e Help Desk.",
+            "Information Security Policy Officer e Fornecedor."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "As atribuições de execução técnica e definição de classificação foram invertidas.",
+            "O Custodiante (TI) opera os controles técnicos; o Proprietário revisa a classificação.",
+            "Auditores avaliam conformidade e o Help Desk realiza triagem operacional.",
+            "O Policy Officer mantém o texto das políticas corporativas."
+        ]
+    },
+    // 85 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Um banco de dados hospedado em nuvem possui uma porta administrativa exposta à internet sem autenticação multifator. Caso um invasor explore essa configuração e exfiltre registros de clientes, como são classificados, respectivamente, a porta mal configurada e a perda financeira decorrente de multas?",
+        options: [
+            "Ameaça e Risco Residual.",
+            "Vulnerabilidade e Impacto (Consequência).",
+            "Incidente e Controle Repressivo.",
+            "Fator de Exposição e Fraqueza Humana."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A falha de configuração não é o agente causador (ameaça).",
+            "A exposição sem MFA é a vulnerabilidade; as multas representam o impacto do incidente.",
+            "A configuração insegura existe antes da ocorrência do incidente.",
+            "Fator de exposição é apenas uma métrica percentual da análise quantitativa."
+        ]
+    },
+    // 86 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Em qual cenário operacional uma organização tende a priorizar a Análise Qualitativa de riscos em detrimento da Análise Quantitativa?",
+        options: [
+            "Quando possui séries históricas estatísticas exatas de frequência anual (ARO) para cada ameaça.",
+            "Quando busca uma priorização rápida baseada em escalas descritivas na ausência de dados financeiros históricos precisos.",
+            "Quando deseja eliminar completamente o risco residual sem implementar controles técnicos.",
+            "Quando exige o cálculo exato da Expectativa Anual de Perda (ALE) em moeda corrente."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Estatísticas históricas exatas favorecem a análise quantitativa.",
+            "A abordagem qualitativa agiliza a classificação usando escalas como Baixo, Médio e Alto.",
+            "Nenhum método de análise elimina riscos sem tratamento posterior.",
+            "Cálculos monetários de ALE definem a análise quantitativa."
+        ]
+    },
+    // 87 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Diante de um ataque de negação de serviço distribuído (DDoS) já em curso contra o portal corporativo, a equipe de operações aciona imediatamente um serviço de mitigação para filtrar o tráfego malicioso e evitar a queda total das vendas. Essa ação atua como um controle:",
+        options: [
+            "Preventivo, pois antecede a existência da ameaça.",
+            "Repressivo, pois limita o dano durante a ocorrência do incidente.",
+            "Corretivo, pois reconstrói o ambiente após o encerramento da crise.",
+            "De Transferência, pois repassa a multa contratual à seguradora."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "O ataque já havia iniciado, ultrapassando a fase preventiva.",
+            "Controles repressivos atuam entre o incidente e o dano para conter o impacto.",
+            "Ações corretivas restauram ativos depois que o dano já se consolidou.",
+            "Mitigação técnica em tempo real não caracteriza transferência financeira."
+        ]
+    },
+    // 88 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Na definição da arquitetura de continuidade de um sistema de vendas, a diretoria reduz o RTO exigido de 24 horas para 15 minutos e o RPO de 12 horas para 5 minutos. Qual é o efeito direto dessa decisão sobre o projeto técnico?",
+        options: [
+            "Redução de custos operacionais, permitindo migrar para um Cold Site.",
+            "Aumento da complexidade e do investimento em infraestrutura de replicação e redundância ativa.",
+            "Eliminação da necessidade de realizar testes periódicos de restauração.",
+            "Substituição obrigatória do Plano de Continuidade de Negócios por seguros patrimoniais."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Cold Sites possuem tempos de retomada de dias ou semanas, incompatíveis com 15 minutos.",
+            "Metas mais rígidas de RTO e RPO exigem soluções mais rápidas e custosas.",
+            "Quanto mais crítico o tempo de retomada, mais rigorosos devem ser os testes.",
+            "Seguros cobrem prejuízos financeiros, mas não restauram sistemas em 15 minutos."
+        ]
+    },
+    // 89 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Uma organização aluga uma instalação secundária equipada com energia, climatização, links de rede e servidores físicos instalados, mas sem replicação contínua em tempo real, exigindo o carregamento dos últimos backups em caso de sinistro. Essa instalação é um:",
+        options: [
+            "Cold Site.",
+            "Warm Site.",
+            "Hot Site síncrono.",
+            "Anel externo de proteção."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Cold Sites não possuem hardware de servidores previamente instalado.",
+            "Warm Sites oferecem hardware pronto, mas dependem da restauração de backups.",
+            "Hot Sites síncronos mantêm dados espelhados em tempo real.",
+            "Anel externo refere-se ao perímetro físico de segurança predial."
+        ]
+    },
+    // 90 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Durante um incidente grave de vazamento de dados, o analista de segurança identifica a necessidade de desconectar o sistema de faturamento nacional, decisão que foge à sua alçada operacional. Ao acionar o diretor executivo e o CISO para autorizar a parada, ocorre um:",
+        options: [
+            "Escalonamento Funcional (Horizontal).",
+            "Escalonamento Hierárquico (Vertical).",
+            "Registro de Falso Positivo.",
+            "Procedimento de Lições Aprendidas."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Escalonamento funcional transfere o caso por competência técnica especializada.",
+            "Escalonamento hierárquico envolve acionar níveis gerenciais com autoridade decisória.",
+            "O vazamento é real e exige decisão executiva, não sendo alarme falso.",
+            "Lições aprendidas acontecem somente após a conclusão e recuperação do incidente."
+        ]
+    },
+    // 91 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "A adoção de Autenticação Única (Single Sign-On — SSO) reduz a fadiga de senhas dos usuários, mas introduz um risco arquitetônico específico que exige proteção reforçada (como MFA). Qual é esse risco?",
+        options: [
+            "Impedir a geração de logs individuais de auditoria por usuário.",
+            "Criar um ponto único de comprometimento onde o vazamento da credencial principal concede acesso a todos os sistemas integrados.",
+            "Inviabilizar a aplicação do modelo de Controle de Acesso Baseado em Papéis (RBAC).",
+            "Desativar automaticamente a criptografia de comunicação em trânsito."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "O SSO mantém identidades únicas e rastreáveis nos registros de auditoria.",
+            "Se a credencial central for comprometida sem fatores adicionais, o invasor alcança múltiplos sistemas.",
+            "SSO atua na autenticação e convive normalmente com autorização via RBAC.",
+            "Autenticação centralizada não interfere nos protocolos de cifragem de rede."
+        ]
+    },
+    // 92 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Na calibração de um leitor biométrico de acesso à Área Segura, ajustar o limiar de sensibilidade para um nível excessivamente permissivo tende a elevar qual taxa de erro e qual risco associado?",
+        options: [
+            "Taxa de Falsa Rejeição (FRR), prejudicando a disponibilidade para usuários legítimos.",
+            "Taxa de Falsa Aceitação (FAR), permitindo a entrada de indivíduos não autorizados.",
+            "Taxa de Ocorrência Anual (ARO), anulando o cálculo do Risco Residual.",
+            "Tempo Médio Entre Falhas (MTBF), reduzindo a vida útil da fechadura."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Falsa rejeição aumenta quando o leitor fica rígido demais, não permissivo.",
+            "Configurações permissivas aumentam a Falsa Aceitação (FAR), comprometendo a segurança.",
+            "ARO é uma métrica de análise quantitativa de riscos.",
+            "MTBF mede confiabilidade mecânica/eletrônica de hardware."
+        ]
+    },
+    // 93 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Antes de promover um novo servidor de aplicação para o ambiente de produção, a equipe de infraestrutura remove pacotes não utilizados, desativa portas lógicas desnecessárias e altera credenciais padrão de fábrica. Esse conjunto de práticas é conhecido como:",
+        options: [
+            "Preenchimento de Tráfego (Traffic Padding).",
+            "Robustecimento de Sistemas (Hardening).",
+            "Acúmulo de Privilégios (Privilege Creep).",
+            "Engenharia Reversa de Rede."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Traffic padding mascara volumes de tráfego em links de comunicação.",
+            "Hardening reduz a superfície de ataque eliminando serviços e configurações inseguras.",
+            "Privilege creep é o acúmulo indevido de permissões por usuários.",
+            "Engenharia reversa analisa o funcionamento interno de softwares ou artefatos."
+        ]
+    },
+    // 94 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Qual é a função principal de um servidor Proxy Web posicionado na saída do tráfego de navegação da rede corporativa para a internet?",
+        options: [
+            "Substituir a necessidade de autenticação nas estações de trabalho locais.",
+            "Intermediar requisições web, aplicar filtragem de conteúdo contra sites maliciosos e ocultar os endereços internos da rede.",
+            "Executar a desmagnetização remota de discos rígidos em caso de furto.",
+            "Sincronizar os relógios dos servidores internos com fontes oficiais de tempo."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Proxies atuam no tráfego de saída e não substituem o login no sistema operacional.",
+            "O proxy controla, inspeciona e intermedia o acesso web protegendo a LAN interna.",
+            "Desmagnetização é um processo físico realizado em mídias magnéticas.",
+            "Sincronização de relógios é função do protocolo NTP."
+        ]
+    },
+    // 95 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "O monitoramento contínuo do uso de CPU, memória, espaço em disco e largura de banda com projeção de crescimento futuro refere-se ao Gerenciamento de Capacidade da ISO/IEC 27002. Qual pilar da Tríade CIA esse controle protege diretamente?",
+        options: [
+            "Confidencialidade.",
+            "Disponibilidade.",
+            "Não-repúdio.",
+            "Autenticidade."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Capacidade de recursos não controla sigilo de leitura de dados.",
+            "Prevenir o esgotamento de recursos evita travamentos e indisponibilidade dos sistemas.",
+            "Não-repúdio depende de logs íntegros e assinaturas criptográficas.",
+            "Autenticidade valida a identidade de origem."
+        ]
+    },
+    // 96 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Para validar uma nova versão de um sistema de atendimento, a equipe de desenvolvimento solicita a base de produção contendo dados reais de clientes. De acordo com a ISO/IEC 27002, qual deve ser a conduta adequada?",
+        options: [
+            "Liberar a base real integralmente desde que o servidor de testes possua antivírus.",
+            "Proibir o uso direto de dados reais sensíveis em testes, utilizando dados sintéticos ou previamente anonimizados/mascarados.",
+            "Permitir a cópia apenas se os desenvolvedores assinarem um SLA com o Help Desk.",
+            "Realizar os testes diretamente no ambiente de produção fora do horário comercial."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Ambientes de teste têm controles mais flexíveis e expõem dados reais indevidamente.",
+            "Dados de teste devem ser protegidos e descaracterizados para evitar vazamentos e violações legais.",
+            "SLAs regem contratos com fornecedores externos, não cópia insegura de produção.",
+            "Testes em produção ameaçam a integridade e a disponibilidade do negócio."
+        ]
+    },
+    // 97 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Ao revisar o Sistema de Gestão de Segurança da Informação (SGSI), um consultor propõe excluir o requisito de 'Competência e Conscientização' (Cláusula 7) alegando que a empresa contrata apenas profissionais experientes. Sob a ISO/IEC 27001, essa proposta é:",
+        options: [
+            "Válida, desde que registrada com justificativa na Declaração de Aplicabilidade (SoA).",
+            "Inválida, pois requisitos das cláusulas 4 a 10 são obrigatórios e não admitem exclusão para conformidade.",
+            "Válida apenas para organizações com menos de cem colaboradores.",
+            "Aceita se a empresa já possuir certificação na norma ISO/IEC 27002."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Exclusões justificadas na SoA aplicam-se somente aos controles do Anexo A.",
+            "Todas as cláusulas principais (4 a 10) são mandatórias sem exceção.",
+            "O porte da organização não isenta o cumprimento das cláusulas estruturais.",
+            "A ISO/IEC 27002 é um guia de boas práticas e não é uma norma certificável."
+        ]
+    },
+    // 98 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Ao formalizar a contratação de um provedor de nuvem para hospedar aplicações críticas, quais elementos devem constar no contrato ou Acordo de Nível de Serviço (SLA) para governar os riscos de terceiros?",
+        options: [
+            "Apenas o valor mensal da fatura e a marca física dos servidores utilizados.",
+            "Requisitos de segurança, metas de disponibilidade, prazos de resposta a incidentes, direito de auditoria e regras para subcontratados.",
+            "A transferência integral da responsabilização legal da contratante perante órgãos reguladores.",
+            "A obrigação de o fornecedor adotar o organograma interno do cliente."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Critérios comerciais isolados não asseguram proteção à informação.",
+            "O SLA formaliza métricas mensuráveis de segurança, continuidade, auditoria e cadeia de suprimentos.",
+            "A responsabilização final pelos dados permanece com a empresa contratante.",
+            "O fornecedor mantém sua estrutura própria desde que atenda aos requisitos acordados."
+        ]
+    },
+    // 99 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Uma organização adota o modelo BYOD (Bring Your Own Device), permitindo acesso a e-mails corporativos em smartphones pessoais. Qual conjunto de medidas concilia a proteção dos dados da empresa com a propriedade pessoal do aparelho?",
+        options: [
+            "Confiscar definitivamente o aparelho pessoal caso o funcionário mude de setor.",
+            "Estabelecer política formal exigindo criptografia, bloqueio de tela, separação lógica de dados corporativos e capacidade de apagamento remoto (Remote Wipe).",
+            "Proibir o uso de senhas no aparelho para facilitar inspeções da equipe de TI.",
+            "Transferir o risco integralmente ao fabricante do smartphone sem criar política interna."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "O hardware pertence ao colaborador, não podendo ser apropriado pela empresa.",
+            "Contêineres isolados, criptografia e Remote Wipe protegem os dados corporativos em dispositivos pessoais.",
+            "Dispositivos móveis sem bloqueio aumentam drasticamente o risco de acesso indevido.",
+            "Fabricantes não assumem a gestão de segurança dos dados corporativos do cliente."
+        ]
+    },
+    // 100 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "A diretoria decide implementar monitoramento de tráfego web e e-mails corporativos para prevenir vazamento de informações estratégicas. Qual condição é indispensável para que essa prática esteja alinhada à governança e à legislação de privacidade?",
+        options: [
+            "Executar o monitoramento em sigilo absoluto para não alertar possíveis infratores.",
+            "Informar previamente os colaboradores de forma transparente por meio de políticas claras e do Código de Conduta.",
+            "Monitorar apenas os dispositivos pessoais fora do horário de trabalho sem aviso.",
+            "Substituir o monitoramento técnico pela assinatura anual de um Certificado de Boa Índole."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Monitoramento oculto sem ciência prévia viola requisitos legais e trabalhistas.",
+            "A transparência prévia via Código de Conduta respalda juridicamente o monitoramento corporativo.",
+            "A empresa não deve monitorar a vida privada fora do contexto corporativo.",
+            "Certificado de boa índole refere-se à verificação de antecedentes criminais na admissão."
+        ]
+    },
+    // 101 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Uma organização mantém um inventário atualizado de servidores e notebooks, mas não mapeou os repositórios de dados, bases de clientes e contratos físicos que residem neles. Qual lacuna de gestão de ativos da ISO/IEC 27002 está presente?",
+        options: [
+            "O inventário cobre apenas ativos de hardware, omitindo os ativos de informação e seus respectivos proprietários.",
+            "A ausência de criptografia assimétrica nos equipamentos listados.",
+            "A falta de balanceamento de carga entre os servidores mapeados.",
+            "A exclusão indevida da Cláusula 4 na Declaração de Aplicabilidade."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "O inventário deve abranger informações e outros ativos associados, vinculando cada um a um proprietário.",
+            "Criptografia é controle técnico, não requisito de inventário.",
+            "Balanceamento de carga refere-se à disponibilidade e capacidade.",
+            "Cláusulas principais não entram na lista de exclusões da SoA."
+        ]
+    },
+    // 102 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Em um portal corporativo, um documento interno classificado como 'Restrito' é enviado por e-mail a um parceiro externo sem autorização, mas chega sem alterações de texto e no horário previsto. Qual pilar da confiabilidade da informação foi violado?",
+        options: [
+            "Disponibilidade.",
+            "Integridade.",
+            "Confidencialidade.",
+            "Utilidade."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A entrega no horário preserva a disponibilidade.",
+            "O conteúdo não sofreu modificação ou truncamento.",
+            "A divulgação a destinatário não autorizado quebra a confidencialidade.",
+            "O arquivo manteve seu formato legível e utilizável."
+        ]
+    },
+    // 103 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Ao diferenciar 'Confidencialidade' de 'Privacidade' no contexto da segurança da informação, qual afirmação descreve corretamente a relação entre ambos?",
+        options: [
+            "Confidencialidade protege qualquer informação contra acesso não autorizado; Privacidade foca nos direitos do titular sobre o tratamento de seus dados pessoais.",
+            "Privacidade aplica-se exclusivamente a segredos industriais; Confidencialidade aplica-se apenas a dados de pessoas físicas.",
+            "Ambos os conceitos são idênticos e regidos unicamente pela ISO/IEC 27000.",
+            "Confidencialidade depende de legislação estatal, enquanto Privacidade é sempre um controle técnico de firewall."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Confidencialidade abrange todo ativo sigiloso; privacidade trata especificamente de dados pessoais.",
+            "Os escopos foram invertidos entre segredos corporativos e dados pessoais.",
+            "Possuem escopos distintos, embora a confidencialidade apoie a privacidade.",
+            "Privacidade possui forte base legal (GDPR/LGPD), não sendo mero filtro de rede."
+        ]
+    },
+    // 104 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Uma empresa digitaliza contratos antigos em papel para um repositório eletrônico e, em seguida, descarta as vias físicas sem validar se todas as páginas foram escaneadas corretamente. Qual subaspecto da Integridade está sob risco direto?",
+        options: [
+            "Autenticidade.",
+            "Completude.",
+            "Posse ou controle.",
+            "Não-repúdio."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Autenticidade trata da veracidade da origem do documento.",
+            "O risco de omissão de páginas durante a digitalização compromete a completude.",
+            "Os arquivos permanecem sob custódia da organização.",
+            "Não-repúdio envolve prova de autoria de uma ação ou transação."
+        ]
+    },
+    // 105 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Por que a atribuição de responsabilidade por um ativo de informação ao 'Proprietário do Ativo' (Asset Owner) não significa que ele precise executar manualmente os backups ou configurar permissões no servidor?",
+        options: [
+            "Porque o Proprietário define a classificação e os requisitos de proteção, podendo delegar a execução operacional ao Custodiante mantendo a responsabilização final.",
+            "Porque backups e permissões são dispensáveis para ativos já classificados.",
+            "Porque o Proprietário atua apenas durante auditorias externas de certificação.",
+            "Porque o Custodiante assume legalmente a propriedade comercial dos dados."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A execução técnica é delegada ao Custodiante (TI), mas a responsabilização pelo ativo permanece com o Proprietário.",
+            "A classificação justamente orienta quais controles técnicos devem ser aplicados.",
+            "O Proprietário gerencia o ativo ao longo de todo o seu ciclo de vida.",
+            "O Custodiante apenas guarda e opera tecnicamente os dados."
+        ]
+    },
+    // 106 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Antes de iniciar a avaliação de riscos do SGSI, a alta direção estabelece os critérios que definem qual nível de risco é aceitável para o negócio. Qual é o papel desses critérios de aceitação de risco?",
+        options: [
+            "Determinar quais riscos exigem tratamento prioritário e quais podem ser formalmente aceitos sem controles adicionais.",
+            "Substituir a necessidade de identificar vulnerabilidades nos servidores.",
+            "Definir o tamanho mínimo de chave criptográfica para conexões VPN.",
+            "Eliminar a obrigatoriedade de revisão anual da Declaração de Aplicabilidade."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Critérios de aceitação calibram o apetite a risco e orientam as decisões de tratamento.",
+            "A identificação de ameaças e vulnerabilidades continua obrigatória.",
+            "Padrões criptográficos são controles técnicos, não critérios estratégicos de risco.",
+            "A SoA deve ser revisada sempre que houver mudanças nos riscos."
+        ]
+    },
+    // 107 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Durante o turno noturno, um operador percebe uma tentativa de acesso físico suspeita na doca de carga que foi barrada pela tranca eletrônica, sem gerar prejuízo. Por que o registro desse 'quase-incidente' (near miss) é valioso para o SGSI?",
+        options: [
+            "Permite identificar padrões de ameaça e aprimorar controles preventivos antes que um incidente real cause dano.",
+            "Obriga a empresa a acionar imediatamente o Plano de Recuperação de Desastres (DRP).",
+            "Substitui a realização da auditoria interna prevista na Cláusula 9.",
+            "Caracteriza transferência automática do risco para a empresa de vigilância."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Analisar tentativas frustradas fortalece a postura preventiva e alimenta a gestão de riscos.",
+            "O DRP é acionado apenas diante de interrupções graves ou desastres.",
+            "Registros operacionais não substituem auditorias independentes.",
+            "O relato de eventos não transfere responsabilidade nem risco."
+        ]
+    },
+    // 108 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Uma organização sofre um vazamento de dados pessoais que paralisa o atendimento por 2 horas e, três meses depois, resulta em multa regulatória e cancelamento de contratos por clientes. Como são classificados a multa e o cancelamento de contratos?",
+        options: [
+            "Danos diretos imediatos.",
+            "Danos indiretos (consequências secundárias).",
+            "Controles corretivos financeiros.",
+            "Vulnerabilidades organizacionais."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Danos diretos ocorrem imediatamente durante o evento principal.",
+            "Multas posteriores e perda de reputação/clientes são danos indiretos.",
+            "Penalidades sofridas são impactos negativos, não controles.",
+            "Vulnerabilidades são fraquezas prévias, não consequências."
+        ]
+    },
+    // 109 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "No gerenciamento de incidentes, após o Help Desk registrar e classificar um chamado, por que a priorização deve considerar simultaneamente o impacto no negócio e a urgência?",
+        options: [
+            "Para garantir que incidentes críticos que afetam processos essenciais recebam resposta e recursos antes de eventos de baixo impacto.",
+            "Para resolver os chamados estritamente por ordem de chegada cronológica.",
+            "Para evitar que qualquer incidente seja escalado para equipes especializadas.",
+            "Para dispensar o registro do nome do notificante em casos urgentes."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Priorizar por impacto e urgência protege primeiro os ativos e processos vitais.",
+            "Ordem de chegada pode atrasar a contenção de incidentes críticos.",
+            "Incidentes complexos ou graves exigem escalonamento funcional ou hierárquico.",
+            "A identificação do notificante permanece obrigatória no registro."
+        ]
+    },
+    // 110 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Qual é a principal diferença operacional entre uma 'Bomba Lógica' (Logic Bomb) e um 'Backdoor' (Porta dos Fundos) inseridos em um software corporativo?",
+        options: [
+            "A bomba lógica dispara uma ação específica quando uma condição ou data é atingida; o backdoor fornece um mecanismo oculto que contorna a autenticação normal.",
+            "O backdoor se replica autonomamente pela rede, enquanto a bomba lógica exige um arquivo hospedeiro.",
+            "A bomba lógica atua apenas em hardware físico, enquanto o backdoor atua apenas em redes Wi-Fi.",
+            "Ambos são controles preventivos utilizados em testes de continuidade."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Bomba lógica depende de gatilho lógico/temporal; backdoor cria acesso furtivo sem login regular.",
+            "Propagação autônoma em rede define o Worm, e hospedeiro define o Vírus.",
+            "Ambos são mecanismos de código lógico.",
+            "São ameaças/artefatos maliciosos ou não autorizados, não controles preventivos."
+        ]
+    },
+    // 111 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Uma empresa realiza exercícios de simulação (tabletop e testes práticos) do seu Plano de Continuidade de Negócios uma vez por ano. Qual objetivo principal essa prática cumpre?",
+        options: [
+            "Validar se os procedimentos funcionam na prática, treinar os papéis envolvidos e identificar falhas antes de uma crise real.",
+            "Substituir a necessidade de manter backups fora do prédio principal (offsite).",
+            "Garantir que nenhum desastre natural ocorra na região da sede.",
+            "Eliminar a exigência de definir RTO e RPO na Análise de Impacto no Negócio."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Testes periódicos comprovam a eficácia do plano e mantêm as equipes preparadas.",
+            "Backups offsite continuam indispensáveis para a recuperação de dados.",
+            "Planos de continuidade mitigam consequências, não impedem fenômenos naturais.",
+            "Os testes justamente verificam se o RTO e o RPO definidos na BIA são atingíveis."
+        ]
+    },
+    // 112 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Na gestão do ciclo de vida de chaves criptográficas dentro de uma Infraestrutura de Chave Pública (ICP), por que certificados digitais possuem prazo de validade definido mesmo que a chave privada não tenha sido comprometida?",
+        options: [
+            "Para limitar a janela de exposição caso uma chave seja quebrada ao longo do tempo e forçar a renovação com algoritmos e tamanhos de chave atualizados.",
+            "Porque chaves criptográficas se corrompem fisicamente no disco rígido após um ano.",
+            "Para substituir a Lista de Revogação de Certificados (CRL) em casos de roubo imediato.",
+            "Porque a chave pública deixa de ser visível após doze meses."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A rotação periódica reduz riscos de criptoanálise prolongada e acompanha a evolução tecnológica.",
+            "A expiração é uma regra lógica de segurança, não desgaste físico.",
+            "Em caso de comprometimento antes do vencimento, a revogação imediata via CRL/OCSP continua necessária.",
+            "A expiração invalida a confiança no certificado, não a visibilidade do arquivo."
+        ]
+    },
+    // 113 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Ao analisar a segurança física de um prédio comercial, observa-se que visitantes assinam um livro na recepção, recebem crachá diferenciado e são escoltados até a sala de reuniões, mas o livro de registros fica aberto sobre o balcão visível a qualquer pessoa que chega. Qual risco secundário essa prática cria?",
+        options: [
+            "Exposição de dados pessoais e informações sobre parceiros ou reuniões estratégicas (quebra de confidencialidade e privacidade).",
+            "Aumento na taxa de falsos negativos do sistema de detecção de intrusão (IDS).",
+            "Comprometimento da sincronização de relógios dos servidores internos.",
+            "Falha no sistema de supressão de incêndio por gás inerte."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Registros de visitantes contêm dados pessoais e revelam contatos comerciais sensíveis.",
+            "Livros de recepção não interferem em sensores lógicos de rede.",
+            "Relógios de servidores são controlados via protocolo NTP.",
+            "Sistemas de incêndio operam de forma independente da recepção."
+        ]
+    },
+    // 114 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Um departamento comercial contrata por conta própria uma ferramenta gratuita de armazenamento em nuvem para compartilhar planilhas de clientes com vendedores externos, sem envolver a TI ou a Segurança. Qual risco caracteriza esse cenário de Shadow IT?",
+        options: [
+            "Processamento de dados corporativos fora do controle do SGSI, sem garantias de criptografia, controle de acesso, backup ou conformidade legal.",
+            "Aumento da segurança por diversificação automática de fornecedores.",
+            "Eliminação da necessidade de Acordo de Nível de Serviço (SLA).",
+            "Redução automática da superfície de ataque da rede corporativa."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Serviços não homologados escapam das políticas, auditorias e controles do SGSI.",
+            "Falta de governança aumenta o risco de vazamento em vez de mitigá-lo.",
+            "Serviços externos críticos exigem avaliação de risco e contrato formal.",
+            "Ferramentas não gerenciadas ampliam a superfície de ataque."
+        ]
+    },
+    // 115 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "No gerenciamento de mudanças de infraestrutura, qual é o papel da segregação de funções entre quem solicita/desenvolve a mudança, quem a aprova e quem a implanta em produção?",
+        options: [
+            "Prevenir alterações não autorizadas, erros não revisados e fraudes cometidas por um único indivíduo.",
+            "Garantir que apenas o usuário final aprove alterações no firewall central.",
+            "Acelerar publicações emergenciais dispensando testes e plano de retorno.",
+            "Substituir a necessidade de manter logs das alterações realizadas."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Dividir solicitação, aprovação e implantação reduz riscos operacionais e de fraude.",
+            "Aprovações técnicas e de risco exigem alçadas competentes, não usuários comuns.",
+            "Mesmo mudanças emergenciais exigem controle, registro e plano de rollback.",
+            "Registros de mudança são obrigatórios para rastreabilidade e auditoria."
+        ]
+    },
+    // 116 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Para proteger um servidor crítico contra variações bruscas de tensão (picos elétricos) e contra apagões prolongados de energia, qual combinação de controles físicos ambientais é necessária?",
+        options: [
+            "Banco de baterias estabilizado (UPS/No-break) atuando em conjunto com um gerador de energia de longa duração.",
+            "Apenas disjuntores comuns ligados diretamente à rede elétrica pública.",
+            "Apenas um sistema de ar-condicionado de precisão redundante.",
+            "Espelhamento de discos em RAID 5 no gabinete do servidor."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "O UPS filtra oscilações e segura a carga imediata até o gerador assumir apagões longos.",
+            "Disjuntores não mantêm servidores ligados durante quedas de energia.",
+            "Climatização controla temperatura e umidade, não fornece energia aos servidores.",
+            "RAID protege contra falha de disco, não contra falta de energia elétrica."
+        ]
+    },
+    // 117 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Ao definir o escopo do Sistema de Gestão de Segurança da Informação (SGSI) na Cláusula 4.3 da ISO/IEC 27001, o que a organização deve considerar obrigatoriamente?",
+        options: [
+            "As questões internas e externas, os requisitos das partes interessadas e as interfaces e dependências entre atividades realizadas pela organização e por terceiros.",
+            "Exclusivamente os computadores localizados na matriz, ignorando interfaces com fornecedores.",
+            "Apenas os controles do Anexo A que a empresa já possui implementados.",
+            "Somente as metas de faturamento comercial definidas para o ano fiscal."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "O escopo deve refletir o contexto organizacional, partes interessadas e interfaces externas.",
+            "Dependências com terceiros dentro da fronteira do escopo precisam ser mapeadas.",
+            "O escopo define os limites do SGSI antes da seleção final de controles.",
+            "Metas comerciais isoladas não definem fronteiras de segurança da informação."
+        ]
+    },
+    // 118 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Durante a Análise Crítica pela Direção (Cláusula 9.3 da ISO/IEC 27001), quais elementos constituem entradas obrigatórias para a tomada de decisão estratégica?",
+        options: [
+            "Status de ações anteriores, mudanças no contexto interno/externo, resultados de auditorias, tendências de incidentes e resultados da avaliação de riscos.",
+            "Apenas o inventário de mobiliário físico do escritório.",
+            "Somente a lista de senhas individuais dos administradores de rede.",
+            "Exclusivamente o relatório de férias do departamento comercial."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A direção avalia desempenho, auditorias, incidentes, riscos e mudanças para direcionar melhorias.",
+            "Mobiliário não compõe os indicadores estratégicos do SGSI.",
+            "Senhas são pessoais e jamais devem ser listadas em relatórios gerenciais.",
+            "Escalas de férias isoladas não substituem os indicadores de eficácia do SGSI."
+        ]
+    },
+    // 119 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "No encerramento de um contrato com um fornecedor terceirizado que administrava sistemas da empresa, quais ações de desligamento (offboarding) são exigidas pela ISO/IEC 27002?",
+        options: [
+            "Revogar imediatamente todos os acessos lógicos e físicos do fornecedor e garantir a devolução ou destruição segura de todos os dados e ativos da contratante.",
+            "Manter as credenciais do fornecedor ativas por seis meses para eventuais consultas informais.",
+            "Permitir que o fornecedor retenha uma cópia dos dados de clientes para seu portfólio.",
+            "Dispensar a conferência de devolução de ativos caso exista um NDA assinado."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Encerrar acessos e assegurar devolução/destruição de ativos evita exposição pós-contrato.",
+            "Acessos ativos sem vínculo contratual geram risco crítico de invasão.",
+            "Dados corporativos e pessoais pertencem à contratante e não podem ser retidos sem base legal.",
+            "O NDA complementa o sigilo jurídico, mas não substitui a revogação técnica e física."
+        ]
+    },
+    // 120 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Uma organização mantém dados pessoais de ex-clientes por prazo indeterminado sem finalidade ativa nem obrigação legal fiscal que justifique a guarda. Qual princípio das leis de proteção de dados (GDPR/LGPD) está sendo violado?",
+        options: [
+            "Princípio da Limitação de Armazenamento / Retenção (término do tratamento quando alcançada a finalidade).",
+            "Princípio da Redundância de Servidores.",
+            "Princípio de Kerckhoffs.",
+            "Princípio da Segregação de Ambientes."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Dados pessoais devem ser eliminados ou anonimizados após o fim da finalidade ou prazo legal.",
+            "Redundância é um conceito técnico de disponibilidade.",
+            "Kerckhoffs refere-se ao sigilo da chave em sistemas criptográficos.",
+            "Segregação de ambientes separa desenvolvimento, teste e produção."
+        ]
+    },
+    // 121 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Quando dados contextualizados (informação) são combinados com a experiência e interpretação de especialistas para embasar decisões estratégicas, qual estágio da cadeia informacional é alcançado?",
+        options: [
+            "Dado bruto estruturado.",
+            "Conhecimento.",
+            "Rotulagem de ativos.",
+            "Metadado técnico."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Dados brutos ainda não possuem significado nem interpretação aplicada.",
+            "Conhecimento resulta da compreensão e aplicação da informação com base em experiência.",
+            "Rotulagem refere-se à designação visual ou lógica de sigilo.",
+            "Metadados apenas descrevem propriedades técnicas de um arquivo."
+        ]
+    },
+    // 122 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Um relatório financeiro não sofreu nenhuma alteração de conteúdo desde sua criação, mas foi forjado desde o início por um impostor se passando pelo diretor contábil. Sob o Hexagrama Parkeriano, qual atributo foi primariamente violado?",
+        options: [
+            "Integridade.",
+            "Disponibilidade.",
+            "Autenticidade.",
+            "Utilidade."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "O documento não foi modificado após sua criação.",
+            "O relatório está acessível normalmente para leitura.",
+            "A falsificação da origem ou autoria viola diretamente a autenticidade.",
+            "O formato do documento permanece legível e utilizável."
+        ]
+    },
+    // 123 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Uma corretora recebe cotações de mercado que possuem altíssimo valor estratégico durante cinco minutos, perdendo relevância após o fechamento do pregão. O que esse cenário demonstra sobre a valoração da informação?",
+        options: [
+            "O valor da informação é constante durante todo o seu ciclo de vida.",
+            "O valor e a sensibilidade da informação podem variar conforme o fator tempo.",
+            "Informações temporárias não exigem controles de integridade.",
+            "Ativos perecíveis dispensam a atribuição de um proprietário."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A criticidade de muitos ativos muda conforme o momento de negócio.",
+            "A temporalidade altera o valor e pode justificar reclassificação posterior.",
+            "Erros durante a janela crítica geram prejuízos imediatos.",
+            "Todo ativo relevante precisa de um proprietário definido."
+        ]
+    },
+    // 124 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Três relatórios classificados individualmente como 'Uso Interno' são consolidados em um único painel executivo que revela a margem de lucro global da companhia. Como o proprietário deve avaliar a classificação desse painel consolidado?",
+        options: [
+            "Manter obrigatoriamente como 'Uso Interno', pois deriva de fontes internas.",
+            "Reavaliar a classificação para um nível mais restrito devido ao efeito de agregação.",
+            "Rebaixar para 'Público' para facilitar a auditoria externa.",
+            "Dispensar rotulagem por se tratar de um resumo gerencial."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A combinação de dados pode elevar a sensibilidade acima das partes isoladas.",
+            "O efeito de agregação exige reclassificação compatível com o novo impacto.",
+            "Expor margens estratégicas compromete a competitividade.",
+            "Documentos consolidados também exigem classificação e rotulagem."
+        ]
+    },
+    // 125 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Em um processo corporativo onde os setores de Vendas e Cobrança utilizam a mesma base de clientes, por que a governança exige definir claramente quem é o Proprietário do Ativo?",
+        options: [
+            "Para evitar que a responsabilidade pela classificação e aprovação de acessos fique diluída ou indefinida.",
+            "Para impedir que o setor de Cobrança leia os dados cadastrais.",
+            "Para transferir a administração técnica do servidor ao setor de Vendas.",
+            "Para substituir o inventário de ativos exigido pela ISO/IEC 27002."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A responsabilização clara evita lacunas de governança sobre o ativo.",
+            "Outros setores podem ter acesso autorizado conforme necessidade de negócio.",
+            "A operação técnica do servidor continua com o custodiante.",
+            "A definição de proprietários complementa o inventário de ativos."
+        ]
+    },
+    // 126 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Na literatura da EXIN, o conceito de 'Confiabilidade da Informação' (Reliability) depende do equilíbrio simultâneo de quais aspectos?",
+        options: [
+            "Criptografia, firewall e backup.",
+            "Confidencialidade, integridade e disponibilidade.",
+            "Auditabilidade, responsabilização e conformidade.",
+            "Prevenção, detecção e correção."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Estes são controles técnicos específicos, não os aspectos conceituais.",
+            "A tríade CIA sustenta a confiabilidade da informação.",
+            "Estes são princípios de governança organizacional.",
+            "Estes representam tipos de controles no ciclo de incidentes."
+        ]
+    },
+    // 127 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Ao auditar o inventário de ativos, constata-se que um servidor de baixo custo financeiro hospeda o único registro de patentes da empresa. Como o nível de proteção deve ser definido?",
+        options: [
+            "Pelo valor de reposição do hardware do servidor.",
+            "Pelo valor e sensibilidade da informação de patentes armazenada.",
+            "Pela idade útil restante da garantia do equipamento.",
+            "Pelo custo mensal de energia elétrica do rack."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "O valor do equipamento não reflete o impacto da perda da propriedade intelectual.",
+            "O ativo de informação determina a criticidade dos controles no suporte.",
+            "Garantia de hardware não mede sensibilidade de negócio.",
+            "Custos operacionais de energia não definem classificação de sigilo."
+        ]
+    },
+    // 128 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Por que um esquema de classificação da informação deve ser acompanhado por procedimentos claros de manuseio de ativos?",
+        options: [
+            "Para que os usuários saibam exatamente como armazenar, copiar, transmitir e descartar cada nível classificado.",
+            "Para eliminar a necessidade de rótulos visuais nos documentos.",
+            "Para permitir que apenas auditores externos leiam arquivos internos.",
+            "Para substituir o controle de acesso lógico nos sistemas."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Sem regras práticas de manuseio, o rótulo de classificação não se traduz em proteção efetiva.",
+            "Rotulagem e regras de manuseio atuam em conjunto.",
+            "Colaboradores autorizados precisam manipular arquivos no dia a dia.",
+            "Procedimentos organizacionais complementam controles lógicos."
+        ]
+    },
+    // 129 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Uma instituição arquiva prontuários digitais que precisam permanecer legíveis por 20 anos por exigência legal. Qual risco ameaça a Utilidade desses registros ao longo das décadas?",
+        options: [
+            "Obsolescência de mídias de leitura e de formatos de arquivo proprietários.",
+            "Excesso de controles de acesso físico no arquivo.",
+            "Uso de assinaturas digitais válidas na data da criação.",
+            "Sincronização periódica de relógios via NTP."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Sem migração de mídias e formatos, dados íntegros podem se tornar ilegíveis no futuro.",
+            "Controles físicos protegem a posse sem destruir a legibilidade.",
+            "Assinaturas digitais preservam autenticidade e integridade.",
+            "NTP garante precisão cronológica de logs."
+        ]
+    },
+    // 130 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM1",
+        q: "Qual é o papel esperado dos usuários finais em relação aos ativos classificados que manipulam diariamente?",
+        options: [
+            "Alterar livremente o nível de sigilo quando acharem conveniente.",
+            "Respeitar os rótulos de designação e seguir as regras de manuseio correspondentes.",
+            "Configurar diretamente as chaves criptográficas da Autoridade Certificadora.",
+            "Aprovar formalmente o risco residual do departamento."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Apenas o proprietário do ativo pode alterar sua classificação.",
+            "Usuários devem aplicar no cotidiano as proteções previstas para cada rótulo.",
+            "Gestão de PKI cabe à equipe especializada e à CA.",
+            "Aprovação de risco residual é prerrogativa da alta direção."
+        ]
+    },
+    // 131 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Em uma avaliação de riscos, duas ameaças possuem o mesmo impacto financeiro caso ocorram, mas a Ameaça A explora uma vulnerabilidade crítica exposta enquanto a Ameaça B exige condições extremamente improváveis. Como os riscos devem ser priorizados?",
+        options: [
+            "Com prioridade idêntica, pois o impacto isolado define o risco.",
+            "A Ameaça A recebe prioridade maior devido à maior probabilidade de concretização.",
+            "A Ameaça B recebe prioridade maior por ser mais difícil de prever.",
+            "Ambas devem ser aceitas sem tratamento até que ocorra um incidente."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "O risco combina probabilidade e impacto, não apenas impacto.",
+            "Maior probabilidade com mesmo impacto resulta em nível de risco superior.",
+            "Eventos muito improváveis tendem a gerar risco menor para igual impacto.",
+            "A avaliação existe para tratar riscos antes da ocorrência de incidentes."
+        ]
+    },
+    // 132 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Ao implantar uma política de senhas extremamente complexas com troca obrigatória semanal, a empresa percebe que os funcionários passaram a anotar suas senhas em papéis sob o teclado. Como se classifica esse novo problema gerado pelo próprio controle?",
+        options: [
+            "Risco inerente original.",
+            "Risco secundário introduzido por um controle mal calibrado.",
+            "Transferência de risco.",
+            "Controle repressivo."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Risco inerente existe antes da aplicação dos controles.",
+            "Controles excessivamente rígidos podem criar novas vulnerabilidades (risco secundário).",
+            "Não há compartilhamento contratual com terceiros.",
+            "Anotar senhas é uma vulnerabilidade humana, não um controle."
+        ]
+    },
+    // 133 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Qual opção distingue corretamente uma ameaça ambiental/natural de uma falha técnica de infraestrutura no data center?",
+        options: [
+            "Enchente por tempestade é ameaça natural; queima de fonte de alimentação por desgaste é falha técnica.",
+            "Ambos são exemplos de ameaças humanas intencionais.",
+            "Falhas técnicas são causadas apenas por malwares.",
+            "Ameaças naturais nunca afetam a disponibilidade dos sistemas."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Fenômenos climáticos são ameaças naturais, enquanto desgaste de componentes é falha técnica.",
+            "Nenhum dos dois envolve ação humana deliberada.",
+            "Hardware sofre falhas físicas independentes de software malicioso.",
+            "Desastres naturais causam interrupções severas de disponibilidade."
+        ]
+    },
+    // 134 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Qual critério diferencia operacionalmente um 'incidente de segurança rotineiro' de um 'desastre' que exige o acionamento do Plano de Continuidade de Negócios (BCP)?",
+        options: [
+            "A severidade e a duração da interrupção, que excedem a capacidade normal de resposta e ameaçam processos críticos do negócio.",
+            "O fato de o evento ter sido reportado por telefone em vez de e-mail.",
+            "Apenas o envolvimento de equipamentos de rede sem fio.",
+            "A ocorrência durante o horário comercial em vez do turno noturno."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Desastres comprometem a continuidade crítica além do escopo de chamados comuns.",
+            "O canal de notificação não define a gravidade do evento.",
+            "Qualquer infraestrutura crítica pode sofrer um desastre.",
+            "Desastres podem ocorrer em qualquer horário."
+        ]
+    },
+    // 135 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Um atacante deixa propositalmente pen drives etiquetados como 'Reajuste Salarial' no estacionamento de uma empresa, contando com a curiosidade dos funcionários para conectá-los nos computadores internos. Como essa técnica de engenharia social é denominada?",
+        options: [
+            "Vishing.",
+            "Baiting (Isca).",
+            "Tailgating.",
+            "Shoulder Surfing."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Vishing ocorre por meio de chamadas telefônicas.",
+            "Baiting utiliza iscas físicas ou digitais atraentes para induzir a vítima a executar malware.",
+            "Tailgating é a entrada física pegando carona pela porta.",
+            "Shoulder surfing consiste em observar a tela ou digitação de terceiros."
+        ]
+    },
+    // 136 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Um golpista telefona para diversos ramais corporativos oferecendo 'suporte técnico gratuito para acelerar o computador' em troca de o usuário desativar o antivírus e informar sua senha. Essa tática de engenharia social é conhecida como:",
+        options: [
+            "Quid pro quo.",
+            "Dumpster Diving.",
+            "Smishing.",
+            "Replay Attack."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Quid pro quo oferece um benefício ou serviço falso em troca de informações ou acessos.",
+            "Dumpster diving envolve vasculhar lixo físico.",
+            "Smishing utiliza mensagens SMS fraudulentas.",
+            "Replay attack retransmite pacotes capturados na rede."
+        ]
+    },
+    // 137 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Na resposta a um incidente de invasão em um servidor, qual sequência representa corretamente a ordem técnica entre Contenção, Erradicação e Recuperação?",
+        options: [
+            "Recuperar o backup, conter a rede e depois erradicar o malware.",
+            "Isolar o sistema afetado (Contenção), remover a causa raiz e artefatos maliciosos (Erradicação) e restaurar a operação segura (Recuperação).",
+            "Erradicar o malware antes de detectar ou conter o incidente.",
+            "Executar apenas a Recuperação para economizar tempo, mantendo o malware isolado."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Restaurar antes de remover a causa raiz provoca reinfecção imediata.",
+            "Estancar a propagação, eliminar a ameaça e restaurar o serviço formam a ordem segura.",
+            "Sem contenção prévia, o incidente continua se espalhando durante a análise.",
+            "Deixar artefatos maliciosos ativos compromete novamente o ambiente."
+        ]
+    },
+    // 138 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Durante uma Análise de Impacto no Negócio (BIA), por que é essencial mapear fornecedores externos críticos e links de telecomunicação dos quais os processos internos dependem?",
+        options: [
+            "Porque a indisponibilidade de um terceiro crítico pode paralisar o processo interno mesmo que os servidores próprios estejam intactos.",
+            "Para assumir a gestão contábil das empresas fornecedoras.",
+            "Para substituir o contrato de trabalho dos funcionários internos.",
+            "Para dispensar a definição de RTO nos sistemas locais."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Dependências externas representam pontos críticos que afetam a continuidade real.",
+            "A BIA avalia dependências operacionais, não a contabilidade de terceiros.",
+            "Gestão de fornecedores é distinta de contratos trabalhistas internos.",
+            "O RTO dos processos internos deve estar alinhado aos SLAs dos fornecedores."
+        ]
+    },
+    // 139 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Na gestão de continuidade de negócios, qual deve ser a relação matemática correta entre o Objetivo de Tempo de Recuperação (RTO) e o Período Máximo Tolerável de Paralisação (MTPD / MAO)?",
+        options: [
+            "O RTO deve ser sempre menor ou igual ao MTPD, garantindo que o sistema retorne antes que o dano se torne inaceitável.",
+            "O RTO deve ser o dobro do MTPD para dar margem à equipe técnica.",
+            "O MTPD deve ser menor que o RTO para reduzir custos de backup.",
+            "Ambos devem ser definidos apenas após a ocorrência do desastre."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Recuperar antes de atingir o limite máximo tolerável evita danos irreversíveis ao negócio.",
+            "Um RTO maior que o MTPD significa que a empresa já teria sofrido impacto intolerável.",
+            "Se o limite tolerável for menor que a meta de recuperação, o plano é ineficaz.",
+            "Métricas de continuidade são planejadas previamente na BIA."
+        ]
+    },
+    // 140 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Uma empresa contrata um seguro cibernético abrangente como estratégia de transferência de risco. Qual limitação importante a diretoria precisa considerar sobre essa estratégia?",
+        options: [
+            "O seguro cobre parte do prejuízo financeiro pós-incidente, mas não impede o ataque nem restaura automaticamente a reputação perdida perante clientes.",
+            "O seguro elimina a probabilidade de ocorrência de ataques cibernéticos.",
+            "A apólice dispensa a empresa de cumprir leis como GDPR e LGPD.",
+            "O seguro substitui a necessidade de manter backups atualizados."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Transferência financeira amortece custos, mas não substitui controles preventivos nem recupera imagem.",
+            "Apólices não alteram a probabilidade técnica de invasão.",
+            "Obrigações legais continuam plenamente exigíveis.",
+            "Sem backups, a recuperação operacional continua inviabilizada."
+        ]
+    },
+    // 141 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Uma equipe de operações sobrecarregada e sem treinamento recente comete erros recorrentes ao aplicar configurações em produção, causando paradas frequentes. Como essas falhas são classificadas na gestão de riscos?",
+        options: [
+            "Ameaças ambientais.",
+            "Ameaças humanas não intencionais (acidentais).",
+            "Controles detectivos.",
+            "Ataques de força bruta."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Ameaças ambientais referem-se a fatores físicos e climáticos.",
+            "Erros operacionais sem má-fé constituem ameaças humanas acidentais.",
+            "Falhas que causam parada não são controles de segurança.",
+            "Força bruta é uma técnica intencional de quebra de credenciais."
+        ]
+    },
+    // 142 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM2",
+        q: "Em qual momento a norma ISO/IEC 27001 exige que a organização execute novas avaliações de riscos além do ciclo periódico planejado?",
+        options: [
+            "Sempre que forem planejadas ou ocorrerem mudanças significativas no negócio, na tecnologia ou no contexto.",
+            "Apenas quando o certificado de três anos expirar completamente.",
+            "Somente se o auditor externo solicitar por escrito.",
+            "Apenas após a troca da diretoria executiva."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Mudanças relevantes introduzem novas ameaças e vulnerabilidades que exigem reavaliação.",
+            "Esperar anos após mudanças críticas deixa brechas abertas.",
+            "A própria organização deve manter a gestão de riscos ativa continuamente.",
+            "Mudanças técnicas, legais ou operacionais também disparam reavaliações."
+        ]
+    },
+    // 143 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Qual é o objetivo principal de realizar revisões periódicas de direitos de acesso (User Access Reviews) conduzidas pelos proprietários dos ativos?",
+        options: [
+            "Confirmar que as permissões ativas continuam coerentes com as funções atuais dos usuários e revogar acessos obsoletos ou excessivos.",
+            "Aumentar automaticamente o nível de privilégio de todos os colaboradores antigos.",
+            "Substituir o uso de senhas fortes e MFA no portal corporativo.",
+            "Eliminar a necessidade de registrar logs de autenticação."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Revisões periódicas detectam acúmulo de privilégios e contas órfãs.",
+            "O objetivo é manter o menor privilégio, não expandir acessos sem necessidade.",
+            "Revisão de autorização não substitui mecanismos de autenticação.",
+            "Logs continuam obrigatórios para rastreabilidade."
+        ]
+    },
+    // 144 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Qual vantagem de segurança a autenticação baseada em certificados digitais de cliente (PKI) oferece em comparação com senhas estáticas simples?",
+        options: [
+            "Reduz a vulnerabilidade a ataques de adivinhação e reutilização de senhas fracas ao exigir posse de chave privada validada por uma CA.",
+            "Elimina a necessidade de proteger a estação de trabalho fisicamente.",
+            "Dispensa qualquer verificação de revogação de certificados.",
+            "Impede fisicamente a ocorrência de ataques de engenharia social presencial."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Certificados digitais vinculam criptograficamente a identidade sem depender de palavras memorizadas fracas.",
+            "A proteção física do equipamento continua necessária.",
+            "Verificação via CRL/OCSP continua essencial em caso de comprometimento.",
+            "Controles lógicos não substituem barreiras físicas e conscientização."
+        ]
+    },
+    // 145 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Por que a ISO/IEC 27002 exige controles ainda mais rigorosos sobre direitos de acesso privilegiados (como contas de administrador de sistemas e bancos de dados)?",
+        options: [
+            "Porque o uso indevido ou comprometimento dessas contas permite contornar outros controles de segurança e comprometer toda a infraestrutura.",
+            "Porque contas privilegiadas consomem maior largura de banda na rede.",
+            "Porque administradores não estão sujeitos ao Código de Conduta.",
+            "Porque contas privilegiadas não podem utilizar autenticação multifator."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Privilégios elevados ampliam drasticamente o impacto de falhas ou invasões.",
+            "Nível de permissão não altera o consumo de banda de rede.",
+            "Todos os colaboradores devem cumprir o Código de Conduta.",
+            "MFA é especialmente recomendado para contas privilegiadas."
+        ]
+    },
+    // 146 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Na segurança física de instalações corporativas, por que áreas de entrega e carregamento (docas de mercadorias) devem ser isoladas das áreas de processamento de informações?",
+        options: [
+            "Para controlar o acesso de entregadores externos e inspecionar cargas antes que entrem nos anéis internos do prédio.",
+            "Para reduzir a necessidade de controle de acesso lógico nos servidores.",
+            "Para permitir que visitantes acessem diretamente o data center sem escolta.",
+            "Para substituir o uso de detectores de fumaça no edifício."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Isolar docas impede que pessoas não autorizadas ou materiais perigosos alcancem áreas sensíveis.",
+            "Controles físicos complementam, mas não substituem controles lógicos.",
+            "Visitantes e entregadores não devem circular sem restrição em áreas seguras.",
+            "Sistemas de detecção de incêndio permanecem obrigatórios."
+        ]
+    },
+    // 147 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Qual objetivo cumpre a proteção física de cabos de energia e de telecomunicações (uso de eletrodutos fechados, vias subterrâneas e rotas separadas)?",
+        options: [
+            "Prevenir danos acidentais, interrupções de disponibilidade, interferência eletromagnética e tentativas de interceptação física (grampo).",
+            "Aumentar a velocidade de processamento das CPUs dos servidores.",
+            "Substituir a criptografia de disco completo nos notebooks.",
+            "Eliminar a necessidade de manter um Plano de Continuidade de Negócios."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Proteger o cabeamento reduz riscos de corte físico, ruído elétrico e escuta não autorizada.",
+            "Infraestrutura de cabos não altera o desempenho de processadores.",
+            "Criptografia de disco protege dados em repouso nos endpoints.",
+            "Proteção física reduz riscos, mas não dispensa o BCP."
+        ]
+    },
+    // 148 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Qual é a diferença prática de uso entre o protocolo TLS/HTTPS e uma VPN corporativa de acesso remoto?",
+        options: [
+            "TLS/HTTPS protege sessões específicas de aplicação (como navegador web), enquanto a VPN estabelece um túnel criptografado abrangente conectando o dispositivo à rede privada corporativa.",
+            "A VPN protege apenas dados em repouso, enquanto o HTTPS protege dados em trânsito.",
+            "O HTTPS utiliza apenas criptografia simétrica sem certificados digitais.",
+            "A VPN dispensa autenticação do usuário ao conectar de redes públicas."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "TLS atua no nível de sessão de aplicação; a VPN estende o acesso seguro à rede interna.",
+            "Ambos protegem dados em trânsito através de redes não confiáveis.",
+            "HTTPS usa criptografia híbrida apoiada em certificados digitais (PKI).",
+            "VPNs corporativas exigem autenticação forte, idealmente com MFA."
+        ]
+    },
+    // 149 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Na gestão de vulnerabilidades técnicas, qual diferença distingue uma 'varredura automatizada de vulnerabilidades' de um 'teste de intrusão' (pentest)?",
+        options: [
+            "A varredura identifica e lista possíveis falhas conhecidas de forma abrangente; o pentest simula ataques reais tentando explorar ativamente essas falhas para medir o impacto prático.",
+            "A varredura é ilegal, enquanto o pentest dispensa autorização da diretoria.",
+            "O pentest substitui a aplicação de patches de segurança nos servidores.",
+            "A varredura avalia apenas segurança física, enquanto o pentest avalia apenas políticas em papel."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Varreduras mapeiam fraquezas conhecidas; pentests validam a explorabilidade real.",
+            "Ambos exigem autorização formal prévia da organização.",
+            "Testes apenas identificam brechas que ainda precisam ser corrigidas.",
+            "Ambos podem focar em sistemas, redes e aplicações."
+        ]
+    },
+    // 150 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Por que ferramentas antimalware baseadas exclusivamente em assinaturas (signatures) apresentam limitações frente a ameaças modernas?",
+        options: [
+            "Porque reconhecem apenas padrões de malwares já catalogados, podendo falhar diante de códigos inéditos (Zero-Day) ou polimórficos.",
+            "Porque não conseguem examinar arquivos armazenados no disco rígido.",
+            "Porque exigem que o computador esteja desconectado da energia elétrica.",
+            "Porque substituem integralmente o firewall de borda."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Sem assinatura prévia conhecida, exige-se análise comportamental/heurística complementar.",
+            "Ferramentas de assinatura inspecionam arquivos locais normalmente.",
+            "O software opera com o sistema ligado e ativo.",
+            "Antimalware e firewall atuam em camadas complementares."
+        ]
+    },
+    // 151 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "Em uma rede corporativa bem arquitetada, qual benefício principal a segmentação em sub-redes ou VLANs com filtragem interna oferece durante um incidente de invasão?",
+        options: [
+            "Restringir a movimentação lateral do atacante e limitar o raio de impacto apenas ao segmento comprometido.",
+            "Impedir que usuários internos precisem utilizar senhas.",
+            "Garantir automaticamente a conformidade com o GDPR.",
+            "Eliminar a necessidade de atualizar sistemas operacionais."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Segmentar a rede contém a propagação de worms e invasores entre departamentos.",
+            "Autenticação de usuários continua obrigatória em todos os segmentos.",
+            "Segmentação apoia a segurança, mas conformidade legal exige requisitos adicionais.",
+            "Gestão de patches permanece indispensável."
+        ]
+    },
+    // 152 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM3",
+        q: "De acordo com a ISO/IEC 27002, qual é o propósito de manter manutenção preventiva regular em equipamentos críticos (como geradores, UPS e servidores)?",
+        options: [
+            "Assegurar a disponibilidade e a integridade contínuas dos equipamentos, reduzindo a probabilidade de falhas inesperadas.",
+            "Substituir a realização de backups externos.",
+            "Eliminar a necessidade de controle de acesso físico na sala.",
+            "Aumentar o valor contábil das licenças de software."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Manutenção preventiva preserva a confiabilidade operacional da infraestrutura.",
+            "Equipamentos bem mantidos ainda podem falhar ou sofrer incidentes lógicos.",
+            "Acesso físico de técnicos de manutenção deve inclusive ser supervisionado.",
+            "Manutenção de hardware não altera licenciamento de software."
+        ]
+    },
+    // 153 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Na Cláusula 4.2 da ISO/IEC 27001, por que a organização deve identificar as partes interessadas (como clientes, reguladores, acionistas e fornecedores) e seus requisitos relevantes?",
+        options: [
+            "Para assegurar que o SGSI contemple exigências legais, contratuais e expectativas de segurança críticas ao negócio.",
+            "Para conceder acesso administrativo aos servidores internos a todos os clientes.",
+            "Para dispensar a elaboração da política de segurança da informação.",
+            "Para transferir a auditoria interna aos concorrentes de mercado."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Compreender requisitos das partes interessadas alinha o SGSI às obrigações externas e internas.",
+            "Identificar partes interessadas não implica conceder privilégios técnicos.",
+            "A política continua sendo requisito obrigatório da Cláusula 5.",
+            "Auditorias internas são conduzidas pela própria organização de forma imparcial."
+        ]
+    },
+    // 154 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "De acordo com a Cláusula 5 da ISO/IEC 27001 (Liderança), qual responsabilidade NÃO pode ser omitida pela Alta Direção na condução do SGSI?",
+        options: [
+            "Garantir a disponibilidade dos recursos necessários, comunicar a importância da segurança e assegurar que a política esteja alinhada à direção estratégica.",
+            "Configurar manualmente as regras de roteamento de cada firewall da matriz.",
+            "Executar pessoalmente os chamados de primeiro nível do Help Desk.",
+            "Substituir o auditor externo durante a auditoria de terceira parte."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A liderança é responsável por patrocínio, recursos, alinhamento estratégico e atribuição de papéis.",
+            "Configuração técnica de rede é tarefa operacional da equipe de TI.",
+            "Suporte de nível 1 pertence ao Service Desk.",
+            "Certificação exige organismo auditor externo independente."
+        ]
+    },
+    // 155 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Segundo a Cláusula 6.2 da ISO/IEC 27001, os objetivos de segurança da informação estabelecidos pela organização devem ser coerentes com a política e, sempre que praticável:",
+        options: [
+            "Mensuráveis, monitorados, comunicados e atualizados conforme apropriado.",
+            "Mantidos em segredo absoluto dos gerentes de departamento.",
+            "Definidos sem qualquer prazo ou responsável atribuído.",
+            "Voltados exclusivamente para a redução do custo de energia elétrica."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Objetivos mensuráveis e acompanhados permitem avaliar a eficácia real do SGSI.",
+            "Objetivos precisam ser comunicados às áreas relevantes para execução.",
+            "O planejamento exige definir o que fazer, recursos, responsáveis e prazos.",
+            "Objetivos de segurança focam na proteção da informação e dos riscos."
+        ]
+    },
+    // 156 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Na Cláusula 7.5 da ISO/IEC 27001 (Informação Documentada), qual é a finalidade de controlar o versionamento, a aprovação e a distribuição das políticas e procedimentos do SGSI?",
+        options: [
+            "Garantir que os colaboradores utilizem sempre versões atualizadas e aprovadas, evitando o uso acidental de documentos obsoletos.",
+            "Impedir que qualquer documento do SGSI seja revisado após a certificação.",
+            "Tornar todos os procedimentos internos públicos na internet.",
+            "Substituir a necessidade de treinamento de conscientização."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Controle documental assegura integridade, disponibilidade e uso da versão vigente.",
+            "Documentos devem ser revisados periodicamente na melhoria contínua.",
+            "Documentos internos devem ser protegidos contra acesso indevido.",
+            "Documentação controlada não substitui capacitação das pessoas."
+        ]
+    },
+    // 157 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Ao tratar uma Não Conformidade identificada em auditoria (Cláusula 10 da ISO/IEC 27001), qual é a diferença entre uma 'correção imediata' e uma 'ação corretiva'?",
+        options: [
+            "A correção elimina o sintoma pontual detectado; a ação corretiva investiga e elimina a causa raiz para impedir que o problema volte a ocorrer.",
+            "A ação corretiva oculta o erro, enquanto a correção apaga o relatório de auditoria.",
+            "Ambas são sinônimos exatos e dispensam verificação de eficácia posterior.",
+            "A correção aplica-se apenas a hardware, enquanto a ação corretiva aplica-se apenas a contratos."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Tratar a causa raiz previne a reincidência da não conformidade no SGSI.",
+            "Não conformidades devem ser registradas e tratadas com transparência.",
+            "A eficácia das ações corretivas deve ser verificada após sua implementação.",
+            "Ambos os conceitos aplicam-se a qualquer processo ou controle do SGSI."
+        ]
+    },
+    // 158 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "De acordo com a ISO/IEC 27002, como devem ser conduzidas as verificações de antecedentes (screening) dos candidatos antes da contratação?",
+        options: [
+            "De forma proporcional aos requisitos do negócio, à classificação das informações a serem acessadas e em total conformidade com a legislação local e ética.",
+            "Com exatamente o mesmo nível invasivo para todos os cargos, independentemente das leis trabalhistas.",
+            "Apenas após o colaborador completar dois anos de acesso aos bancos de dados.",
+            "Somente para funcionários efetivos, dispensando prestadores terceirizados com acesso privilegiado."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "A verificação pré-emprego deve equilibrar risco do cargo, sensibilidade dos dados e legalidade.",
+            "Leis locais e privacidade impõem limites obrigatórios ao processo de screening.",
+            "A verificação deve ocorrer antes da concessão de acesso sensível.",
+            "Terceiros e temporários com acesso a ativos sensíveis também exigem verificação proporcional."
+        ]
+    },
+    // 159 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Por que a ISO/IEC 27002 recomenda manter contatos estabelecidos com autoridades relevantes e grupos especiais de interesse em segurança (como CERTs/CSIRTs)?",
+        options: [
+            "Para agilizar comunicações em incidentes graves e manter o conhecimento atualizado sobre novas ameaças, vulnerabilidades e boas práticas.",
+            "Para delegar a operação diária do firewall interno a entidades externas.",
+            "Para obter isenção automática em caso de vazamento de dados pessoais.",
+            "Para substituir a realização da Análise Crítica pela Direção."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Contatos prévios facilitam a resposta a crises e o acompanhamento de inteligência de ameaças.",
+            "A operação dos controles internos permanece sob responsabilidade da organização.",
+            "Contatos institucionais não isentam a empresa de responsabilidades legais.",
+            "A análise crítica pela direção continua sendo obrigação interna."
+        ]
+    },
+    // 160 - GERADA POR IA COM BASE NA EXIN
+    {
+        domain: "DOM4",
+        q: "Na conformidade do SGSI (ISO/IEC 27002), por que a organização deve manter atualizada uma lista dos requisitos legais, estatutários, regulatórios e contratuais aplicáveis à segurança da informação?",
+        options: [
+            "Para evitar violações jurídicas, multas e descumprimentos contratuais ao garantir que os controles do SGSI atendam a todas as obrigações vigentes.",
+            "Para transformar normas ISO voluntárias em leis penais internas.",
+            "Para dispensar a revisão periódica da Declaração de Aplicabilidade.",
+            "Para eliminar a necessidade de assinar acordos de confidencialidade (NDA)."
+        ],
+        answer: "<conceptual_placeholder>",
+        explanations: [
+            "Mapear obrigações externas garante conformidade contínua e reduz riscos legais.",
+            "Normas ISO mantêm caráter voluntário perante o Estado.",
+            "Mudanças legais podem exigir atualização de controles e da SoA.",
+            "Requisitos contratuais frequentemente reforçam o uso de NDAs."
+        ]
     }
 ];
